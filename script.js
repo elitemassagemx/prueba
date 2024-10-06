@@ -28,11 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.text(); // Get the raw text instead of parsing JSON
+                return response.text();
             })
             .then(text => {
                 try {
-                    const data = JSON.parse(text); // Try to parse the JSON
+                    // Intenta arreglar problemas comunes de JSON antes de parsearlo
+                    const cleanedText = text.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
+                    const data = JSON.parse(cleanedText);
                     console.log('JSON data loaded successfully:', data);
                     services = data.services;
                     renderServices('individual');
@@ -42,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } catch (error) {
                     console.error('Error parsing JSON:', error);
                     console.error('Problematic JSON:', text);
-                    throw error; // Re-throw the error to be caught by the catch block
+                    throw error;
                 }
             })
             .catch(error => {
@@ -103,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 serviceBackground.style.backgroundImage = `url(${buildImageUrl(service.backgroundImage)})`;
             }
 
-            // Añadir clases de filtro basadas en los beneficios
             const serviceItem = serviceElement.querySelector('.service-item');
             if (Array.isArray(service.benefits)) {
                 service.benefits.forEach(benefit => {
@@ -153,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 packageBackground.style.backgroundImage = `url(${buildImageUrl(pkg.backgroundImage)})`;
             }
 
-            // Añadir clase de filtro basada en el tipo de paquete
             const packageItem = packageElement.querySelector('.package-item');
             if (pkg.type) {
                 packageItem.classList.add(pkg.type.toLowerCase().replace(/\s+/g, '-'));
@@ -369,7 +369,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalImg.src = this.querySelector('img').src;
                 modalDescription.innerHTML = this.querySelector('.image-description').innerHTML;
             });
-        });
 
         closeBtn.onclick = function() {
             modal.style.display = "none";
