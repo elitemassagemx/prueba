@@ -404,7 +404,7 @@
         "image": "${BASE_URL}jamc.jpg",
         "popupDescription": "El Paquete Relax y Sabores ofrece una combinación perfecta de relajación y placer culinario. Comienza con un masaje de reflexología en pareja de 60 minutos, que alivia el estrés y promueve el bienestar general a través de la estimulación de puntos específicos en los pies. Después, disfruten de 30 minutos de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una selección de quesos gourmet. Este paquete es ideal para parejas que buscan una experiencia relajante y romántica con un toque de sofisticación culinaria.\n\nPrecio: $1,700",
         "popupImage": "${BASE_URL}relax-sabores-popup.jpg"
-      }
+      },
     ]
   }
 }
