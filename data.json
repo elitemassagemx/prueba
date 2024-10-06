@@ -54,25 +54,33 @@
         "description": "Disfruta de sus propiedades antioxidantes con nuestra selección de lociones hechas de chocolate.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Hidratará tu Piel", "Multisensorial", "Relajación Profunda"],
         "duration": "60 min",
-        "icon": "${BASE_URL}choco.png",
-        "benefitsIcons": ["${BASE_URL}chidratacion.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
-        "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}chocolaterapia-image.jpg",
-        "popupDescription": "La chocolaterapia es un tratamiento lujoso que combina los beneficios del masaje con las propiedades nutritivas del chocolate. El cacao rico en antioxidantes ayuda a nutrir y rejuvenecer la piel, mientras que el aroma del chocolate induce una sensación de bienestar y relajación. Este tratamiento no solo es un placer para los sentidos, sino que también deja la piel suave, hidratada y con un brillo saludable.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
-        "popupImage": "${BASE_URL}chocolaterapia-popup.jpg"
-      },
-      {
-        "title": "Pies cansados",
-        "description": "Centrado en tus pies, aplicando puntos de presión para estimular la salud general.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
-        "benefits": ["Mejorarás tu Equilibrio", "Reducirás el Estrés"],
-        "duration": "30 min",
-        "icon": "${BASE_URL}sqpieblanco.png",
+        "icon": "${BASE_URL}chocolate-icon.png",
         "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}reflexologia-image.jpg",
-        "popupDescription": "La reflexología es una técnica terapéutica que se centra en aplicar presión en puntos específicos de los pies que se corresponden con diferentes órganos y sistemas del cuerpo. Este tratamiento no solo proporciona una profunda relajación, sino que también puede ayudar a mejorar la circulación, reducir el estrés y promover un sentido general de bienestar en todo el cuerpo.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
-        "popupImage": "${BASE_URL}reflexologia-popup.jpg"
-      },
+        "image": "${BASE_URL}chocolaterapia.jpg",
+        "popupDescription": "La Chocolaterapia es un tratamiento de spa lujoso que utiliza chocolate real para nutrir y rejuvenecer la piel...",
+        "popupImage": "${BASE_URL}chocolaterapia-popup.jpg"
+      }
+      {
+{
+  "title": "Pies cansados",
+  "description": "Centrado en tus pies, aplicando puntos de presión para estimular la salud general.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+  "benefits": [
+    "Mejorarás tu Equilibrio",
+    "Reducirás el Estrés"
+  ],
+  "duration": "30 min",
+  "icon": "${BASE_URL}sqpieblanco.png",
+  "benefitsIcons": [
+    "${BASE_URL}benefits-icon1.png",
+    "${BASE_URL}benefits-icon2.png",
+    "${BASE_URL}benefits-icon3.png"
+  ],
+  "durationIcon": "${BASE_URL}duration-icon.png",
+  "image": "${BASE_URL}reflexologia-image.jpg",
+  "popupDescription": "La reflexología es una técnica terapéutica que se centra en aplicar presión en puntos específicos de los pies que se corresponden con diferentes órganos y sistemas del cuerpo. Este tratamiento no solo proporciona una profunda relajación, sino que también puede ayudar a mejorar la circulación, reducir el estrés y promover un sentido general de bienestar en todo el cuerpo.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+  "popupImage": "${BASE_URL}reflexologia-popup.jpg"
+}
       {
         "title": "Lomi Lomi",
         "description": "El masaje Lomi Lomi es una técnica hawaiana tradicional que combina movimientos rítmicos y fluidos para promover la relajación y el bienestar físico, emocional y espiritual. Basado en los principios de Aloha y Mana, utiliza las manos, antebrazos y codos para realizar movimientos largos y continuos, siguiendo el flujo natural del cuerpo. Este masaje busca no solo relajar los músculos y mejorar la circulación, sino también liberar bloqueos emocionales y reducir el estrés.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
