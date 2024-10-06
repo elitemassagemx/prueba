@@ -123,7 +123,7 @@
         "popupDescription": "El Ritual de Diamantes es un tratamiento de lujo que combina un masaje corporal relajante con una exfoliación profunda utilizando polvo de diamante. Este tratamiento único ayuda a eliminar las células muertas de la piel, estimula la producción de colágeno y deja la piel con un brillo incomparable. El ritual concluye con un facial rejuvenecedor que utiliza productos infundidos con diamantes para una experiencia verdaderamente lujosa.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}diamond-ritual-popup.jpg"
       },
-          "experiencias": [
+      "experiencias": [
       {
         "title": "Día de Spa Completo",
         "description": "Una experiencia de día completo que incluye múltiples tratamientos para una relajación total.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
