@@ -28,18 +28,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json();
+                return response.text(); // Get the raw text instead of parsing JSON
             })
-            .then(data => {
-                console.log('JSON data loaded successfully:', data);
-                services = data.services;
-                renderServices('individual');
-                renderPackages();
-                setupFilters();
-                setupServiceCategories();
+            .then(text => {
+                try {
+                    const data = JSON.parse(text); // Try to parse the JSON
+                    console.log('JSON data loaded successfully:', data);
+                    services = data.services;
+                    renderServices('individual');
+                    renderPackages();
+                    setupFilters();
+                    setupServiceCategories();
+                } catch (error) {
+                    console.error('Error parsing JSON:', error);
+                    console.error('Problematic JSON:', text);
+                    throw error; // Re-throw the error to be caught by the catch block
+                }
             })
             .catch(error => {
-                console.error('Error loading the JSON file:', error);
+                console.error('Error loading or parsing the JSON file:', error);
                 const servicesList = getElement('services-list');
                 const packageList = getElement('package-list');
                 if (servicesList) servicesList.innerHTML = '<p>Error al cargar los servicios. Por favor, intente más tarde.</p>';
