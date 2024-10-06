@@ -123,6 +123,80 @@
         "popupDescription": "El Ritual de Diamantes es un tratamiento de lujo que combina un masaje corporal relajante con una exfoliación profunda utilizando polvo de diamante. Este tratamiento único ayuda a eliminar las células muertas de la piel, estimula la producción de colágeno y deja la piel con un brillo incomparable. El ritual concluye con un facial rejuvenecedor que utiliza productos infundidos con diamantes para una experiencia verdaderamente lujosa.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}diamond-ritual-popup.jpg"
       },
+          "experiencias": [
+      {
+        "title": "Día de Spa Completo",
+        "description": "Una experiencia de día completo que incluye múltiples tratamientos para una relajación total.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "includes": ["Masaje de cuerpo completo", "Facial personalizado", "Manicura y pedicura", "Almuerzo saludable"],
+        "duration": "6 horas",
+        "icon": "${BASE_URL}full-day-spa-icon.png",
+        "benefitsIcons": ["${BASE_URL}massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}mani-pedi-icon.png", "${BASE_URL}lunch-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}full-day-spa-image.jpg",
+        "popupDescription": "Sumérgete en un día completo de indulgencia y relajación. Esta experiencia incluye un masaje de cuerpo completo personalizado, un facial adaptado a tu tipo de piel, una lujosa manicura y pedicura, y un almuerzo saludable en nuestro spa café. Tendrás acceso a todas nuestras instalaciones, incluyendo sauna, jacuzzi y áreas de relajación.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "popupImage": "${BASE_URL}full-day-spa-popup.jpg"
+      },
+      {
+        "title": "Retiro de Bienestar",
+        "description": "Un programa de varios días diseñado para rejuvenecer cuerpo y mente.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "includes": ["Tratamientos de spa diarios", "Clases de yoga y meditación", "Consultas nutricionales", "Alojamiento de lujo"],
+        "duration": "3 días / 2 noches",
+        "icon": "${BASE_URL}wellness-retreat-icon.png",
+        "benefitsIcons": ["${BASE_URL}spa-treatments-icon.png", "${BASE_URL}yoga-icon.png", "${BASE_URL}nutrition-icon.png", "${BASE_URL}luxury-accommodation-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}wellness-retreat-image.jpg",
+        "popupDescription": "Escapa de la rutina diaria con nuestro Retiro de Bienestar de 3 días. Este programa integral incluye tratamientos de spa diarios, clases de yoga y meditación, consultas nutricionales personalizadas y alojamiento de lujo. Diseñado para rejuvenecer tu cuerpo y mente, te irás sintiéndote renovado y revitalizado.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "popupImage": "${BASE_URL}wellness-retreat-popup.jpg"
+      },
+      {
+        "title": "Experiencia Termal",
+        "description": "Un recorrido por nuestras instalaciones termales para una experiencia de relajación completa.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "includes": ["Circuito de aguas", "Sauna y baño turco", "Piscina de hidromasaje", "Sala de relajación"],
+        "duration": "3 horas",
+        "icon": "${BASE_URL}thermal-experience-icon.png",
+        "benefitsIcons": ["${BASE_URL}water-circuit-icon.png", "${BASE_URL}sauna-icon.png", "${BASE_URL}jacuzzi-icon.png", "${BASE_URL}relaxation-room-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}thermal-experience-image.jpg",
+        "popupDescription": "Sumérgete en nuestra Experiencia Termal, un viaje de relajación a través de nuestras lujosas instalaciones. Comienza con nuestro circuito de aguas, seguido de sesiones en la sauna y el baño turco. Relájate en nuestra piscina de hidromasaje y termina tu experiencia en nuestra tranquila sala de relajación. Este tratamiento ayuda a desintoxicar el cuerpo, mejorar la circulación y proporcionar una relajación profunda.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "popupImage": "${BASE_URL}thermal-experience-popup.jpg"
+      },
+      {
+        "title": "Escapada Romántica",
+        "description": "Una experiencia diseñada para parejas que buscan relajarse y reconectar.\n\nPrecio: $1,700",
+        "includes": ["Masaje en pareja", "Baño de burbujas privado", "Cena a la luz de las velas", "Champagne y fresas"],
+        "duration": "4 horas",
+        "icon": "${BASE_URL}romantic-getaway-icon.png",
+        "benefitsIcons": ["${BASE_URL}couple-massage-icon.png", "${BASE_URL}bubble-bath-icon.png", "${BASE_URL}dinner-icon.png", "${BASE_URL}champagne-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}romantic-getaway-image.jpg",
+        "popupDescription": "Celebra el amor con nuestra Escapada Romántica. Comienza con un relajante masaje en pareja, seguido de un baño de burbujas privado con vistas panorámicas. La experiencia culmina con una cena íntima a la luz de las velas, acompañada de champagne y fresas. Esta experiencia está diseñada para crear momentos inolvidables y fortalecer la conexión con tu pareja.\n\nPrecio: $1,700",
+        "popupImage": "${BASE_URL}romantic-getaway-popup.jpg"
+      },
+      {
+        "title": "Detox y Renovación",
+        "description": "Un programa integral diseñado para desintoxicar y revitalizar el cuerpo.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "includes": ["Envoltura corporal desintoxicante", "Masaje drenaje linfático", "Facial purificante", "Sesión de yoga"],
+        "duration": "5 horas",
+        "icon": "${BASE_URL}detox-renewal-icon.png",
+        "benefitsIcons": ["${BASE_URL}body-wrap-icon.png", "${BASE_URL}lymphatic-massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}yoga-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}detox-renewal-image.jpg",
+        "popupDescription": "Renueva tu cuerpo y mente con nuestro programa Detox y Renovación. Comienza con una envoltura corporal desintoxicante para eliminar toxinas, seguida de un masaje de drenaje linfático para mejorar la circulación. Disfruta de un facial purificante y termina con una sesión de yoga revitalizante. Este programa está diseñado para dejarte sintiéndote completamente renovado y lleno de energía.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "popupImage": "${BASE_URL}detox-renewal-popup.jpg"
+      },
+      {
+        "title": "Viaje Sensorial",
+        "description": "Una experiencia única que estimula todos los sentidos para una relajación profunda.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "includes": ["Masaje aromático", "Terapia de sonido", "Degustación de tés exóticos", "Tratamiento de cromoterapia"],
+        "duration": "3 horas",
+        "icon": "${BASE_URL}sensory-journey-icon.png",
+        "benefitsIcons": ["${BASE_URL}aroma-icon.png", "${BASE_URL}sound-therapy-icon.png", "${BASE_URL}tea-tasting-icon.png", "${BASE_URL}chromotherapy-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}sensory-journey-image.jpg",
+        "popupDescription": "Embárcate en un Viaje Sensorial que despertará y relajará todos tus sentidos. Comienza con un masaje aromático personalizado, seguido de una sesión de terapia de sonido con cuencos tibetanos. Disfruta de una degustación de tés exóticos mientras te sumerges en un ambiente de cromoterapia diseñado para equilibrar tu energía. Esta experiencia única te transportará a un estado de relajación profunda y renovación.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
+        "popupImage": "${BASE_URL}sensory-journey-popup.jpg"
+      }
+    ],
 "paquetes": [
       {
         "title": "Paquete Romance Total",
