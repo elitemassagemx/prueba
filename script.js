@@ -357,29 +357,30 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Found ${images.length} images in the gallery`);
     }
 
-    function setupGalleryModal() {
-        const modal = getElement('imageModal');
-        const modalImg = getElement('modalImage');
-        const modalDescription = getElement('modalDescription');
-        const closeBtn = modal.querySelector('.close');
+function setupGalleryModal() {
+    const modal = getElement('imageModal');
+    const modalImg = getElement('modalImage');
+    const modalDescription = getElement('modalDescription');
+    const closeBtn = modal.querySelector('.close');
 
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.querySelector('img').src;
-                modalDescription.innerHTML = this.querySelector('.image-description').innerHTML;
-            });
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', function() {
+            modal.style.display = "block";
+            modalImg.src = this.querySelector('img').src;
+            modalDescription.innerHTML = this.querySelector('.image-description').innerHTML;
+        });
+    });
 
-        closeBtn.onclick = function() {
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = "none";
         }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
     }
+}
 
     function setupFilters() {
         setupFilterButtons('.benefits-nav', '#services-list', '.service-item');
