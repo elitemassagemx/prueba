@@ -123,8 +123,7 @@
         "popupDescription": "El Ritual de Diamantes es un tratamiento de lujo que combina un masaje corporal relajante con una exfoliación profunda utilizando polvo de diamante. Este tratamiento único ayuda a eliminar las células muertas de la piel, estimula la producción de colágeno y deja la piel con un brillo incomparable. El ritual concluye con un facial rejuvenecedor que utiliza productos infundidos con diamantes para una experiencia verdaderamente lujosa.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}diamond-ritual-popup.jpg"
       },
-    
-        {
+
         "title": "Experiencia Caviar",
         "description": "Un tratamiento facial y corporal de lujo que utiliza extractos de caviar para nutrir y rejuvenecer la piel.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Hidratación intensa", "Firmeza de la piel", "Nutrición profunda"],
@@ -173,8 +172,7 @@
         "popupImage": "${BASE_URL}champagne-roses-popup.jpg"
       }
     ],
-
- "experiencias": [
+    "experiencias": [
       {
         "title": "Día de Spa Completo",
         "description": "Una experiencia de día completo que incluye múltiples tratamientos para una relajación total.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
@@ -247,9 +245,8 @@
         "popupDescription": "Embárcate en un Viaje Sensorial que despertará y relajará todos tus sentidos. Comienza con un masaje aromático personalizado, seguido de una sesión de terapia de sonido con cuencos tibetanos. Disfruta de una degustación de tés exóticos mientras te sumerges en un ambiente de cromoterapia diseñado para equilibrar tu energía. Esta experiencia única te transportará a un estado de relajación profunda y renovación.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}sensory-journey-popup.jpg"
       }
-    ]
-    
-    "paquetes": [
+    ],
+"paquetes": [
       {
         "title": "Paquete Romance Total",
         "description": "Vivan una experiencia de masaje en pareja completa, con atención especial al detalle para un día inolvidable.\n\nPrecio: $1,700",
@@ -353,7 +350,7 @@
         "popupDescription": "El Paquete Sensaciones Inolvidables es una experiencia diseñada para despertar todos sus sentidos. Comienza con un lujoso masaje de cuerpo completo en pareja de 90 minutos, que les dejará completamente relajados y renovados. Después, disfruten de 45 minutos de pura indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos artísticos. Este paquete combina perfectamente la relajación profunda con una experiencia gastronómica refinada, creando recuerdos que perdurarán mucho después de que termine su visita.\n\nPrecio: $1,700",
         "popupImage": "${BASE_URL}sensaciones-inolvidables-popup.jpg"
       },
-        {
+      {
         "title": "Paquete Escape de Lujo",
         "description": "Una escapada lujosa para parejas que buscan un día de relajación y disfrute.\n\nPrecio: $1,700",
         "includes": [
@@ -404,8 +401,7 @@
         "image": "${BASE_URL}jamc.jpg",
         "popupDescription": "El Paquete Relax y Sabores ofrece una combinación perfecta de relajación y placer culinario. Comienza con un masaje de reflexología en pareja de 60 minutos, que alivia el estrés y promueve el bienestar general a través de la estimulación de puntos específicos en los pies. Después, disfruten de 30 minutos de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una selección de quesos gourmet. Este paquete es ideal para parejas que buscan una experiencia relajante y romántica con un toque de sofisticación culinaria.\n\nPrecio: $1,700",
         "popupImage": "${BASE_URL}relax-sabores-popup.jpg"
-      },
+      }
     ]
   }
 }
-        
