@@ -3,249 +3,409 @@
     "individual": [
       {
         "title": "Aromaterapia",
-        "description": "Elige de nuestra selección de aceites esenciales pensados en tu relajación. Nuestras terapeutas combinan técnicas suaves que no te puedes perder.",
+        "description": "Elige de nuestra selección de aceites esenciales pensados en tu relajación. Nuestras terapeutas combinan técnicas suaves que no te puedes perder.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Bajará tu Estrés", "Cambiará tu Ánimo", "Aliviarás Tensiones"],
         "duration": "60 min",
         "icon": "${BASE_URL}cfragancia2.png",
         "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}aroma.JPG",
-        "popupDescription": "La aromaterapia es una terapia holística que utiliza aceites esenciales naturales para promover la salud y el bienestar. Nuestras expertas terapeutas seleccionarán cuidadosamente los aceites más adecuados para ti, creando una experiencia personalizada que no solo relaja tu cuerpo, sino que también calma tu mente y eleva tu espíritu.",
+        "popupDescription": "La aromaterapia es una terapia holística que utiliza aceites esenciales naturales para promover la salud y el bienestar. Nuestras expertas terapeutas seleccionarán cuidadosamente los aceites más adecuados para ti, creando una experiencia personalizada que no solo relaja tu cuerpo, sino que también calma tu mente y eleva tu espíritu.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}aroma.JPG"
       },
       {
         "title": "Piedras Calientes",
-        "description": "Disfruta el calor de nuestras piedras lisas de Origen Volcánico, mientras tu terapeuta hace un masaje profundo.",
+        "description": "Disfruta el calor de nuestras piedras lisas de Origen Volcánico, mientras tu terapeuta hace un masaje profundo.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Aliviarás Dolores Musculares", "Mejorarás tu Circulación", "Relajación Profunda"],
         "duration": "60 min",
         "icon": "${BASE_URL}rhpiedrasfloresvela.png",
         "benefitsIcons": ["${BASE_URL}sqpierna.png", "${BASE_URL}ccirculacion.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}piedras-calientes-image.jpg",
-        "popupDescription": "El masaje con piedras calientes es una terapia antigua que combina el masaje tradicional con el uso de piedras volcánicas lisas y calientes. El calor penetrante de las piedras ayuda a relajar los músculos en profundidad, permitiendo a nuestros terapeutas trabajar más efectivamente en las áreas de tensión. Esta terapia es particularmente efectiva para aliviar dolores musculares, mejorar la circulación y proporcionar una sensación de relajación profunda.",
+        "popupDescription": "El masaje con piedras calientes es una terapia antigua que combina el masaje tradicional con el uso de piedras volcánicas lisas y calientes. El calor penetrante de las piedras ayuda a relajar los músculos en profundidad, permitiendo a nuestros terapeutas trabajar más efectivamente en las áreas de tensión. Esta terapia es particularmente efectiva para aliviar dolores musculares, mejorar la circulación y proporcionar una sensación de relajación profunda.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}piedras-calientes-popup.jpg"
       },
       {
         "title": "Espalda y Cuello",
-        "description": "Un enfoque especial para liberar tensiones acumuladas y relajarse profundamente.",
+        "description": "Un enfoque especial para liberar tensiones acumuladas y relajarse profundamente.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Relajación", "Alivio de Dolores en Espalda y Cuello"],
         "duration": "30 min",
         "icon": "${BASE_URL}pinsuecia.png",
         "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}noche.jpg",
-        "popupDescription": "Este masaje focalizado se centra en las áreas que más comúnmente acumulan tensión: la espalda y el cuello. Utilizando una combinación de técnicas de masaje sueco y de puntos de presión, nuestros terapeutas trabajarán para liberar los nudos musculares, mejorar la flexibilidad y proporcionar un alivio del estrés y la tensión.",
+        "popupDescription": "Este masaje focalizado se centra en las áreas que más comúnmente acumulan tensión: la espalda y el cuello. Utilizando una combinación de técnicas de masaje sueco y de puntos de presión, nuestros terapeutas trabajarán para liberar los nudos musculares, mejorar la flexibilidad y proporcionar un alivio del estrés y la tensión.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}espalda-cuello-popup.jpg"
       },
       {
         "title": "Relajante",
-        "description": "Ideal para una relajación completa, nuestras especialistas usarán técnicas de presión suaves para calmar el estrés.",
+        "description": "Ideal para una relajación completa, nuestras especialistas usarán técnicas de presión suaves para calmar el estrés.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Relajación Total", "Mejora Circulación Sanguínea"],
         "duration": "60 min",
         "icon": "${BASE_URL}pinsuecia.png",
         "benefitsIcons": ["${BASE_URL}ccirculacion.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}relajante.jpg",
-        "popupDescription": "Conocido por su capacidad para inducir una relajación profunda y aliviar la tensión muscular. Nuestros terapeutas utilizan una combinación de movimientos largos y fluidos, para mejorar la circulación, flexibilidad y bienestar general. Este masaje es perfecto para aquellos que buscan un escape relajante del estrés diario.",
+        "popupDescription": "Conocido por su capacidad para inducir una relajación profunda y aliviar la tensión muscular. Nuestros terapeutas utilizan una combinación de movimientos largos y fluidos, para mejorar la circulación, flexibilidad y bienestar general. Este masaje es perfecto para aquellos que buscan un escape relajante del estrés diario.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}sueco-relajante-popup.jpg"
       },
       {
         "title": "Chocolaterapia",
-        "description": "Disfruta de sus propiedades antioxidantes con nuestra selección de lociones hechas de chocolate.",
+        "description": "Disfruta de sus propiedades antioxidantes con nuestra selección de lociones hechas de chocolate.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Hidratará tu Piel", "Multisensorial", "Relajación Profunda"],
         "duration": "60 min",
         "icon": "${BASE_URL}choco.png",
         "benefitsIcons": ["${BASE_URL}chidratacion.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}chocolaterapia-image.jpg",
-        "popupDescription": "La chocolaterapia es un tratamiento lujoso que combina los beneficios del masaje con las propiedades nutritivas del chocolate. El cacao rico en antioxidantes ayuda a nutrir y rejuvenecer la piel, mientras que el aroma del chocolate induce una sensación de bienestar y relajación. Este tratamiento no solo es un placer para los sentidos, sino que también deja la piel suave, hidratada y con un brillo saludable.",
+        "popupDescription": "La chocolaterapia es un tratamiento lujoso que combina los beneficios del masaje con las propiedades nutritivas del chocolate. El cacao rico en antioxidantes ayuda a nutrir y rejuvenecer la piel, mientras que el aroma del chocolate induce una sensación de bienestar y relajación. Este tratamiento no solo es un placer para los sentidos, sino que también deja la piel suave, hidratada y con un brillo saludable.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}chocolaterapia-popup.jpg"
       },
       {
         "title": "Pies cansados",
-        "description": "Centrado en tus pies, aplicando puntos de presión para estimular la salud general.",
+        "description": "Centrado en tus pies, aplicando puntos de presión para estimular la salud general.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Mejorarás tu Equilibrio", "Reducirás el Estrés"],
         "duration": "30 min",
         "icon": "${BASE_URL}sqpieblanco.png",
         "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}reflexologia-image.jpg",
-        "popupDescription": "La reflexología es una técnica terapéutica que se centra en aplicar presión en puntos específicos de los pies que se corresponden con diferentes órganos y sistemas del cuerpo. Este tratamiento no solo proporciona una profunda relajación, sino que también puede ayudar a mejorar la circulación, reducir el estrés y promover un sentido general de bienestar en todo el cuerpo.",
+        "popupDescription": "La reflexología es una técnica terapéutica que se centra en aplicar presión en puntos específicos de los pies que se corresponden con diferentes órganos y sistemas del cuerpo. Este tratamiento no solo proporciona una profunda relajación, sino que también puede ayudar a mejorar la circulación, reducir el estrés y promover un sentido general de bienestar en todo el cuerpo.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}reflexologia-popup.jpg"
       },
       {
         "title": "Lomi Lomi",
-        "description": "El masaje Lomi Lomi es una técnica hawaiana tradicional que combina movimientos rítmicos y fluidos para promover la relajación y el bienestar físico, emocional y espiritual. Basado en los principios de Aloha y Mana, utiliza las manos, antebrazos y codos para realizar movimientos largos y continuos, siguiendo el flujo natural del cuerpo., . Este masaje busca no solo relajar los músculos y mejorar la circulación, sino también liberar bloqueos emocionales y reducir el estrés.",
+        "description": "El masaje Lomi Lomi es una técnica hawaiana tradicional que combina movimientos rítmicos y fluidos para promover la relajación y el bienestar físico, emocional y espiritual. Basado en los principios de Aloha y Mana, utiliza las manos, antebrazos y codos para realizar movimientos largos y continuos, siguiendo el flujo natural del cuerpo. Este masaje busca no solo relajar los músculos y mejorar la circulación, sino también liberar bloqueos emocionales y reducir el estrés.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Relajación Profunda", "Aumento de Energía", "Mejora Circulación"],
         "duration": "60 min",
         "icon": "${BASE_URL}lomi.png",
         "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}ccirculacion.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}lomi-lomi-image.jpg",
-        "popupDescription": "El Lomi Lomi es un masaje tradicional hawaiano que utiliza movimientos largos, fluidos y rítmicos de los antebrazos y las manos para masajear el cuerpo. Esta técnica única no solo relaja profundamente los músculos, sino que también se dice que ayuda a liberar patrones de pensamiento negativos almacenados en el cuerpo. El resultado es una sensación de rejuvenecimiento tanto física como mental.",
+        "popupDescription": "El Lomi Lomi es un masaje tradicional hawaiano que utiliza movimientos largos, fluidos y rítmicos de los antebrazos y las manos para masajear el cuerpo. Esta técnica única no solo relaja profundamente los músculos, sino que también se dice que ayuda a liberar patrones de pensamiento negativos almacenados en el cuerpo. El resultado es una sensación de rejuvenecimiento tanto física como mental.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}lomi-lomi-popup.jpg"
       },
       {
         "title": "Aceites de CBD",
-        "description": "Masaje con aceites de CBD para reducir la inflamación, aliviar el dolor y promover la relajación.",
+        "description": "Masaje con aceites de CBD para reducir la inflamación, aliviar el dolor y promover la relajación.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Alivio Dolor Muscular", "Reduce Ansiedad", "Calma Profunda"],
         "duration": "60 min",
         "icon": "${BASE_URL}sqfragancias.png",
         "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}cbd-image.jpg",
-        "popupDescription": "Nuestro masaje con aceites de CBD combina las técnicas de masaje tradicionales con los beneficios terapéuticos del cannabidiol (CBD). El CBD es conocido por sus propiedades antiinflamatorias y calmantes. Este tratamiento puede ayudar a aliviar el dolor muscular y promover una sensación de calma y bienestar general.",
+        "popupDescription": "Nuestro masaje con aceites de CBD combina las técnicas de masaje tradicionales con los beneficios terapéuticos del cannabidiol (CBD). El CBD es conocido por sus propiedades antiinflamatorias y calmantes. Este tratamiento puede ayudar a aliviar el dolor muscular y promover una sensación de calma y bienestar general.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}cbd-popup.jpg"
       }
     ],
     "premium": [
       {
         "title": "Masaje de Lujo con Oro",
-        "description": "Un tratamiento exclusivo que combina un masaje relajante con la aplicación de partículas de oro para rejuvenecer la piel.",
+        "description": "Un tratamiento exclusivo que combina un masaje relajante con la aplicación de partículas de oro para rejuvenecer la piel.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Rejuvenecimiento de la piel", "Relajación profunda", "Experiencia de lujo"],
         "duration": "90 min",
         "icon": "${BASE_URL}gold-massage-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
+        "benefitsIcons": ["${BASE_URL}skin-icon.png", "${BASE_URL}relax-icon.png", "${BASE_URL}luxury-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}gold-massage-image.jpg",
-        "popupDescription": "Este masaje de lujo utiliza aceites infundidos con partículas de oro de 24 quilates, conocidas por sus propiedades anti-envejecimiento y rejuvenecedoras. El tratamiento incluye un masaje corporal completo utilizando técnicas avanzadas para relajar profundamente los músculos y mejorar la circulación, mientras que las partículas de oro nutren y revitalizan la piel, dejándola con un brillo radiante y juvenil.",
+        "popupDescription": "Este masaje de lujo utiliza aceites infundidos con partículas de oro de 24 quilates, conocidas por sus propiedades anti-envejecimiento y rejuvenecedoras. El tratamiento incluye un masaje corporal completo utilizando técnicas avanzadas para relajar profundamente los músculos y mejorar la circulación, mientras que las partículas de oro nutren y revitalizan la piel, dejándola con un brillo radiante y juvenil.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}gold-massage-popup.jpg"
       },
       {
         "title": "Ritual de Diamantes",
-        "description": "Un tratamiento facial y corporal de alta gama que utiliza polvo de diamante para exfoliar y rejuvenecer la piel.",
+        "description": "Un tratamiento facial y corporal de alta gama que utiliza polvo de diamante para exfoliar y rejuvenecer la piel.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Exfoliación profunda", "Luminosidad de la piel", "Anti-envejecimiento"],
         "duration": "120 min",
         "icon": "${BASE_URL}diamond-ritual-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
+        "benefitsIcons": ["${BASE_URL}exfoliation-icon.png", "${BASE_URL}glow-icon.png", "${BASE_URL}anti-aging-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}diamond-ritual-image.jpg",
-        "popupDescription": "El Ritual de Diamantes es un tratamiento de lujo que combina un masaje corporal relajante con una exfoliación profunda utilizando polvo de diamante. Este tratamiento único ayuda a eliminar las células muertas de la piel, estimula la producción de colágeno y deja la piel con un brillo incomparable. El ritual concluye con un facial rejuvenecedor que utiliza productos infundidos con diamantes para una experiencia verdaderamente lujosa.",
+        "popupDescription": "El Ritual de Diamantes es un tratamiento de lujo que combina un masaje corporal relajante con una exfoliación profunda utilizando polvo de diamante. Este tratamiento único ayuda a eliminar las células muertas de la piel, estimula la producción de colágeno y deja la piel con un brillo incomparable. El ritual concluye con un facial rejuvenecedor que utiliza productos infundidos con diamantes para una experiencia verdaderamente lujosa.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}diamond-ritual-popup.jpg"
       },
-      {
+    
+        {
         "title": "Experiencia Caviar",
-        "description": "Un tratamiento facial y corporal de lujo que utiliza extractos de caviar para nutrir y rejuvenecer la piel.",
+        "description": "Un tratamiento facial y corporal de lujo que utiliza extractos de caviar para nutrir y rejuvenecer la piel.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Hidratación intensa", "Firmeza de la piel", "Nutrición profunda"],
         "duration": "100 min",
         "icon": "${BASE_URL}caviar-experience-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
+        "benefitsIcons": ["${BASE_URL}hydration-icon.png", "${BASE_URL}firmness-icon.png", "${BASE_URL}nutrition-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}caviar-experience-image.jpg",
-        "popupDescription": "La Experiencia Caviar es un tratamiento de lujo que aprovecha las propiedades nutritivas del caviar para rejuvenecer la piel. Comienza con un masaje corporal relajante utilizando aceites infundidos con proteínas de caviar, seguido de un facial de alta gama que utiliza productos ricos en caviar para hidratar profundamente, mejorar la elasticidad y reducir los signos visibles del envejecimiento.",
+        "popupDescription": "La Experiencia Caviar es un tratamiento de lujo que aprovecha las propiedades nutritivas del caviar para rejuvenecer la piel. Comienza con un masaje corporal relajante utilizando aceites infundidos con proteínas de caviar, seguido de un facial de alta gama que utiliza productos ricos en caviar para hidratar profundamente, mejorar la elasticidad y reducir los signos visibles del envejecimiento.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}caviar-experience-popup.jpg"
       },
-      
-       {
+      {
         "title": "Ritual de Piedras Preciosas",
-        "description": "Un tratamiento holístico que utiliza piedras preciosas para equilibrar los chakras y promover la sanación energética.",
+        "description": "Un tratamiento holístico que utiliza piedras preciosas para equilibrar los chakras y promover la sanación energética.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Equilibrio energético", "Relajación profunda", "Bienestar holístico"],
         "duration": "90 min",
         "icon": "${BASE_URL}gemstone-ritual-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
+        "benefitsIcons": ["${BASE_URL}balance-icon.png", "${BASE_URL}relax-icon.png", "${BASE_URL}holistic-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}gemstone-ritual-image.jpg",
-        "popupDescription": "El Ritual de Piedras Preciosas es un tratamiento holístico que combina masaje terapéutico con la colocación de piedras preciosas en los puntos de chakra del cuerpo. Cada piedra se elige cuidadosamente por sus propiedades energéticas únicas para promover el equilibrio y la sanación. Este ritual incluye técnicas de masaje relajante y meditación guiada para una experiencia de bienestar completa.",
+        "popupDescription": "El Ritual de Piedras Preciosas es un tratamiento holístico que combina masaje terapéutico con la colocación de piedras preciosas en los puntos de chakra del cuerpo. Cada piedra se elige cuidadosamente por sus propiedades energéticas únicas para promover el equilibrio y la sanación. Este ritual incluye técnicas de masaje relajante y meditación guiada para una experiencia de bienestar completa.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}gemstone-ritual-popup.jpg"
       },
       {
         "title": "Tratamiento de Células Madre",
-        "description": "Un tratamiento facial avanzado que utiliza células madre vegetales para rejuvenecer y revitalizar la piel.",
+        "description": "Un tratamiento facial avanzado que utiliza células madre vegetales para rejuvenecer y revitalizar la piel.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Regeneración celular", "Reducción de arrugas", "Luminosidad"],
         "duration": "75 min",
         "icon": "${BASE_URL}stem-cell-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
+        "benefitsIcons": ["${BASE_URL}regeneration-icon.png", "${BASE_URL}anti-wrinkle-icon.png", "${BASE_URL}glow-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}stem-cell-image.jpg",
-        "popupDescription": "El Tratamiento de Células Madre es un procedimiento facial de vanguardia que utiliza células madre derivadas de plantas para estimular la regeneración celular y combatir los signos del envejecimiento. Este tratamiento ayuda a mejorar la textura de la piel, reduce la apariencia de líneas finas y arrugas, y promueve un cutis más luminoso y juvenil.",
+        "popupDescription": "El Tratamiento de Células Madre es un procedimiento facial de vanguardia que utiliza células madre derivadas de plantas para estimular la regeneración celular y combatir los signos del envejecimiento. Este tratamiento ayuda a mejorar la textura de la piel, reduce la apariencia de líneas finas y arrugas, y promueve un cutis más luminoso y juvenil.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}stem-cell-popup.jpg"
       },
       {
         "title": "Ritual de Champagne y Rosas",
-        "description": "Un lujoso tratamiento que combina los beneficios del champagne y las rosas para una experiencia sensorial única.",
+        "description": "Un lujoso tratamiento que combina los beneficios del champagne y las rosas para una experiencia sensorial única.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "benefits": ["Hidratación profunda", "Relajación de lujo", "Piel radiante"],
         "duration": "120 min",
         "icon": "${BASE_URL}champagne-roses-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
+        "benefitsIcons": ["${BASE_URL}hydration-icon.png", "${BASE_URL}luxury-relax-icon.png", "${BASE_URL}radiant-skin-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}champagne-roses-image.jpg",
-        "popupDescription": "El Ritual de Champagne y Rosas es una experiencia sensorial de lujo que comienza con un baño de burbujas infusionado con champagne y pétalos de rosa. Continúa con un masaje corporal utilizando aceite de rosa y una mascarilla facial de champagne rica en antioxidantes. Este tratamiento indulgente deja la piel suave, hidratada y con un brillo saludable.",
+        "popupDescription": "El Ritual de Champagne y Rosas es una experiencia sensorial de lujo que comienza con un baño de burbujas infusionado con champagne y pétalos de rosa. Continúa con un masaje corporal utilizando aceite de rosa y una mascarilla facial de champagne rica en antioxidantes. Este tratamiento indulgente deja la piel suave, hidratada y con un brillo saludable.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}champagne-roses-popup.jpg"
       }
     ],
-    "experiencias": [
+
+ "experiencias": [
       {
         "title": "Día de Spa Completo",
-        "description": "Una experiencia de día completo que incluye múltiples tratamientos para una relajación total.",
+        "description": "Una experiencia de día completo que incluye múltiples tratamientos para una relajación total.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "includes": ["Masaje de cuerpo completo", "Facial personalizado", "Manicura y pedicura", "Almuerzo saludable"],
         "duration": "6 horas",
         "icon": "${BASE_URL}full-day-spa-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
+        "benefitsIcons": ["${BASE_URL}massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}mani-pedi-icon.png", "${BASE_URL}lunch-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}full-day-spa-image.jpg",
-        "popupDescription": "Sumérgete en un día completo de indulgencia y relajación. Esta experiencia incluye un masaje de cuerpo completo personalizado, un facial adaptado a tu tipo de piel, una lujosa manicura y pedicura, y un almuerzo saludable en nuestro spa café. Tendrás acceso a todas nuestras instalaciones, incluyendo sauna, jacuzzi y áreas de relajación.",
+        "popupDescription": "Sumérgete en un día completo de indulgencia y relajación. Esta experiencia incluye un masaje de cuerpo completo personalizado, un facial adaptado a tu tipo de piel, una lujosa manicura y pedicura, y un almuerzo saludable en nuestro spa café. Tendrás acceso a todas nuestras instalaciones, incluyendo sauna, jacuzzi y áreas de relajación.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}full-day-spa-popup.jpg"
       },
       {
         "title": "Retiro de Bienestar",
-        "description": "Un programa de varios días diseñado para rejuvenecer cuerpo y mente.",
+        "description": "Un programa de varios días diseñado para rejuvenecer cuerpo y mente.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "includes": ["Tratamientos de spa diarios", "Clases de yoga y meditación", "Consultas nutricionales", "Alojamiento de lujo"],
         "duration": "3 días / 2 noches",
         "icon": "${BASE_URL}wellness-retreat-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
+        "benefitsIcons": ["${BASE_URL}spa-treatments-icon.png", "${BASE_URL}yoga-icon.png", "${BASE_URL}nutrition-icon.png", "${BASE_URL}luxury-accommodation-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}wellness-retreat-image.jpg",
-        "popupDescription": "Escapa de la rutina diaria con nuestro Retiro de Bienestar de 3 días. Este programa integral incluye tratamientos de spa diarios, clases de yoga y meditación, consultas nutricionales personalizadas y alojamiento de lujo. Diseñado para rejuvenecer tu cuerpo y mente, te irás sintiéndote renovado y revitalizado.",
+        "popupDescription": "Escapa de la rutina diaria con nuestro Retiro de Bienestar de 3 días. Este programa integral incluye tratamientos de spa diarios, clases de yoga y meditación, consultas nutricionales personalizadas y alojamiento de lujo. Diseñado para rejuvenecer tu cuerpo y mente, te irás sintiéndote renovado y revitalizado.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}wellness-retreat-popup.jpg"
       },
       {
         "title": "Experiencia Termal",
-        "description": "Un recorrido por nuestras instalaciones termales para una experiencia de relajación completa.",
+        "description": "Un recorrido por nuestras instalaciones termales para una experiencia de relajación completa.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "includes": ["Circuito de aguas", "Sauna y baño turco", "Piscina de hidromasaje", "Sala de relajación"],
         "duration": "3 horas",
         "icon": "${BASE_URL}thermal-experience-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
+        "benefitsIcons": ["${BASE_URL}water-circuit-icon.png", "${BASE_URL}sauna-icon.png", "${BASE_URL}jacuzzi-icon.png", "${BASE_URL}relaxation-room-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}thermal-experience-image.jpg",
-        "popupDescription": "Sumérgete en nuestra Experiencia Termal, un viaje de relajación a través de nuestras lujosas instalaciones. Comienza con nuestro circuito de aguas, seguido de sesiones en la sauna y el baño turco. Relájate en nuestra piscina de hidromasaje y termina tu experiencia en nuestra tranquila sala de relajación. Este tratamiento ayuda a desintoxicar el cuerpo, mejorar la circulación y proporcionar una relajación profunda.",
+        "popupDescription": "Sumérgete en nuestra Experiencia Termal, un viaje de relajación a través de nuestras lujosas instalaciones. Comienza con nuestro circuito de aguas, seguido de sesiones en la sauna y el baño turco. Relájate en nuestra piscina de hidromasaje y termina tu experiencia en nuestra tranquila sala de relajación. Este tratamiento ayuda a desintoxicar el cuerpo, mejorar la circulación y proporcionar una relajación profunda.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}thermal-experience-popup.jpg"
       },
       {
         "title": "Escapada Romántica",
-        "description": "Una experiencia diseñada para parejas que buscan relajarse y reconectar.",
+        "description": "Una experiencia diseñada para parejas que buscan relajarse y reconectar.\n\nPrecio: $1,700",
         "includes": ["Masaje en pareja", "Baño de burbujas privado", "Cena a la luz de las velas", "Champagne y fresas"],
         "duration": "4 horas",
         "icon": "${BASE_URL}romantic-getaway-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
+        "benefitsIcons": ["${BASE_URL}couple-massage-icon.png", "${BASE_URL}bubble-bath-icon.png", "${BASE_URL}dinner-icon.png", "${BASE_URL}champagne-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}romantic-getaway-image.jpg",
-        "popupDescription": "Celebra el amor con nuestra Escapada Romántica. Comienza con un relajante masaje en pareja, seguido de un baño de burbujas privado con vistas panorámicas. La experiencia culmina con una cena íntima a la luz de las velas, acompañada de champagne y fresas. Esta experiencia está diseñada para crear momentos inolvidables y fortalecer la conexión con tu pareja.",
+        "popupDescription": "Celebra el amor con nuestra Escapada Romántica. Comienza con un relajante masaje en pareja, seguido de un baño de burbujas privado con vistas panorámicas. La experiencia culmina con una cena íntima a la luz de las velas, acompañada de champagne y fresas. Esta experiencia está diseñada para crear momentos inolvidables y fortalecer la conexión con tu pareja.\n\nPrecio: $1,700",
         "popupImage": "${BASE_URL}romantic-getaway-popup.jpg"
       },
       {
         "title": "Detox y Renovación",
-        "description": "Un programa integral diseñado para desintoxicar y revitalizar el cuerpo.",
+        "description": "Un programa integral diseñado para desintoxicar y revitalizar el cuerpo.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "includes": ["Envoltura corporal desintoxicante", "Masaje drenaje linfático", "Facial purificante", "Sesión de yoga"],
         "duration": "5 horas",
         "icon": "${BASE_URL}detox-renewal-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
+        "benefitsIcons": ["${BASE_URL}body-wrap-icon.png", "${BASE_URL}lymphatic-massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}yoga-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}detox-renewal-image.jpg",
-        "popupDescription": "Renueva tu cuerpo y mente con nuestro programa Detox y Renovación. Comienza con una envoltura corporal desintoxicante para eliminar toxinas, seguida de un masaje de drenaje linfático para mejorar la circulación. Disfruta de un facial purificante y termina con una sesión de yoga revitalizante. Este programa está diseñado para dejarte sintiéndote completamente renovado y lleno de energía.",
+        "popupDescription": "Renueva tu cuerpo y mente con nuestro programa Detox y Renovación. Comienza con una envoltura corporal desintoxicante para eliminar toxinas, seguida de un masaje de drenaje linfático para mejorar la circulación. Disfruta de un facial purificante y termina con una sesión de yoga revitalizante. Este programa está diseñado para dejarte sintiéndote completamente renovado y lleno de energía.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}detox-renewal-popup.jpg"
       },
       {
         "title": "Viaje Sensorial",
-        "description": "Una experiencia única que estimula todos los sentidos para una relajación profunda.",
+        "description": "Una experiencia única que estimula todos los sentidos para una relajación profunda.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "includes": ["Masaje aromático", "Terapia de sonido", "Degustación de tés exóticos", "Tratamiento de cromoterapia"],
         "duration": "3 horas",
         "icon": "${BASE_URL}sensory-journey-icon.png",
-        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
+        "benefitsIcons": ["${BASE_URL}aroma-icon.png", "${BASE_URL}sound-therapy-icon.png", "${BASE_URL}tea-tasting-icon.png", "${BASE_URL}chromotherapy-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}sensory-journey-image.jpg",
-        "popupDescription": "Embárcate en un Viaje Sensorial que despertará y relajará todos tus sentidos. Comienza con un masaje aromático personalizado, seguido de una sesión de terapia de sonido con cuencos tibetanos. Disfruta de una degustación de tés exóticos mientras te sumerges en un ambiente de cromoterapia diseñado para equilibrar tu energía. Esta experiencia única te transportará a un estado de relajación profunda y renovación.",
+        "popupDescription": "Embárcate en un Viaje Sensorial que despertará y relajará todos tus sentidos. Comienza con un masaje aromático personalizado, seguido de una sesión de terapia de sonido con cuencos tibetanos. Disfruta de una degustación de tés exóticos mientras te sumerges en un ambiente de cromoterapia diseñado para equilibrar tu energía. Esta experiencia única te transportará a un estado de relajación profunda y renovación.\n\nPrecio: Individual $1,000\n               En pareja $1,700",
         "popupImage": "${BASE_URL}sensory-journey-popup.jpg"
+      }
+    ]
+    
+    "paquetes": [
+      {
+        "title": "Paquete Romance Total",
+        "description": "Vivan una experiencia de masaje en pareja completa, con atención especial al detalle para un día inolvidable.\n\nPrecio: $1,700",
+        "includes": [
+          "Masaje en Pareja de Aromaterapia",
+          "Copa de Vino",
+          "Fresas con Chocolate",
+          "Tabla de Quesos Gourmet"
+        ],
+        "duration": "90 minutos de masaje + 30 minutos para disfrutar de las delicias.",
+        "benefits": [
+          "Relajación profunda",
+          "experiencia sensorial completa",
+          "momentos de disfrute compartido"
+        ],
+        "icon": "${BASE_URL}romance-total-icon.png",
+        "benefitsIcons": [
+          "${BASE_URL}benefits-icon1.png",
+          "${BASE_URL}benefits-icon2.png",
+          "${BASE_URL}benefits-icon3.png"
+        ],
+        "durationIcon": "${BASE_URL}duration-romance-icon.png",
+        "image": "${BASE_URL}paq1.jpg",
+        "popupDescription": "El Paquete Romance Total es la experiencia definitiva para parejas que buscan un escape lujoso y relajante. Comienza con un masaje de aromaterapia en pareja de 90 minutos, donde los aceites esenciales cuidadosamente seleccionados crearán una atmósfera de relajación total. Después del masaje, disfruten de 30 minutos adicionales de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos gourmet. Este paquete está diseñado para nutrir tanto el cuerpo como el espíritu, ofreciendo un momento de conexión y lujo compartido.\n\nPrecio: $1,700",
+        "popupImage": "${BASE_URL}romance-total-popup.jpg"
+      },
+      {
+        "title": "Romance Dulzura",
+        "description": "Deseas un momento de relajación con tu pareja lleno de buena vibra y concluir esta experiencia acompañado de dulzura y sabor a café?\n\nPrecio: $1,700",
+        "includes": [
+          "Masaje en Pareja de Aromaterapia de café",
+          "Elige tu Café (Latte, Capuchino, Expreso) y",
+          "Pastel o Tarta"
+        ],
+        "duration": "60 minutos de masaje + 30 minutos para disfrutar de las dulzuras.",
+        "benefits" : [
+          "Relajación profunda",
+          "experiencia sensorial completa",
+          "para los amantes del café"
+        ],
+        "icon": "${BASE_URL}romance-total2-icon.png",
+        "benefitsIcons": [
+          "${BASE_URL}benefits-icon1.png",
+          "${BASE_URL}benefits-icon2.png",
+          "${BASE_URL}benefits-icon3.png"
+        ],
+        "durationIcon": "${BASE_URL}duration-romance2-icon.png",
+        "image": "${BASE_URL}rosao.jpg",
+        "popupDescription": "Comienza con un lujoso masaje de aromaterapia en pareja de 60 minutos, donde cuidamos cada detalle para que la experiencia sea sensorial. Después del masaje disfruten las delicias dulces del café con pastel o tarta de su previamente elegidas por ti. Este paquete combina perfectamente la relajación profunda con los placeres culinarios, creando un momento especial para conectar.\n\nPrecio: $1,700",
+        "popupImage": "${BASE_URL}romance-total2-popup.jpg"
+      },
+      {
+        "title": "Paquete Lujo y Sabor",
+        "description": "Un paquete que combina técnicas de masaje de lujo con sabores exquisitos para un día de indulgencia.\n\nPrecio: $1,700",
+        "includes": [
+          "Masaje de Piedras Calientes en Pareja",
+          "Copa de Vino",
+          "Fresas con Chocolate",
+          "Selección de Quesos y Vino"
+        ],
+        "duration": "90 minutos de masaje + 30 minutos para disfrutar de las delicias.",
+        "benefits": [
+          "Alivio de tensiones",
+          "degustación de sabores refinados",
+          "experiencia de lujo"
+        ],
+        "icon": "${BASE_URL}lujo-sabor-icon.png",
+        "benefitsIcons": [
+          "${BASE_URL}benefits-icon1.png",
+          "${BASE_URL}benefits-icon2.png",
+          "${BASE_URL}benefits-icon3.png"
+        ],
+        "durationIcon": "${BASE_URL}duration-lujo-icon.png",
+        "image": "${BASE_URL}jamc.JPG",
+        "popupDescription": "El Paquete Lujo y Sabor es una experiencia premium que combina el lujo de un masaje de piedras calientes con una degustación gourmet. Comienza con un relajante masaje de 90 minutos donde las piedras volcánicas calientes aliviarán profundamente la tensión muscular. Luego, disfruten de 30 minutos de pura indulgencia con una selección cuidadosamente curada de vinos finos, quesos artesanales y fresas bañadas en chocolate. Este paquete es perfecto para aquellos que buscan una experiencia que deleite todos los sentidos.\n\nPrecio: $1,700",
+        "popupImage": "${BASE_URL}lujo-sabor-popup.jpg"
+      },
+      {
+        "title": "Paquete Sensaciones Inolvidables",
+        "description": "Un paquete pensado para ofrecer una experiencia sensorial completa con masajes, vino y sabores exquisitos.\n\nPrecio: $1,700",
+        "includes": [
+          "Masaje de Cuerpo Completo en Pareja",
+          "Copa de Vino",
+          "Fresas con Chocolate",
+          "Tabla de Quesos Artísticos"
+        ],
+        "duration": "90 minutos de masaje + 45 minutos para disfrutar de las delicias.",
+        "benefits": [
+          "Relajación total",
+          "degustación gourmet",
+          "experiencia romántica"
+        ],
+        "icon": "${BASE_URL}sensaciones-icon.png",
+        "benefitsIcons": [
+          "${BASE_URL}benefits-icon1.png",
+          "${BASE_URL}benefits-icon2.png",
+          "${BASE_URL}benefits-icon3.png"
+        ],
+        "durationIcon": "${BASE_URL}duration-sensaciones-icon.png",
+        "image": "${BASE_URL}chen.jpg",
+        "popupDescription": "El Paquete Sensaciones Inolvidables es una experiencia diseñada para despertar todos sus sentidos. Comienza con un lujoso masaje de cuerpo completo en pareja de 90 minutos, que les dejará completamente relajados y renovados. Después, disfruten de 45 minutos de pura indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos artísticos. Este paquete combina perfectamente la relajación profunda con una experiencia gastronómica refinada, creando recuerdos que perdurarán mucho después de que termine su visita.\n\nPrecio: $1,700",
+        "popupImage": "${BASE_URL}sensaciones-inolvidables-popup.jpg"
+      },
+        {
+        "title": "Paquete Escape de Lujo",
+        "description": "Una escapada lujosa para parejas que buscan un día de relajación y disfrute.\n\nPrecio: $1,700",
+        "includes": [
+          "Masaje con Aromaterapia y Envoltura de Algas en Pareja",
+          "Copa de Vino",
+          "Fresas con Chocolate",
+          "Tabla de Quesos y Frutas"
+        ],
+        "duration": "90 minutos de masaje + 30 minutos para degustar las delicias.",
+        "benefits": [
+          "Relajación profunda",
+          "desintoxicación",
+          "experiencia culinaria exquisita"
+        ],
+        "icon": "${BASE_URL}escape-lujo-icon.png",
+        "benefitsIcons": [
+          "${BASE_URL}benefits-icon1.png",
+          "${BASE_URL}benefits-icon2.png",
+          "${BASE_URL}benefits-icon3.png"
+        ],
+        "durationIcon": "${BASE_URL}duration-escape-icon.png",
+        "image": "${BASE_URL}copas.jpg",
+        "popupDescription": "El Paquete Escape de Lujo es la elección perfecta para parejas que buscan una experiencia de spa verdaderamente indulgente. Comienza con un masaje de aromaterapia relajante, seguido de una envoltura de algas desintoxicante. Este tratamiento de 90 minutos dejará su piel suave y su cuerpo completamente relajado. Después, disfruten de 30 minutos de placer culinario con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos y frutas frescas. Es la combinación perfecta de relajación, desintoxicación y placer gastronómico.\n\nPrecio: $1,700",
+        "popupImage": "${BASE_URL}escape-lujo-popup.jpg"
+      },
+      {
+        "title": "Paquete Relax y Sabores",
+        "description": "Disfruta de un masaje relajante seguido de una experiencia gourmet para cerrar el día.\n\nPrecio: $1,700",
+        "includes": [
+          "Masaje de Reflexología en Pareja",
+          "Copa de Vino",
+          "Fresas con Chocolate",
+          "Selección de Quesos"
+        ],
+        "duration": "60 minutos de masaje + 30 minutos para degustar.",
+        "benefits": [
+          "Alivio del estrés",
+          "disfrute sensorial",
+          "conexión íntima"
+        ],
+        "icon": "${BASE_URL}relax-sabores-icon.png",
+        "benefitsIcons": [
+          "${BASE_URL}benefits-icon1.png",
+          "${BASE_URL}benefits-icon2.png",
+          "${BASE_URL}benefits-icon3.png"
+        ],
+        "durationIcon": "${BASE_URL}duration-relax-icon.png",
+        "image": "${BASE_URL}jamc.jpg",
+        "popupDescription": "El Paquete Relax y Sabores ofrece una combinación perfecta de relajación y placer culinario. Comienza con un masaje de reflexología en pareja de 60 minutos, que alivia el estrés y promueve el bienestar general a través de la estimulación de puntos específicos en los pies. Después, disfruten de 30 minutos de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una selección de quesos gourmet. Este paquete es ideal para parejas que buscan una experiencia relajante y romántica con un toque de sofisticación culinaria.\n\nPrecio: $1,700",
+        "popupImage": "${BASE_URL}relax-sabores-popup.jpg"
       }
     ]
   }
 }
+        
