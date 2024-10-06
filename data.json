@@ -98,374 +98,161 @@
         "popupImage": "${BASE_URL}cbd-popup.jpg"
       }
     ],
-    "pareja": [
+    
+    "premium": [
       {
-        "title": "Aromaterapia para 2",
-        "description": "Disfruten de un masaje relajante mientras se sumergen en una atmósfera de calma con aceites esenciales que eligieron previamente. Este masaje combina técnicas suaves y aromaterapia promoviendo la relajación y el bienestar.",
-        "benefits": [
-          "Reducirán Estrés",
-          "Mejora en Estado de Ánimo",
-          "Alivia Tensiones Musculares"
-        ],
-        "duration": "60 min",
-        "icon": "${BASE_URL}cfragancia2.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
+        "title": "Masaje de Lujo con Oro",
+        "description": "Un tratamiento exclusivo que combina un masaje relajante con la aplicación de partículas de oro para rejuvenecer la piel.",
+        "benefits": ["Rejuvenecimiento de la piel", "Relajación profunda", "Experiencia de lujo"],
+        "duration": "90 min",
+        "icon": "${BASE_URL}gold-massage-icon.png",
+        "benefitsIcons": ["${BASE_URL}skin-icon.png", "${BASE_URL}relax-icon.png", "${BASE_URL}luxury-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}aromaterapia-image.jpg",
-        "popupDescription": "Experimenten juntos el poder relajante de la aromaterapia. En este masaje para parejas, podrán elegir entre una variedad de aceites esenciales cuidadosamente seleccionados para crear su atmósfera perfecta. Nuestros terapeutas expertos utilizarán técnicas suaves de masaje mientras los aromas elegidos envuelven sus sentidos, proporcionando una experiencia de relajación profunda y conexión mutua.",
-        "popupImage": "${BASE_URL}aromaterapia-pareja-popup.jpg"
+        "image": "${BASE_URL}gold-massage-image.jpg",
+        "popupDescription": "Este masaje de lujo utiliza aceites infundidos con partículas de oro de 24 quilates, conocidas por sus propiedades anti-envejecimiento y rejuvenecedoras. El tratamiento incluye un masaje corporal completo utilizando técnicas avanzadas para relajar profundamente los músculos y mejorar la circulación, mientras que las partículas de oro nutren y revitalizan la piel, dejándola con un brillo radiante y juvenil.",
+        "popupImage": "${BASE_URL}gold-massage-popup.jpg"
       },
       {
-        "title": "Experiencia Piedras Calientes en Pareja",
-        "description": "Comparte el calor y relajación de un masaje con piedras lisas de Origen Volcánico colocadas sobre el cuerpo mientras reciben un masaje profundo. Ideal para momentos de unión, liberar tensiones y mejorar la circulación.",
-        "benefits": [
-          "Alivio de dolores musculares",
-          "mejora de la circulación sanguínea",
-          "profundo estado de relajación"
-        ],
-        "duration": "60 min",
-        "icon": "${BASE_URL}piedras-calientes-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}ccirculacion.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
+        "title": "Ritual de Diamantes",
+        "description": "Un tratamiento facial y corporal de alta gama que utiliza polvo de diamante para exfoliar y rejuvenecer la piel.",
+        "benefits": ["Exfoliación profunda", "Luminosidad de la piel", "Anti-envejecimiento"],
+        "duration": "120 min",
+        "icon": "${BASE_URL}diamond-ritual-icon.png",
+        "benefitsIcons": ["${BASE_URL}exfoliation-icon.png", "${BASE_URL}glow-icon.png", "${BASE_URL}anti-aging-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}piedras-calientes-image.jpg",
-        "popupDescription": "Sumérjanse juntos en una experiencia de calor y relajación profunda. Las piedras volcánicas calientes se colocan estratégicamente en puntos clave del cuerpo, combinadas con un masaje profundo que alivia la tensión muscular y mejora la circulación. Este tratamiento en pareja no solo proporciona beneficios físicos, sino que también crea un momento íntimo y relajante para compartir y conectar.",
-        "popupImage": "${BASE_URL}piedras-calientes-pareja-popup.jpg"
+        "image": "${BASE_URL}diamond-ritual-image.jpg",
+        "popupDescription": "El Ritual de Diamantes es un tratamiento de lujo que combina un masaje corporal relajante con una exfoliación profunda utilizando polvo de diamante. Este tratamiento único ayuda a eliminar las células muertas de la piel, estimula la producción de colágeno y deja la piel con un brillo incomparable. El ritual concluye con un facial rejuvenecedor que utiliza productos infundidos con diamantes para una experiencia verdaderamente lujosa.",
+        "popupImage": "${BASE_URL}diamond-ritual-popup.jpg"
       },
       {
-        "title": "Liberan Cuello y Espalda",
-        "description": "Perfecto para liberar estrés y tensiones acumuladas. Masaje focalizado donde disfrutan y crean conexión.",
-        "benefits": [
-          "Reducirán Rigidez",
-          "Alivia Dolores Espalda y Cuello",
-          "Sensación Relajación Compartida"
-        ],
-        "duration": "30 min",
-        "icon": "${BASE_URL}cuello-espalda-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
+        "title": "Experiencia Caviar",
+        "description": "Un tratamiento facial y corporal de lujo que utiliza extractos de caviar para nutrir y rejuvenecer la piel.",
+        "benefits": ["Hidratación intensa", "Firmeza de la piel", "Nutrición profunda"],
+        "duration": "100 min",
+        "icon": "${BASE_URL}caviar-experience-icon.png",
+        "benefitsIcons": ["${BASE_URL}hydration-icon.png", "${BASE_URL}firmness-icon.png", "${BASE_URL}nutrition-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}cuello-espalda-image.jpg",
-"popupDescription": "Este masaje focalizado es ideal para parejas que buscan aliviar la tensión en las áreas que más lo necesitan. Nuestros terapeutas se centrarán en liberar el estrés acumulado en el cuello y la espalda, utilizando técnicas específicas para reducir la rigidez y aliviar el dolor. Disfruten juntos de esta experiencia relajante y salgan sintiéndose renovados y conectados.",
-        "popupImage": "${BASE_URL}cuello-espalda-pareja-popup.jpg"
+        "image": "${BASE_URL}caviar-experience-image.jpg",
+        "popupDescription": "La Experiencia Caviar es un tratamiento de lujo que aprovecha las propiedades nutritivas del caviar para rejuvenecer la piel. Comienza con un masaje corporal relajante utilizando aceites infundidos con proteínas de caviar, seguido de un facial de alta gama que utiliza productos ricos en caviar para hidratar profundamente, mejorar la elasticidad y reducir los signos visibles del envejecimiento.",
+        "popupImage": "${BASE_URL}caviar-experience-popup.jpg"
       },
       {
-        "title": "Relajante para 2",
-        "description": "Masaje con técnicas de presión y fricción suaves que alivian el estrés y mejoran tu circulación. Experiencia simultánea que refuerza vínculos.",
-        "benefits": [
-          "Relajación General",
-          "Mejora la Circulación",
-          "Reduce Estrés"
-        ],
-        "duration": "60 min",
-        "icon": "${BASE_URL}sueco-relajante-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}ccirculacion.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
+        "title": "Ritual de Piedras Preciosas",
+        "description": "Un tratamiento holístico que utiliza piedras preciosas para equilibrar los chakras y promover la sanación energética.",
+        "benefits": ["Equilibrio energético", "Relajación profunda", "Bienestar holístico"],
+        "duration": "90 min",
+        "icon": "${BASE_URL}gemstone-ritual-icon.png",
+        "benefitsIcons": ["${BASE_URL}balance-icon.png", "${BASE_URL}relax-icon.png", "${BASE_URL}holistic-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}sueco-relajante-image.jpg",
-        "popupDescription": "Este tratamiento utiliza movimientos largos y fluidos, amasamiento suave y fricción circular para aliviar la tensión muscular, mejorar la circulación y promover una relajación total. Es una experiencia perfecta para parejas que buscan un escape del estrés diario y un momento de conexión en un ambiente tranquilo y lujoso.",
-        "popupImage": "${BASE_URL}sueco-relajante-pareja-popup.jpg"
+        "image": "${BASE_URL}gemstone-ritual-image.jpg",
+        "popupDescription": "El Ritual de Piedras Preciosas es un tratamiento holístico que combina masaje terapéutico con la colocación de piedras preciosas en los puntos de chakra del cuerpo. Cada piedra se elige cuidadosamente por sus propiedades energéticas únicas para promover el equilibrio y la sanación. Este ritual incluye técnicas de masaje relajante y meditación guiada para una experiencia de bienestar completa.",
+        "popupImage": "${BASE_URL}gemstone-ritual-popup.jpg"
       },
       {
-        "title": "Chocolaterapia en Pareja",
-        "description": "Disfruta de un masaje indulgente con lociones a base de chocolate, conocido por sus propiedades antioxidantes. Este tratamiento es ideal para una experiencia sensorial completa.",
-        "benefits": [
-          "Hidratación de la piel",
-          "sensación de lujo",
-          "relajación profunda"
-        ],
-        "duration": "60 min",
-        "icon": "${BASE_URL}chocolaterapia-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
+        "title": "Tratamiento de Células Madre",
+        "description": "Un tratamiento facial avanzado que utiliza células madre vegetales para rejuvenecer y revitalizar la piel.",
+        "benefits": ["Regeneración celular", "Reducción de arrugas", "Luminosidad"],
+        "duration": "75 min",
+        "icon": "${BASE_URL}stem-cell-icon.png",
+        "benefitsIcons": ["${BASE_URL}regeneration-icon.png", "${BASE_URL}anti-wrinkle-icon.png", "${BASE_URL}glow-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}chocolaterapia-image.jpg",
-        "popupDescription": "Sumérjanse en el lujo y el placer con nuestra chocolaterapia en pareja. Este tratamiento indulgente utiliza productos a base de chocolate rico en antioxidantes para nutrir y rejuvenecer la piel. El aroma del chocolate no solo es delicioso, sino que también estimula la liberación de endorfinas, creando una sensación de felicidad y relajación. Disfruten juntos de esta experiencia sensorial única que dejará su piel suave, hidratada y con un delicioso aroma.",
-        "popupImage": "${BASE_URL}chocolaterapia-pareja-popup.jpg"
+        "image": "${BASE_URL}stem-cell-image.jpg",
+        "popupDescription": "El Tratamiento de Células Madre es un procedimiento facial de vanguardia que utiliza células madre derivadas de plantas para estimular la regeneración celular y combatir los signos del envejecimiento. Este tratamiento ayuda a mejorar la textura de la piel, reduce la apariencia de líneas finas y arrugas, y promueve un cutis más luminoso y juvenil.",
+        "popupImage": "${BASE_URL}stem-cell-popup.jpg"
       },
       {
-        "title": "Masaje de Pies Cansado en Pareja",
-        "description": "Un enfoque en los pies que utiliza puntos de presión específicos para estimular la salud general del cuerpo. Ambos disfrutarán de este tratamiento revitalizante.",
-        "benefits": [
-          "Mejora del equilibrio corporal",
-          "alivio del estrés",
-          "mejora de la salud general"
-        ],
-        "duration": "30 min",
-        "icon": "${BASE_URL}reflexologia-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
+        "title": "Ritual de Champagne y Rosas",
+        "description": "Un lujoso tratamiento que combina los beneficios del champagne y las rosas para una experiencia sensorial única.",
+        "benefits": ["Hidratación profunda", "Relajación de lujo", "Piel radiante"],
+        "duration": "120 min",
+        "icon": "${BASE_URL}champagne-roses-icon.png",
+        "benefitsIcons": ["${BASE_URL}hydration-icon.png", "${BASE_URL}luxury-relax-icon.png", "${BASE_URL}radiant-skin-icon.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}reflexologia-image.jpg",
-        "popupDescription": "Experimenten juntos los beneficios de la reflexología, una técnica que se centra en puntos de presión específicos en los pies que corresponden a diferentes partes del cuerpo. Este tratamiento no solo proporciona una relajación profunda, sino que también puede ayudar a mejorar la circulación, reducir el estrés y promover un sentido de bienestar en todo el cuerpo. Es una forma única y relajante de cuidarse mutuamente y disfrutar de un momento de tranquilidad compartida.",
-        "popupImage": "${BASE_URL}reflexologia-pareja-popup.jpg"
-      },
-      {
-        "title": "Masaje Lomi Lomi en Pareja",
-        "description": "Este masaje hawaiano utiliza movimientos largos y fluidos, combinados con técnicas de estiramiento para relajar y revitalizar el cuerpo. Disfruta de una experiencia de conexión y armonía mientras ambos reciben el masaje simultáneamente.",
-        "benefits": [
-          "Relajación profunda",
-          "aumento de la energía",
-          "mejora de la circulación"
-        ],
-        "duration": "60 min",
-        "icon": "${BASE_URL}lomi-lomi-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}ccirculacion.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}bat.jpg",
-        "popupDescription": "Experimenten juntos la magia del masaje hawaiano Lomi Lomi. Este tratamiento único utiliza movimientos largos, fluidos y rítmicos que recorren todo el cuerpo, imitando las olas del océano. Los terapeutas usan no solo las manos, sino también los antebrazos para aplicar una presión profunda y relajante. El Lomi Lomi no solo relaja los músculos, sino que también se cree que ayuda a liberar patrones de pensamiento y emociones negativas, promoviendo una sensación de armonía y bienestar total.",
-        "popupImage": "${BASE_URL}lomi-lomi-pareja-popup.jpg"
-      },
-      {
-        "title": "Masaje con Aceites de CBD en Pareja",
-        "description": "Un masaje que utiliza aceites infundidos con cannabidiol (CBD) para ayudar a reducir la inflamación, aliviar el dolor y promover la relajación.",
-        "benefits": [
-          "Alivio del dolor muscular y articular",
-          "reducción de la ansiedad",
-          "relajación profunda"
-        ],
-        "duration": "60 min",
-        "icon": "${BASE_URL}cbd-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-icon.png",
-        "image": "${BASE_URL}cbd-image.jpg",
-        "popupDescription": "Experimenten juntos los beneficios terapéuticos del CBD con nuestro masaje en pareja. El cannabidiol (CBD), es conocido por sus propiedades antiinflamatorias y calmantes. Nuestros aceites se combinan con técnicas de masaje expertas para proporcionar un alivio profundo del dolor muscular y articular. Además de sus beneficios físicos, el CBD puede ayudar a reducir la ansiedad y promover una sensación de calma y bienestar. Este tratamiento es ideal para parejas que buscan una experiencia de relajación profunda y alivio del estrés físico y mental.",
-        "popupImage": "${BASE_URL}cbd-pareja-popup.jpg"
+        "image": "${BASE_URL}champagne-roses-image.jpg",
+        "popupDescription": "El Ritual de Champagne y Rosas es una experiencia sensorial de lujo que comienza con un baño de burbujas infusionado con champagne y pétalos de rosa. Continúa con un masaje corporal utilizando aceite de rosa y una mascarilla facial de champagne rica en antioxidantes. Este tratamiento indulgente deja la piel suave, hidratada y con un brillo saludable.",
+        "popupImage": "${BASE_URL}champagne-roses-popup.jpg"
       }
     ],
-    "paquetes": [
+   {
+  "services": {
+    "individual": [
+      // ... (Los servicios individuales permanecen sin cambios)
+    ],
+    "premium": [
+      // ... (Los servicios premium permanecen sin cambios)
+    ],
+    "experiencias": [
       {
-        "title": "Paquete Romance Total",
-        "description": "Vivan una experiencia de masaje en pareja completa, con atención especial al detalle para un día inolvidable.",
-        "includes": [
-          "Masaje en Pareja de Aromaterapia",
-          "Copa de Vino",
-          "Fresas con Chocolate",
-          "Tabla de Quesos Gourmet"
-        ],
-        "duration": "90 minutos de masaje + 30 minutos para disfrutar de las delicias.",
-        "benefits": [
-          "Relajación profunda",
-          "experiencia sensorial completa",
-          "momentos de disfrute compartido"
-        ],
-        "icon": "${BASE_URL}romance-total-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-romance-icon.png",
-        "image": "${BASE_URL}paq1.jpg",
-        "popupDescription": "El Paquete Romance Total es la experiencia definitiva para parejas que buscan un escape lujoso y relajante. Comienza con un masaje de aromaterapia en pareja de 90 minutos, donde los aceites esenciales cuidadosamente seleccionados crearán una atmósfera de relajación total. Después del masaje, disfruten de 30 minutos adicionales de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos gourmet. Este paquete está diseñado para nutrir tanto el cuerpo como el espíritu, ofreciendo un momento de conexión y lujo compartido.",
-        "popupImage": "${BASE_URL}romance-total-popup.jpg"
+        "title": "Día de Spa Completo",
+        "description": "Una experiencia de día completo que incluye múltiples tratamientos para una relajación total.",
+        "includes": ["Masaje de cuerpo completo", "Facial personalizado", "Manicura y pedicura", "Almuerzo saludable"],
+        "duration": "6 horas",
+        "icon": "${BASE_URL}full-day-spa-icon.png",
+        "benefitsIcons": ["${BASE_URL}massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}mani-pedi-icon.png", "${BASE_URL}lunch-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}full-day-spa-image.jpg",
+        "popupDescription": "Sumérgete en un día completo de indulgencia y relajación. Esta experiencia incluye un masaje de cuerpo completo personalizado, un facial adaptado a tu tipo de piel, una lujosa manicura y pedicura, y un almuerzo saludable en nuestro spa café. Tendrás acceso a todas nuestras instalaciones, incluyendo sauna, jacuzzi y áreas de relajación.",
+        "popupImage": "${BASE_URL}full-day-spa-popup.jpg"
       },
       {
-        "title": "Romance Dulzura",
-        "description": "Deseas un momento de relajación con tu pareja lleno de buena vibra y concluir esta experiencia acompañado de dulzura y sabor a café?",
-        "includes": [
-          "Masaje en Pareja de Aromaterapia de café",
-          "Elige tu Café (Latte, Capuchino, Expreso) y",
-          "Pastel o Tarta"
-        ],
-        "duration": "60 minutos de masaje + 30 minutos para disfrutar de las dulzuras.",
-        "benefits" : [
-          "Relajación profunda",
-          "experiencia sensorial completa",
-          "para los amantes del café"
-        ],
-        "icon": "${BASE_URL}romance-total2-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-romance2-icon.png",
-        "image": "${BASE_URL}rosao.jpg",
-        "popupDescription": "Comienza con un lujoso masaje de aromaterapia en pareja de 60 minutos, donde cuidamos cada detalle para que la experiencia sea sensorial. Después del masaje disfruten las delicias dulces del café con pastel o tarta de su previamente elegidas por ti. Este paquete combina perfectamente la relajación profunda con los placeres culinarios, creando un momento especial para conectar.",
-        "popupImage": "${BASE_URL}romance-total2-popup.jpg"
+        "title": "Retiro de Bienestar",
+        "description": "Un programa de varios días diseñado para rejuvenecer cuerpo y mente.",
+        "includes": ["Tratamientos de spa diarios", "Clases de yoga y meditación", "Consultas nutricionales", "Alojamiento de lujo"],
+        "duration": "3 días / 2 noches",
+        "icon": "${BASE_URL}wellness-retreat-icon.png",
+        "benefitsIcons": ["${BASE_URL}spa-treatments-icon.png", "${BASE_URL}yoga-icon.png", "${BASE_URL}nutrition-icon.png", "${BASE_URL}luxury-accommodation-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}wellness-retreat-image.jpg",
+        "popupDescription": "Escapa de la rutina diaria con nuestro Retiro de Bienestar de 3 días. Este programa integral incluye tratamientos de spa diarios, clases de yoga y meditación, consultas nutricionales personalizadas y alojamiento de lujo. Diseñado para rejuvenecer tu cuerpo y mente, te irás sintiéndote renovado y revitalizado.",
+        "popupImage": "${BASE_URL}wellness-retreat-popup.jpg"
       },
       {
-        "title": "Paquete Lujo y Sabor",
-        "description": "Un paquete que combina técnicas de masaje de lujo con sabores exquisitos para un día de indulgencia.",
-        "includes": [
-          "Masaje de Piedras Calientes en Pareja",
-          "Copa de Vino",
-          "Fresas con Chocolate",
-          "Selección de Quesos y Vino"
-        ],
-        "duration": "90 minutos de masaje + 30 minutos para disfrutar de las delicias.",
-        "benefits": [
-          "Alivio de tensiones",
-          "degustación de sabores refinados",
-          "experiencia de lujo"
-        ],
-        "icon": "${BASE_URL}lujo-sabor-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-lujo-icon.png",
-        "image": "${BASE_URL}jamc.JPG",
-        "popupDescription": "El Paquete Lujo y Sabor es una experiencia premium que combina el lujo de un masaje de piedras calientes con una degustación gourmet. Comienza con un relajante masaje de 90 minutos donde las piedras volcánicas calientes aliviarán profundamente la tensión muscular. Luego, disfruten de 30 minutos de pura indulgencia con una selección cuidadosamente curada de vinos finos, quesos artesanales y fresas bañadas en chocolate. Este paquete es perfecto para aquellos que buscan una experiencia que deleite todos los sentidos.",
-        "popupImage": "${BASE_URL}lujo-sabor-popup.jpg"
+        "title": "Experiencia Termal",
+        "description": "Un recorrido por nuestras instalaciones termales para una experiencia de relajación completa.",
+        "includes": ["Circuito de aguas", "Sauna y baño turco", "Piscina de hidromasaje", "Sala de relajación"],
+        "duration": "3 horas",
+        "icon": "${BASE_URL}thermal-experience-icon.png",
+        "benefitsIcons": ["${BASE_URL}water-circuit-icon.png", "${BASE_URL}sauna-icon.png", "${BASE_URL}jacuzzi-icon.png", "${BASE_URL}relaxation-room-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}thermal-experience-image.jpg",
+        "popupDescription": "Sumérgete en nuestra Experiencia Termal, un viaje de relajación a través de nuestras lujosas instalaciones. Comienza con nuestro circuito de aguas, seguido de sesiones en la sauna y el baño turco. Relájate en nuestra piscina de hidromasaje y termina tu experiencia en nuestra tranquila sala de relajación. Este tratamiento ayuda a desintoxicar el cuerpo, mejorar la circulación y proporcionar una relajación profunda.",
+        "popupImage": "${BASE_URL}thermal-experience-popup.jpg"
       },
       {
-        "title": "Paquete Sensaciones Inolvidables",
-        "description": "Un paquete pensado para ofrecer una experiencia sensorial completa con masajes, vino y sabores exquisitos.",
-        "includes": [
-          "Masaje de Cuerpo Completo en Pareja",
-          "Copa de Vino",
-          "Fresas con Chocolate",
-          "Tabla de Quesos Artísticos"
-        ],
-        "duration": "90 minutos de masaje + 45 minutos para disfrutar de las delicias.",
-        "benefits": [
-          "Relajación total",
-          "degustación gourmet",
-          "experiencia romántica"
-        ],
-        "icon": "${BASE_URL}sensaciones-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-sensaciones-icon.png",
-        "image": "${BASE_URL}chen.jpg",
-        "popupDescription": "El Paquete Sensaciones Inolvidables es una experiencia diseñada para despertar todos sus sentidos. Comienza con un lujoso masaje de cuerpo completo en pareja de 90 minutos, que les dejará completamente relajados y renovados. Después, disfruten de 45 minutos de pura indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos artísticos. Este paquete combina perfectamente la relajación profunda con una experiencia gastronómica refinada, creando recuerdos que perdurarán mucho después de que termine su visita.",
-"popupImage": "${BASE_URL}sensaciones-inolvidables-popup.jpg"
+        "title": "Escapada Romántica",
+        "description": "Una experiencia diseñada para parejas que buscan relajarse y reconectar.",
+        "includes": ["Masaje en pareja", "Baño de burbujas privado", "Cena a la luz de las velas", "Champagne y fresas"],
+        "duration": "4 horas",
+        "icon": "${BASE_URL}romantic-getaway-icon.png",
+        "benefitsIcons": ["${BASE_URL}couple-massage-icon.png", "${BASE_URL}bubble-bath-icon.png", "${BASE_URL}dinner-icon.png", "${BASE_URL}champagne-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}romantic-getaway-image.jpg",
+        "popupDescription": "Celebra el amor con nuestra Escapada Romántica. Comienza con un relajante masaje en pareja, seguido de un baño de burbujas privado con vistas panorámicas. La experiencia culmina con una cena íntima a la luz de las velas, acompañada de champagne y fresas. Esta experiencia está diseñada para crear momentos inolvidables y fortalecer la conexión con tu pareja.",
+        "popupImage": "${BASE_URL}romantic-getaway-popup.jpg"
       },
       {
-        "title": "Paquete Escape de Lujo",
-        "description": "Una escapada lujosa para parejas que buscan un día de relajación y disfrute.",
-        "includes": [
-          "Masaje con Aromaterapia y Envoltura de Algas en Pareja",
-          "Copa de Vino",
-          "Fresas con Chocolate",
-          "Tabla de Quesos y Frutas"
-        ],
-        "duration": "90 minutos de masaje + 30 minutos para degustar las delicias.",
-        "benefits": [
-          "Relajación profunda",
-          "desintoxicación",
-          "experiencia culinaria exquisita"
-        ],
-        "icon": "${BASE_URL}escape-lujo-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-escape-icon.png",
-        "image": "${BASE_URL}copas.jpg",
-        "popupDescription": "El Paquete Escape de Lujo es la elección perfecta para parejas que buscan una experiencia de spa verdaderamente indulgente. Comienza con un masaje de aromaterapia relajante, seguido de una envoltura de algas desintoxicante. Este tratamiento de 90 minutos dejará su piel suave y su cuerpo completamente relajado. Después, disfruten de 30 minutos de placer culinario con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos y frutas frescas. Es la combinación perfecta de relajación, desintoxicación y placer gastronómico.",
-        "popupImage": "${BASE_URL}escape-lujo-popup.jpg"
+        "title": "Detox y Renovación",
+        "description": "Un programa integral diseñado para desintoxicar y revitalizar el cuerpo.",
+        "includes": ["Envoltura corporal desintoxicante", "Masaje drenaje linfático", "Facial purificante", "Sesión de yoga"],
+        "duration": "5 horas",
+        "icon": "${BASE_URL}detox-renewal-icon.png",
+        "benefitsIcons": ["${BASE_URL}body-wrap-icon.png", "${BASE_URL}lymphatic-massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}yoga-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}detox-renewal-image.jpg",
+        "popupDescription": "Renueva tu cuerpo y mente con nuestro programa Detox y Renovación. Comienza con una envoltura corporal desintoxicante para eliminar toxinas, seguida de un masaje de drenaje linfático para mejorar la circulación. Disfruta de un facial purificante y termina con una sesión de yoga revitalizante. Este programa está diseñado para dejarte sintiéndote completamente renovado y lleno de energía.",
+        "popupImage": "${BASE_URL}detox-renewal-popup.jpg"
       },
       {
-        "title": "Paquete Relax y Sabores",
-        "description": "Disfruta de un masaje relajante seguido de una experiencia gourmet para cerrar el día.",
-        "includes": [
-          "Masaje de Reflexología en Pareja",
-          "Copa de Vino",
-          "Fresas con Chocolate",
-          "Selección de Quesos"
-        ],
-        "duration": "60 minutos de masaje + 30 minutos para degustar.",
-        "benefits": [
-          "Alivio del estrés",
-          "disfrute sensorial",
-          "conexión íntima"
-        ],
-        "icon": "${BASE_URL}relax-sabores-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-relax-icon.png",
-        "image": "${BASE_URL}jamc.jpg",
-        "popupDescription": "El Paquete Relax y Sabores ofrece una combinación perfecta de relajación y placer culinario. Comienza con un masaje de reflexología en pareja de 60 minutos, que alivia el estrés y promueve el bienestar general a través de la estimulación de puntos específicos en los pies. Después, disfruten de 30 minutos de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una selección de quesos gourmet. Este paquete es ideal para parejas que buscan una experiencia relajante y romántica con un toque de sofisticación culinaria.",
-        "popupImage": "${BASE_URL}relax-sabores-popup.jpg"
-      },
-      {
-        "title": "Paquete Tranquilidad Gourmet",
-        "description": "Un paquete diseñado para ofrecer relajación total y sabores exquisitos en un entorno lujoso.",
-        "includes": [
-          "Masaje con Aceites de CBD en Pareja",
-          "Sabor de Café (Latte, Capuchino, Expreso)",
-          "Pastel o Tarta"
-        ],
-        "duration": "60 minutos de masaje + 30 minutos para disfrutar.",
-        "benefits": [
-          "Alivio del dolor",
-          "relajación",
-          "experiencia gourmet"
-        ],
-        "icon": "${BASE_URL}tranquilidad-gourmet-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-tranquilidad-icon.png",
-        "image": "${BASE_URL}tranquilidad-gourmet-image.jpg",
-        "popupDescription": "El Paquete Tranquilidad Gourmet combina los beneficios terapéuticos del CBD con una experiencia de café gourmet. Comienza con un masaje de 60 minutos utilizando aceites infundidos con CBD, conocidos por sus propiedades antiinflamatorias y relajantes. Después, disfruten de 30 minutos de placer culinario con su elección de café gourmet (Latte, Capuchino o Expreso) acompañado de un delicioso pastel o tarta. Este paquete es perfecto para parejas que buscan alivio del estrés y el dolor, junto con una experiencia de café de alta calidad.",
-        "popupImage": "${BASE_URL}tranquilidad-gourmet-popup.jpg"
-      },
-      {
-        "title": "Paquete Relajación y Gourmet",
-        "description": "Un paquete que combina técnicas de masaje para una relajación total con un toque gourmet.",
-        "includes": [
-          "Masaje Sueco en Pareja",
-          "Copa de Vino",
-          "Fresas con Chocolate",
-          "Selección de Quesos"
-        ],
-        "duration": "60 minutos de masaje + 30 minutos para degustar.",
-        "benefits": [
-          "Relajación",
-          "degustación",
-          "toque especial"
-        ],
-        "icon": "${BASE_URL}relajacion-gourmet-icon.png",
-        "benefitsIcons": [
-          "${BASE_URL}benefits-icon1.png",
-          "${BASE_URL}benefits-icon2.png",
-          "${BASE_URL}benefits-icon3.png"
-        ],
-        "durationIcon": "${BASE_URL}duration-relajacion-icon.png",
-        "image": "${BASE_URL}copas.jpg",
-        "popupDescription": "El Paquete Relajación y Gourmet ofrece una experiencia completa de bienestar y placer culinario. Comienza con un masaje sueco en pareja de 60 minutos, utilizando técnicas de presión suave y movimientos largos para aliviar la tensión muscular y promover la relajación. Después, disfruten de 30 minutos de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una selección de quesos finos. Este paquete es ideal para parejas que buscan una combinación perfecta de relajación física y placer gastronómico en un ambiente lujoso y romántico.",
-        "popupImage": "${BASE_URL}relajacion-gourmet-popup.jpg"
+        "title": "Viaje Sensorial",
+        "description": "Una experiencia única que estimula todos los sentidos para una relajación profunda.",
+        "includes": ["Masaje aromático", "Terapia de sonido", "Degustación de tés exóticos", "Tratamiento de cromoterapia"],
+        "duration": "3 horas",
+        "icon": "${BASE_URL}sensory-journey-icon.png",
+        "benefitsIcons": ["${BASE_URL}aroma-icon.png", "${BASE_URL}sound-therapy-icon.png", "${BASE_URL}tea-tasting-icon.png", "${BASE_URL}chromotherapy-icon.png"],
+        "durationIcon": "${BASE_URL}duration-icon.png",
+        "image": "${BASE_URL}sensory-journey-image.jpg",
+        "popupDescription": "Embárcate en un Viaje Sensorial que despertará y relajará todos tus sentidos. Comienza con un masaje aromático personalizado, seguido de una sesión de terapia de sonido con cuencos tibetanos. Disfruta de una degustación de tés exóticos mientras te sumerges en un ambiente de cromoterapia diseñado para equilibrar tu energía. Esta experiencia única te transportará a un estado de relajación profunda y renovación.",
+        "popupImage": "${BASE_URL}sensory-journey-popup.jpg"
       }
     ]
   }
