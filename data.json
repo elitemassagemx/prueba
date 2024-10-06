@@ -98,7 +98,6 @@
         "popupImage": "${BASE_URL}cbd-popup.jpg"
       }
     ],
-    
     "premium": [
       {
         "title": "Masaje de Lujo con Oro",
@@ -106,7 +105,7 @@
         "benefits": ["Rejuvenecimiento de la piel", "Relajación profunda", "Experiencia de lujo"],
         "duration": "90 min",
         "icon": "${BASE_URL}gold-massage-icon.png",
-        "benefitsIcons": ["${BASE_URL}skin-icon.png", "${BASE_URL}relax-icon.png", "${BASE_URL}luxury-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}gold-massage-image.jpg",
         "popupDescription": "Este masaje de lujo utiliza aceites infundidos con partículas de oro de 24 quilates, conocidas por sus propiedades anti-envejecimiento y rejuvenecedoras. El tratamiento incluye un masaje corporal completo utilizando técnicas avanzadas para relajar profundamente los músculos y mejorar la circulación, mientras que las partículas de oro nutren y revitalizan la piel, dejándola con un brillo radiante y juvenil.",
@@ -118,7 +117,7 @@
         "benefits": ["Exfoliación profunda", "Luminosidad de la piel", "Anti-envejecimiento"],
         "duration": "120 min",
         "icon": "${BASE_URL}diamond-ritual-icon.png",
-        "benefitsIcons": ["${BASE_URL}exfoliation-icon.png", "${BASE_URL}glow-icon.png", "${BASE_URL}anti-aging-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}diamond-ritual-image.jpg",
         "popupDescription": "El Ritual de Diamantes es un tratamiento de lujo que combina un masaje corporal relajante con una exfoliación profunda utilizando polvo de diamante. Este tratamiento único ayuda a eliminar las células muertas de la piel, estimula la producción de colágeno y deja la piel con un brillo incomparable. El ritual concluye con un facial rejuvenecedor que utiliza productos infundidos con diamantes para una experiencia verdaderamente lujosa.",
@@ -130,19 +129,20 @@
         "benefits": ["Hidratación intensa", "Firmeza de la piel", "Nutrición profunda"],
         "duration": "100 min",
         "icon": "${BASE_URL}caviar-experience-icon.png",
-        "benefitsIcons": ["${BASE_URL}hydration-icon.png", "${BASE_URL}firmness-icon.png", "${BASE_URL}nutrition-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}caviar-experience-image.jpg",
         "popupDescription": "La Experiencia Caviar es un tratamiento de lujo que aprovecha las propiedades nutritivas del caviar para rejuvenecer la piel. Comienza con un masaje corporal relajante utilizando aceites infundidos con proteínas de caviar, seguido de un facial de alta gama que utiliza productos ricos en caviar para hidratar profundamente, mejorar la elasticidad y reducir los signos visibles del envejecimiento.",
         "popupImage": "${BASE_URL}caviar-experience-popup.jpg"
       },
-      {
+      
+       {
         "title": "Ritual de Piedras Preciosas",
         "description": "Un tratamiento holístico que utiliza piedras preciosas para equilibrar los chakras y promover la sanación energética.",
         "benefits": ["Equilibrio energético", "Relajación profunda", "Bienestar holístico"],
         "duration": "90 min",
         "icon": "${BASE_URL}gemstone-ritual-icon.png",
-        "benefitsIcons": ["${BASE_URL}balance-icon.png", "${BASE_URL}relax-icon.png", "${BASE_URL}holistic-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}gemstone-ritual-image.jpg",
         "popupDescription": "El Ritual de Piedras Preciosas es un tratamiento holístico que combina masaje terapéutico con la colocación de piedras preciosas en los puntos de chakra del cuerpo. Cada piedra se elige cuidadosamente por sus propiedades energéticas únicas para promover el equilibrio y la sanación. Este ritual incluye técnicas de masaje relajante y meditación guiada para una experiencia de bienestar completa.",
@@ -154,7 +154,7 @@
         "benefits": ["Regeneración celular", "Reducción de arrugas", "Luminosidad"],
         "duration": "75 min",
         "icon": "${BASE_URL}stem-cell-icon.png",
-        "benefitsIcons": ["${BASE_URL}regeneration-icon.png", "${BASE_URL}anti-wrinkle-icon.png", "${BASE_URL}glow-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}stem-cell-image.jpg",
         "popupDescription": "El Tratamiento de Células Madre es un procedimiento facial de vanguardia que utiliza células madre derivadas de plantas para estimular la regeneración celular y combatir los signos del envejecimiento. Este tratamiento ayuda a mejorar la textura de la piel, reduce la apariencia de líneas finas y arrugas, y promueve un cutis más luminoso y juvenil.",
@@ -166,20 +166,12 @@
         "benefits": ["Hidratación profunda", "Relajación de lujo", "Piel radiante"],
         "duration": "120 min",
         "icon": "${BASE_URL}champagne-roses-icon.png",
-        "benefitsIcons": ["${BASE_URL}hydration-icon.png", "${BASE_URL}luxury-relax-icon.png", "${BASE_URL}radiant-skin-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}champagne-roses-image.jpg",
         "popupDescription": "El Ritual de Champagne y Rosas es una experiencia sensorial de lujo que comienza con un baño de burbujas infusionado con champagne y pétalos de rosa. Continúa con un masaje corporal utilizando aceite de rosa y una mascarilla facial de champagne rica en antioxidantes. Este tratamiento indulgente deja la piel suave, hidratada y con un brillo saludable.",
         "popupImage": "${BASE_URL}champagne-roses-popup.jpg"
       }
-    ],
-   {
-  "services": {
-    "individual": [
-      // ... (Los servicios individuales permanecen sin cambios)
-    ],
-    "premium": [
-      // ... (Los servicios premium permanecen sin cambios)
     ],
     "experiencias": [
       {
@@ -188,7 +180,7 @@
         "includes": ["Masaje de cuerpo completo", "Facial personalizado", "Manicura y pedicura", "Almuerzo saludable"],
         "duration": "6 horas",
         "icon": "${BASE_URL}full-day-spa-icon.png",
-        "benefitsIcons": ["${BASE_URL}massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}mani-pedi-icon.png", "${BASE_URL}lunch-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}full-day-spa-image.jpg",
         "popupDescription": "Sumérgete en un día completo de indulgencia y relajación. Esta experiencia incluye un masaje de cuerpo completo personalizado, un facial adaptado a tu tipo de piel, una lujosa manicura y pedicura, y un almuerzo saludable en nuestro spa café. Tendrás acceso a todas nuestras instalaciones, incluyendo sauna, jacuzzi y áreas de relajación.",
@@ -200,7 +192,7 @@
         "includes": ["Tratamientos de spa diarios", "Clases de yoga y meditación", "Consultas nutricionales", "Alojamiento de lujo"],
         "duration": "3 días / 2 noches",
         "icon": "${BASE_URL}wellness-retreat-icon.png",
-        "benefitsIcons": ["${BASE_URL}spa-treatments-icon.png", "${BASE_URL}yoga-icon.png", "${BASE_URL}nutrition-icon.png", "${BASE_URL}luxury-accommodation-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}wellness-retreat-image.jpg",
         "popupDescription": "Escapa de la rutina diaria con nuestro Retiro de Bienestar de 3 días. Este programa integral incluye tratamientos de spa diarios, clases de yoga y meditación, consultas nutricionales personalizadas y alojamiento de lujo. Diseñado para rejuvenecer tu cuerpo y mente, te irás sintiéndote renovado y revitalizado.",
@@ -212,7 +204,7 @@
         "includes": ["Circuito de aguas", "Sauna y baño turco", "Piscina de hidromasaje", "Sala de relajación"],
         "duration": "3 horas",
         "icon": "${BASE_URL}thermal-experience-icon.png",
-        "benefitsIcons": ["${BASE_URL}water-circuit-icon.png", "${BASE_URL}sauna-icon.png", "${BASE_URL}jacuzzi-icon.png", "${BASE_URL}relaxation-room-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}thermal-experience-image.jpg",
         "popupDescription": "Sumérgete en nuestra Experiencia Termal, un viaje de relajación a través de nuestras lujosas instalaciones. Comienza con nuestro circuito de aguas, seguido de sesiones en la sauna y el baño turco. Relájate en nuestra piscina de hidromasaje y termina tu experiencia en nuestra tranquila sala de relajación. Este tratamiento ayuda a desintoxicar el cuerpo, mejorar la circulación y proporcionar una relajación profunda.",
@@ -224,7 +216,7 @@
         "includes": ["Masaje en pareja", "Baño de burbujas privado", "Cena a la luz de las velas", "Champagne y fresas"],
         "duration": "4 horas",
         "icon": "${BASE_URL}romantic-getaway-icon.png",
-        "benefitsIcons": ["${BASE_URL}couple-massage-icon.png", "${BASE_URL}bubble-bath-icon.png", "${BASE_URL}dinner-icon.png", "${BASE_URL}champagne-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}romantic-getaway-image.jpg",
         "popupDescription": "Celebra el amor con nuestra Escapada Romántica. Comienza con un relajante masaje en pareja, seguido de un baño de burbujas privado con vistas panorámicas. La experiencia culmina con una cena íntima a la luz de las velas, acompañada de champagne y fresas. Esta experiencia está diseñada para crear momentos inolvidables y fortalecer la conexión con tu pareja.",
@@ -236,7 +228,7 @@
         "includes": ["Envoltura corporal desintoxicante", "Masaje drenaje linfático", "Facial purificante", "Sesión de yoga"],
         "duration": "5 horas",
         "icon": "${BASE_URL}detox-renewal-icon.png",
-        "benefitsIcons": ["${BASE_URL}body-wrap-icon.png", "${BASE_URL}lymphatic-massage-icon.png", "${BASE_URL}facial-icon.png", "${BASE_URL}yoga-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}detox-renewal-image.jpg",
         "popupDescription": "Renueva tu cuerpo y mente con nuestro programa Detox y Renovación. Comienza con una envoltura corporal desintoxicante para eliminar toxinas, seguida de un masaje de drenaje linfático para mejorar la circulación. Disfruta de un facial purificante y termina con una sesión de yoga revitalizante. Este programa está diseñado para dejarte sintiéndote completamente renovado y lleno de energía.",
@@ -248,7 +240,7 @@
         "includes": ["Masaje aromático", "Terapia de sonido", "Degustación de tés exóticos", "Tratamiento de cromoterapia"],
         "duration": "3 horas",
         "icon": "${BASE_URL}sensory-journey-icon.png",
-        "benefitsIcons": ["${BASE_URL}aroma-icon.png", "${BASE_URL}sound-therapy-icon.png", "${BASE_URL}tea-tasting-icon.png", "${BASE_URL}chromotherapy-icon.png"],
+        "benefitsIcons": ["${BASE_URL}benefits-icon1.png", "${BASE_URL}benefits-icon2.png", "${BASE_URL}benefits-icon3.png", "${BASE_URL}benefits-icon4.png"],
         "durationIcon": "${BASE_URL}duration-icon.png",
         "image": "${BASE_URL}sensory-journey-image.jpg",
         "popupDescription": "Embárcate en un Viaje Sensorial que despertará y relajará todos tus sentidos. Comienza con un masaje aromático personalizado, seguido de una sesión de terapia de sonido con cuencos tibetanos. Disfruta de una degustación de tés exóticos mientras te sumerges en un ambiente de cromoterapia diseñado para equilibrar tu energía. Esta experiencia única te transportará a un estado de relajación profunda y renovación.",
