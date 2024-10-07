@@ -11,6 +11,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -22,7 +25,7 @@
     <!-- Web Manifest -->
     <link rel="manifest" href="site.webmanifest">
 </head>
-<body>
+<body class="light-mode">
     <header id="sticky-header">
         <div class="container">
             <div class="header-top">
@@ -30,14 +33,24 @@
                     <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/logo.png" alt="Elite Massage Logo" class="logo" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-logo.png';">
                     <h1>Elite Massage</h1>
                 </div>
-                <div class="language-selector">
-                    <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/trad.png" alt="Traducir" id="translate-icon" aria-label="Seleccionar idioma" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ICONOS/error.jpg';">
-                    <div class="language-options">
-                        <button class="lang-option" data-lang="es"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/omx.png" alt="Bandera de México" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> Español</button>
-                        <button class="lang-option" data-lang="en"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ous.png" alt="Bandera de Estados Unidos" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> English</button>
-                        <button class="lang-option" data-lang="iw"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ois.png" alt="Bandera de Israel" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> עברית</button>
-                        <button class="lang-option" data-lang="fr"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ofr.png" alt="Bandera de Francia" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> Français</button>
-                        <button class="lang-option" data-lang="zh-CN"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/och.png" alt="Bandera de China" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> 中文</button>
+                <div class="header-controls">
+                    <div class="dark-mode-toggle">
+                        <i class="fas fa-sun"></i>
+                        <label class="switch btn-color-mode-switch">
+                            <input type="checkbox" name="color_mode" id="color_mode" value="1">
+                            <label for="color_mode" data-on="Dark" data-off="Light" class="btn-color-mode-switch-inner"></label>
+                        </label>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="language-selector">
+                        <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/trad.png" alt="Traducir" id="translate-icon" aria-label="Seleccionar idioma" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ICONOS/error.jpg';">
+                        <div class="language-options">
+                            <button class="lang-option" data-lang="es"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/omx.png" alt="Bandera de México" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> Español</button>
+                            <button class="lang-option" data-lang="en"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ous.png" alt="Bandera de Estados Unidos" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> English</button>
+                            <button class="lang-option" data-lang="iw"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ois.png" alt="Bandera de Israel" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> עברית</button>
+                            <button class="lang-option" data-lang="fr"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ofr.png" alt="Bandera de Francia" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> Français</button>
+                            <button class="lang-option" data-lang="zh-CN"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/och.png" alt="Bandera de China" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> 中文</button>
+                        </div>
                     </div>
                 </div>
                 <div id="google_translate_element" style="display:none;"></div>
@@ -56,10 +69,13 @@
         <section id="servicios" class="section services">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
-                <div class="service-category-buttons">
-                    <button class="category-btn active" data-category="individual">Individual</button>
-                    <button class="category-btn" data-category="premium">Premium</button>
-                    <button class="category-btn" data-category="experiencias">Experiencias</button>
+                <div class="service-category-toggle">
+                    <input type="radio" id="individual" name="category" value="individual" checked>
+                    <label for="individual">Individual</label>
+                    <input type="radio" id="premium" name="category" value="premium">
+                    <label for="premium">Premium</label>
+                    <input type="radio" id="experiencias" name="category" value="experiencias">
+                    <label for="experiencias">Experiencias</label>
                 </div>
                 <div class="benefits-nav">
                     <!-- Los botones de beneficios se generarán dinámicamente con JavaScript -->
@@ -95,39 +111,12 @@
         <section id="galeria" class="section gallery">
             <div class="container">
                 <h2>Galería de Imágenes</h2>
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/SILLASH.jpg" alt="Sillas choco vino esquinado H">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Ambiente Acogedor</h3>
-                            <p class="image-description">Disfruta de nuestro espacio de relajación único.</p>
-                        </div>
-                        <div class="more-icon" aria-label="Ver más detalles">+</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/QUESOSAHM.jpg" alt="Sillas choco vino esquinado H">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Delicias Gourmet</h3>
-                            <p class="image-description">Saborea nuestra selección de quesos y vinos premium.</p>
-                        </div>
-                        <div class="more-icon" aria-label="Ver más detalles">+</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/par.JPG" alt="Sillas choco vino esquinado H">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Masaje en Pareja</h3>
-                            <p class="image-description">Comparte un momento de relajación con tu ser querido.</p>
-                        </div>
-                        <div class="more-icon" aria-label="Ver más detalles">+</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/rosal.JPG" alt="Rosal">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Toque Romántico</h3>
-                            <p class="image-description">Detalles que hacen la diferencia en tu experiencia.</p>
-                        </div>
-                        <div class="more-icon" aria-label="Ver más detalles">+</div>
-                    </div>
+                <div class="gallery-carousel">
+                    <!-- Las imágenes del carrusel se generarán dinámicamente con JavaScript -->
+                </div>
+                <button id="ver-mas-galeria" class="cta-button">Ver más</button>
+                <div class="gallery-grid">
+                    <!-- Las imágenes de la galería en cuadrícula se generarán dinámicamente con JavaScript -->
                 </div>
             </div>
         </section>
@@ -220,12 +209,6 @@
                     <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
                     <span class="package-duration-text"></span>
                 </div>
-
-
-                    <div class="package-duration">
-                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
-                    <span class="package-duration-text"></span>
-                </div>
                 <div class="package-benefits">
                     <img src="/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
                     <span class="package-benefits-list"></span>
@@ -237,8 +220,7 @@
             <div class="more-icon" aria-label="Ver más detalles">+</div>
         </div>
     </template>
-    
-    <!-- Bootstrap JS -->
+   <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <!-- Google Translate -->
