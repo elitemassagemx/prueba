@@ -2,7 +2,7 @@
     --primary-color: #D4AF37;
     --secondary-color: #8B4513;
     --text-color: #333;
-    --background-color: #4c0026;
+    --background-color: #f4e7d2; /* Nuevo color de fondo general */
     --item-background: #f0f0f0;
     --header-background: #191919;
     --main-blue: #082032;
@@ -94,6 +94,10 @@ h1 {
 .header-controls {
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
 }
 
 .dark-mode-toggle {
@@ -153,8 +157,8 @@ input:checked + .slider:before {
 }
 
 #translate-icon {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     background-color: transparent;
     border-radius: 50%;
     padding: 2px;
@@ -300,6 +304,7 @@ input:checked + .slider:before {
     flex-direction: column;
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 .service-background, .package-background {
@@ -398,7 +403,7 @@ input:checked + .slider:before {
 
 /* Estilos para la sección de testimonios */
 .testimonials {
-    background-color: var(--item-background);
+    background-color: var(--background-color);
     padding: 2rem 0;
 }
 
@@ -511,7 +516,7 @@ input:checked + .slider:before {
 
 .popup-content {
     position: relative;
-    background-color: var(--background-color);
+    background-color: rgba(255, 255, 255, 0.1);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
@@ -522,6 +527,7 @@ input:checked + .slider:before {
     text-align: center;
     color: var(--text-color);
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .popup-content::before {
@@ -541,10 +547,12 @@ input:checked + .slider:before {
 .popup-content h2 {
     margin: 1rem 0;
     color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 .popup-content p {
     margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
 #popup-image {
@@ -576,10 +584,13 @@ input:checked + .slider:before {
     margin-top: 20px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .whatsapp-button:hover {
     background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .whatsapp-button img {
@@ -636,8 +647,8 @@ input:checked + .slider:before {
 }
 
 .nav-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px; /* Aumentado el tamaño de los GIFs */
+    height: 32px; /* Aumentado el tamaño de los GIFs */
     margin-bottom: 5px;
 }
 
@@ -710,6 +721,16 @@ footer {
     .footer-content {
         flex-wrap: wrap;
     }
+
+    .header-controls {
+        top: 5px;
+        right: 5px;
+    }
+
+    #translate-icon {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -719,6 +740,15 @@ footer {
 
     .nav-text {
         display: none;
+    }
+
+    .package-includes {
+        margin-bottom: 10px;
+    }
+
+    .package-includes strong {
+        display: block;
+        margin-bottom: 5px;
     }
 }
 
@@ -815,4 +845,10 @@ a:focus, button:focus {
 .package-item .package-duration,
 .package-item .package-benefits {
     margin-bottom: 10px;
+}
+
+/* Ajuste del tamaño de los títulos */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
