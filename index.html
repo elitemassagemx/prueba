@@ -142,7 +142,7 @@
         </ul>
     </nav>
 
-    <div id="popup" class="popup" aria-modal="true" role="dialog">
+<div id="popup" class="popup" aria-modal="true" role="dialog">
         <div class="popup-content">
             <span class="close" aria-label="Cerrar">&times;</span>
             <img id="popup-image" src="" alt="Imagen del servicio">
@@ -162,6 +162,8 @@
                 <img src="/ICONOS/whatsapp-icon.png" alt="WhatsApp">
                 Reservar por WhatsApp
             </a>
+            <button class="nav-button prev-button" aria-label="Servicio anterior">← Anterior</button>
+            <button class="nav-button next-button" aria-label="Siguiente servicio">Siguiente →</button>
         </div>
     </div>
 
@@ -192,7 +194,6 @@
                     <button class="reserve-button">Reserva ahora</button>
                 </div>
             </div>
-            <div class="more-icon" aria-label="Ver más detalles">+</div>
         </div>
     </template>
 
@@ -217,17 +218,20 @@
                     <button class="reserve-button">Reservar</button>
                 </div>
             </div>
-            <div class="more-icon" aria-label="Ver más detalles">+</div>
         </div>
     </template>
 
-<!-- Bootstrap JS -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
     <!-- Google Translate -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            new google.translate.TranslateElement({
+                pageLanguage: 'es', 
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
