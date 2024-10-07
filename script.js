@@ -1,8 +1,8 @@
+const BASE_URL = "https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/";
+let services = {};
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
-
-    const BASE_URL = "https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/";
-    let services = {};
 
     function handleImageError(img) {
         console.warn(`Failed to load image: ${img.src}`);
@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(text => {
                 try {
+                    // Reemplazar ${BASE_URL} con la URL base real
+                    text = text.replace(/\$\{BASE_URL\}/g, BASE_URL);
                     const cleanedText = text.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
                     const data = JSON.parse(cleanedText);
                     console.log('JSON data loaded successfully:', data);
@@ -199,6 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
         popupBenefits.textContent = Array.isArray(data.benefits) ? data.benefits.join(', ') : data.benefits || '';
         popupDuration.textContent = data.duration || '';
 
+        // Aplicar efecto de desenfoque basado en la imagen de fondo
+        const popupContent = popup.querySelector('.popup-content');
+        popupContent.style.backgroundImage = `url(${buildImageUrl(data.popupImage || data.image)})`;
+        popupContent.style.backgroundSize = 'cover';
+        popupContent.style.backgroundPosition = 'center';
+        popupContent.style.backdropFilter = 'blur(10px)';
+
         popup.style.display = 'block';
     }
 
@@ -350,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryGrid.appendChild(galleryItem);
         });
 
-        verMasButton.addEventListener('click', () => {
+verMasButton.addEventListener('click', () => {
             galleryGrid.style.display = galleryGrid.style.display === 'none' ? 'grid' : 'none';
             verMasButton.textContent = galleryGrid.style.display === 'none' ? 'Ver más' : 'Ver menos';
         });
@@ -472,7 +481,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setupDarkMode() {
-        const darkModeToggle = document.getElementById('color_mode');
+        const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
 
         darkModeToggle.addEventListener('change', () => {
