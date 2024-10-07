@@ -9,6 +9,14 @@
     --gold: #FFD700;
 }
 
+/* Modo oscuro */
+body.dark-mode {
+    --text-color: #f0f0f0;
+    --background-color: #121212;
+    --item-background: #1e1e1e;
+    --header-background: #000;
+}
+
 /* Reset y estilos base */
 body, h1, h2, h3, p, ul {
     margin: 0;
@@ -24,6 +32,7 @@ body {
     color: var(--text-color);
     padding-bottom: 60px;
     text-size-adjust: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img {
@@ -55,6 +64,7 @@ a, button {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
 }
 
 .header-top {
@@ -82,6 +92,63 @@ h1 {
     letter-spacing: -0.5px;
 }
 
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin: 0 10px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.btn-color-mode-switch-inner {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.btn-color-mode-switch-inner:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .btn-color-mode-switch-inner {
+    background-color: var(--primary-color);
+}
+
+input:checked + .btn-color-mode-switch-inner:before {
+    transform: translateX(26px);
+}
+
 .language-selector {
     position: relative;
 }
@@ -92,6 +159,7 @@ h1 {
     background-color: #FFD700;
     border-radius: 50%;
     padding: 2px;
+    cursor: pointer;
 }
 
 .language-options {
@@ -143,26 +211,30 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Estilos para los botones de categoría de servicio */
-.service-category-buttons {
+/* Estilos para el toggle de categoría de servicio */
+.service-category-toggle {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-}
-
-.category-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
+    background-color: var(--item-background);
     border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 5px;
 }
 
-.category-btn.active {
-    background-color: var(--secondary-color);
+.service-category-toggle input[type="radio"] {
+    display: none;
+}
+
+.service-category-toggle label {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 15px;
+}
+
+.service-category-toggle input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: var(--background-color);
 }
 
 /* Estilos para las barras de navegación de beneficios y paquetes */
@@ -289,7 +361,7 @@ h1 {
     width: 30px;
     height: 30px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--background-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -350,8 +422,25 @@ h1 {
 }
 
 /* Estilos para la galería interactiva */
-.gallery-container {
-    display: grid;
+.gallery-carousel {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.gallery-carousel img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#ver-mas-galeria {
+    display: block;
+    margin: 20px auto;
+}
+
+.gallery-grid {
+    display: none;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
     padding: 1rem 0;
@@ -415,7 +504,7 @@ h1 {
     width: 30px;
     height: 30px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--background-color);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -449,16 +538,16 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
+    color: var(--text-color);
 }
 
 .popup-content h2 {
     margin: 1rem 0;
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .popup-content p {
     margin-bottom: 1.5rem;
-    color: var(--text-color);
 }
 
 #popup-image {
@@ -471,7 +560,7 @@ h1 {
 .popup-details {
     display: flex;
     justify-content: space-around;
-margin-top: 20px;
+    margin-top: 20px;
 }
 
 .popup-benefits, .popup-duration {
@@ -529,7 +618,7 @@ margin-top: 20px;
     z-index: 1000;
 }
 
-.main-nav ul {
+.fixed-bar ul {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
@@ -537,11 +626,11 @@ margin-top: 20px;
     margin: 0;
 }
 
-.main-nav li {
+.fixed-bar li {
     text-align: center;
 }
 
-.main-nav a {
+.fixed-bar a {
     color: var(--text-color);
     text-decoration: none;
     display: flex;
