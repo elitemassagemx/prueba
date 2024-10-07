@@ -1,5 +1,6 @@
 const BASE_URL = "https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/";
 let services = {};
+let currentPopupIndex = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
@@ -32,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(text => {
                 try {
-                    // Reemplazar ${BASE_URL} con la URL base real
                     text = text.replace(/\$\{BASE_URL\}/g, BASE_URL);
                     const cleanedText = text.replace(/,\s*}/g, '}').replace(/,\s*]/g, ']');
                     const data = JSON.parse(cleanedText);
@@ -111,24 +111,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const reserveButton = serviceElement.querySelector('.reserve-button');
             if (reserveButton) {
-                reserveButton.addEventListener('click', () => sendWhatsAppMessage('Reservar', service.title));
+                reserveButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    sendWhatsAppMessage('Reservar', service.title);
+                });
             }
 
-            const moreIcon = serviceElement.querySelector('.more-icon');
-            if (moreIcon) {
-                moreIcon.addEventListener('click', () => showPopup(service));
+const serviceItem = serviceElement.querySelector('.service-item');
+            if (serviceItem) {
+                serviceItem.addEventListener('click', () => showPopup(service, index));
+                if (Array.isArray(service.benefits)) {
+                    service.benefits.forEach(benefit => {
+                        serviceItem.classList.add(benefit.toLowerCase().replace(/\s+/g, '-'));
+                    });
+                }
             }
 
             const serviceBackground = serviceElement.querySelector('.service-background');
             if (serviceBackground && service.backgroundImage) {
                 serviceBackground.style.backgroundImage = `url(${buildImageUrl(service.backgroundImage)})`;
-            }
-
-            const serviceItem = serviceElement.querySelector('.service-item');
-            if (serviceItem && Array.isArray(service.benefits)) {
-                service.benefits.forEach(benefit => {
-                    serviceItem.classList.add(benefit.toLowerCase().replace(/\s+/g, '-'));
-                });
             }
 
             servicesList.appendChild(serviceElement);
@@ -152,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-services.paquetes.forEach((pkg, index) => {
+        services.paquetes.forEach((pkg, index) => {
             console.log(`Rendering package ${index + 1}:`, pkg);
             const packageElement = template.content.cloneNode(true);
             
@@ -163,17 +164,19 @@ services.paquetes.forEach((pkg, index) => {
             packageElement.querySelector('.package-benefits-list').textContent = Array.isArray(pkg.benefits) ? pkg.benefits.join(', ') : 'No especificado';
 
             const reserveButton = packageElement.querySelector('.reserve-button');
-            reserveButton.addEventListener('click', () => sendWhatsAppMessage('Reservar', pkg.title));
+            reserveButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                sendWhatsAppMessage('Reservar', pkg.title);
+            });
 
-            const moreIcon = packageElement.querySelector('.more-icon');
-            moreIcon.addEventListener('click', () => showPopup(pkg));
+            const packageItem = packageElement.querySelector('.package-item');
+            packageItem.addEventListener('click', () => showPopup(pkg, index, true));
 
             const packageBackground = packageElement.querySelector('.package-background');
             if (pkg.backgroundImage) {
                 packageBackground.style.backgroundImage = `url(${buildImageUrl(pkg.backgroundImage)})`;
             }
 
-            const packageItem = packageElement.querySelector('.package-item');
             if (pkg.type) {
                 packageItem.classList.add(pkg.type.toLowerCase().replace(/\s+/g, '-'));
             }
@@ -183,7 +186,7 @@ services.paquetes.forEach((pkg, index) => {
         console.log(`Rendered ${services.paquetes.length} packages`);
     }
 
-    function showPopup(data) {
+    function showPopup(data, index, isPackage = false) {
         console.log('Showing popup for:', data.title);
         const popup = getElement('popup');
         const popupTitle = getElement('popup-title');
@@ -191,7 +194,10 @@ services.paquetes.forEach((pkg, index) => {
         const popupDescription = getElement('popup-description');
         const popupBenefits = getElement('popup-benefits');
         const popupDuration = getElement('popup-duration');
-        if (!popup || !popupTitle || !popupImage || !popupDescription || !popupBenefits || !popupDuration) return;
+        const whatsappButton = getElement('whatsapp-button');
+        if (!popup || !popupTitle || !popupImage || !popupDescription || !popupBenefits || !popupDuration || !whatsappButton) return;
+
+        currentPopupIndex = index;
 
         popupTitle.textContent = data.title || '';
         popupImage.src = buildImageUrl(data.popupImage || data.image);
@@ -206,9 +212,35 @@ services.paquetes.forEach((pkg, index) => {
         popupContent.style.backgroundImage = `url(${buildImageUrl(data.popupImage || data.image)})`;
         popupContent.style.backgroundSize = 'cover';
         popupContent.style.backgroundPosition = 'center';
-        popupContent.style.backdropFilter = 'blur(10px)';
+
+        whatsappButton.onclick = () => sendWhatsAppMessage('Reservar', data.title);
+
+        // Agregar botones de navegación
+        const prevButton = document.createElement('button');
+        prevButton.textContent = '← Anterior';
+        prevButton.className = 'nav-button prev-button';
+        prevButton.onclick = () => navigatePopup(-1, isPackage);
+
+        const nextButton = document.createElement('button');
+        nextButton.textContent = 'Siguiente →';
+        nextButton.className = 'nav-button next-button';
+        nextButton.onclick = () => navigatePopup(1, isPackage);
+
+        popupContent.appendChild(prevButton);
+        popupContent.appendChild(nextButton);
 
         popup.style.display = 'block';
+    }
+
+    function navigatePopup(direction, isPackage) {
+        const items = isPackage ? services.paquetes : services[getCurrentCategory()];
+        currentPopupIndex = (currentPopupIndex + direction + items.length) % items.length;
+        showPopup(items[currentPopupIndex], currentPopupIndex, isPackage);
+    }
+
+    function getCurrentCategory() {
+        const checkedRadio = document.querySelector('.service-category-toggle input[type="radio"]:checked');
+        return checkedRadio ? checkedRadio.value : 'individual';
     }
 
     function sendWhatsAppMessage(action, serviceTitle) {
@@ -449,7 +481,7 @@ services.paquetes.forEach((pkg, index) => {
             }
         });
 
-        function animateImages() {
+function animateImages() {
             images.forEach((img, index) => {
                 gsap.fromTo(img, 
                     { scale: 0.8, opacity: 0 },
@@ -537,6 +569,25 @@ services.paquetes.forEach((pkg, index) => {
         });
     }
 
+    function setupScrollHandling() {
+        const header = document.querySelector('.header-controls');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                header.style.top = '-50px';
+            } else {
+                // Scrolling up
+                header.style.top = '10px';
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        }, false);
+    }
+
     function init() {
         loadJSONData();
         setupLanguageSelector();
@@ -544,6 +595,7 @@ services.paquetes.forEach((pkg, index) => {
         setupGalleryAnimations();
         setupGalleryModal();
         setupDarkMode();
+        setupScrollHandling();
     }
 
     init();
