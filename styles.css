@@ -2,7 +2,7 @@
     --primary-color: #D4AF37;
     --secondary-color: #8B4513;
     --text-color: #333;
-    --background-color: #f4e7d2; /* Nuevo color de fondo general */
+    --background-color: #f4e7d2;
     --item-background: #f0f0f0;
     --header-background: #191919;
     --main-blue: #082032;
@@ -11,10 +11,10 @@
 
 /* Modo oscuro */
 body.dark-mode {
-    --text-color: #f0f0f0;
+    --text-color: #ffffff;
     --background-color: #121212;
     --item-background: #1e1e1e;
-    --header-background: #000;
+    --header-background: #000000;
 }
 
 /* Reset y estilos base */
@@ -157,12 +157,13 @@ input:checked + .slider:before {
 }
 
 #translate-icon {
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     background-color: transparent;
     border-radius: 50%;
     padding: 2px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .language-options {
@@ -339,9 +340,23 @@ input:checked + .slider:before {
     align-items: center;
 }
 
-.service-icon, .benefits-icon, .duration-icon {
-    width: 24px;
-    height: 24px;
+.service-icon {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+}
+
+.benefits-icon {
+    width: 28.8px;
+    height: 28.8px;
+    margin-right: 10px;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+}
+
+.duration-icon {
+    width: 21.6px;
+    height: 21.6px;
     margin-right: 10px;
     filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
 }
@@ -647,8 +662,8 @@ input:checked + .slider:before {
 }
 
 .nav-icon {
-    width: 32px; /* Aumentado el tamaño de los GIFs */
-    height: 32px; /* Aumentado el tamaño de los GIFs */
+    width: 32px;
+    height: 32px;
     margin-bottom: 5px;
 }
 
@@ -832,19 +847,27 @@ a:focus, button:focus {
     }
 }
 
-/* Ajuste del tamaño de los iconos de duración */
-.duration-icon {
-    width: 18px;
-    height: 18px;
+/* Ajustes adicionales */
+.service-category-toggle.sticky,
+.benefits-nav.sticky,
+.package-nav.sticky {
+    position: sticky;
+    top: 70px;
+    background-color: var(--background-color);
+    z-index: 100;
+    padding: 10px 0;
 }
 
-/* Ajuste del espaciado en los paquetes */
-.package-item .package-title,
-.package-item .package-description,
-.package-item .package-includes,
-.package-item .package-duration,
-.package-item .package-benefits {
+.hero + .services {
+    margin-top: 20px;
+}
+
+.package-includes {
     margin-bottom: 10px;
+}
+
+.package-includes strong {
+    margin-right: 5px;
 }
 
 /* Ajuste del tamaño de los títulos */
