@@ -69,7 +69,7 @@
         <section id="servicios" class="section services">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
-                <div class="service-category-toggle">
+                <div class="service-category-toggle sticky">
                     <input type="radio" id="individual" name="category" value="individual" checked>
                     <label for="individual">Individual</label>
                     <input type="radio" id="premium" name="category" value="premium">
@@ -77,7 +77,7 @@
                     <input type="radio" id="experiencias" name="category" value="experiencias">
                     <label for="experiencias">Experiencias</label>
                 </div>
-                <div class="benefits-nav">
+                <div class="benefits-nav sticky">
                     <!-- Los botones de beneficios se generarán dinámicamente con JavaScript -->
                 </div>
                 <div id="services-list" class="services-grid"></div>
@@ -87,7 +87,7 @@
         <section id="paquetes" class="section packages">
             <div class="container">
                 <h2>Paquetes Especiales</h2>
-                <div class="package-nav">
+                <div class="package-nav sticky">
                     <!-- Los botones de paquetes se generarán dinámicamente con JavaScript -->
                 </div>
                 <div id="package-list"></div>
@@ -142,7 +142,7 @@
         </ul>
     </nav>
 
-<div id="popup" class="popup" aria-modal="true" role="dialog">
+    <div id="popup" class="popup" aria-modal="true" role="dialog">
         <div class="popup-content">
             <span class="close" aria-label="Cerrar">&times;</span>
             <img id="popup-image" src="" alt="Imagen del servicio">
@@ -162,8 +162,6 @@
                 <img src="/ICONOS/whatsapp-icon.png" alt="WhatsApp">
                 Reservar por WhatsApp
             </a>
-            <button class="nav-button prev-button" aria-label="Servicio anterior">← Anterior</button>
-            <button class="nav-button next-button" aria-label="Siguiente servicio">Siguiente →</button>
         </div>
     </div>
 
@@ -194,6 +192,7 @@
                     <button class="reserve-button">Reserva ahora</button>
                 </div>
             </div>
+            <div class="more-icon" aria-label="Ver más detalles">+</div>
         </div>
     </template>
 
@@ -204,7 +203,7 @@
                 <h3 class="package-title"></h3>
                 <p class="package-description"></p>
                 <div class="package-includes">
-                    <strong>Incluye:</strong> <span class="package-includes-list"></span>
+                    <strong>Incluye: </strong><span class="package-includes-list"></span>
                 </div>
                 <div class="package-duration">
                     <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
@@ -218,6 +217,7 @@
                     <button class="reserve-button">Reservar</button>
                 </div>
             </div>
+            <div class="more-icon" aria-label="Ver más detalles">+</div>
         </div>
     </template>
 
