@@ -326,79 +326,93 @@ if (durationIcon && service.durationIcon) {
         setupPackageNav();
     }
 
-    function setupBenefitsNav(category) {
-        const benefitsNav = document.querySelector('.benefits-nav');
-        if (!benefitsNav) return;
+  function setupBenefitsNav(category) {
+    const benefitsNav = document.querySelector('.benefits-nav');
+    if (!benefitsNav) return;
 
-        benefitsNav.innerHTML = '';
-        const allBenefits = new Set();
+    benefitsNav.innerHTML = '';
+    const allBenefits = new Set();
 
-        if (services[category]) {
-            services[category].forEach(service => {
-                if (Array.isArray(service.benefits)) {
-                    service.benefits.forEach(benefit => allBenefits.add(benefit));
-                }
-            });
-        }
-
-        const allButton = document.createElement('button');
-        allButton.classList.add('benefit-btn', 'active');
-        allButton.dataset.filter = 'all';
-        allButton.innerHTML = `
-            <img src="${BASE_URL}todos.png" alt="Todos">
-            <span>Todos</span>
-        `;
-        benefitsNav.appendChild(allButton);
-
-        allBenefits.forEach(benefit => {
-            const button = document.createElement('button');
-            button.classList.add('benefit-btn');
-            button.dataset.filter = benefit.toLowerCase().replace(/\s+/g, '-');
-            button.innerHTML = `
-                <img src="${BASE_URL}${benefit.toLowerCase().replace(/\s+/g, '-')}.png" alt="${benefit}">
-                <span>${benefit}</span>
-            `;
-            benefitsNav.appendChild(button);
+    if (services[category]) {
+        services[category].forEach(service => {
+            if (Array.isArray(service.benefits)) {
+                service.benefits.forEach(benefit => allBenefits.add(benefit));
+            }
         });
-
-        setupFilterButtons('.benefits-nav', '#services-list', '.service-item');
     }
 
-    function setupPackageNav() {
-        const packageNav = document.querySelector('.package-nav');
-        if (!packageNav) return;
+    const allButton = document.createElement('button');
+    allButton.classList.add('benefit-btn', 'active');
+    allButton.dataset.filter = 'all';
+    allButton.innerHTML = `
+        <img src="${BASE_URL}todos.png" alt="Todos">
+        <span>Todos</span>
+    `;
+    benefitsNav.appendChild(allButton);
 
-        packageNav.innerHTML = '';
-        const allPackages = new Set();
-
-        if (services.paquetes) {
-            services.paquetes.forEach(pkg => {
-                allPackages.add(pkg.title);
-            });
-        }
-
-        const allButton = document.createElement('button');
-        allButton.classList.add('package-btn', 'active');
-        allButton.dataset.filter = 'all';
-        allButton.innerHTML = `
-            <img src="${BASE_URL}todos.png" alt="Todos">
-            <span>Todos</span>
+    Array.from(allBenefits).forEach((benefit, index) => {
+        const button = document.createElement('button');
+        button.classList.add('benefit-btn');
+        button.dataset.filter = benefit.toLowerCase().replace(/\s+/g, '-');
+        
+        // Usa el índice para seleccionar el icono correcto
+        const iconIndex = index + 1;
+        const iconFileName = `benefits-icon${iconIndex}.png`;
+        
+        button.innerHTML = `
+            <img src="${BASE_URL}${iconFileName}" alt="${benefit}">
+            <span>${benefit}</span>
         `;
-        packageNav.appendChild(allButton);
+        benefitsNav.appendChild(button);
+    });
 
-        allPackages.forEach(packageTitle => {
-            const button = document.createElement('button');
-            button.classList.add('package-btn');
-            button.dataset.filter = packageTitle.toLowerCase().replace(/\s+/g, '-');
-            button.innerHTML = `
-                <img src="${BASE_URL}${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.png" alt="${packageTitle}">
-                <span>${packageTitle}</span>
-            `;
-            packageNav.appendChild(button);
+    setupFilterButtons('.benefits-nav', '#services-list', '.service-item');
+}
+
+function setupPackageNav() {
+    const packageNav = document.querySelector('.package-nav');
+    if (!packageNav) return;
+
+    packageNav.innerHTML = '';
+    const allPackages = new Set();
+
+    if (services.paquetes) {
+        services.paquetes.forEach(pkg => {
+            allPackages.add(pkg.title);
         });
-
-        setupFilterButtons('.package-nav', '#package-list', '.package-item');
     }
+
+    const allButton = document.createElement('button');
+    allButton.classList.add('package-btn', 'active');
+    allButton.dataset.filter = 'all';
+    allButton.innerHTML = `
+        <img src="${BASE_URL}todos.png" alt="Todos">
+        <span>Todos</span>
+    `;
+    packageNav.appendChild(allButton);
+
+    allPackages.forEach(packageTitle => {
+        const button = document.createElement('button');
+        button.classList.add('package-btn');
+        button.dataset.filter = packageTitle.toLowerCase().replace(/\s+/g, '-');
+
+        // Buscar el paquete correspondiente en services.paquetes
+        const packageData = services.paquetes.find(pkg => pkg.title === packageTitle);
+        
+        // Usar el icono especificado en el JSON si está disponible, de lo contrario usar un nombre de archivo generado
+        const iconFileName = packageData && packageData.icon ? 
+            packageData.icon.split('/').pop() : 
+            `${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.png`;
+
+        button.innerHTML = `
+            <img src="${BASE_URL}${iconFileName}" alt="${packageTitle}">
+            <span>${packageTitle}</span>
+        `;
+        packageNav.appendChild(button);
+    });
+
+    setupFilterButtons('.package-nav', '#package-list', '.package-item');
+}
 
     function setupPopup() {
         const popup = getElement('popup');
