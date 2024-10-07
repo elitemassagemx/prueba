@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (benefitsElement) benefitsElement.textContent = Array.isArray(service.benefits) ? service.benefits.join(', ') : 'No especificado';
             
             const durationIcon = serviceElement.querySelector('.duration-icon');
-            if (durationIcon && service.durationIcon) {
+if (durationIcon && service.durationIcon) {
                 durationIcon.src = buildImageUrl(service.durationIcon);
                 durationIcon.onerror = () => handleImageError(durationIcon);
             }
@@ -117,9 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-const serviceItem = serviceElement.querySelector('.service-item');
-            if (serviceItem) {
+            const serviceItem = serviceElement.querySelector('.service-item');
+            const moreIcon = serviceElement.querySelector('.more-icon');
+            if (serviceItem && moreIcon) {
                 serviceItem.addEventListener('click', () => showPopup(service, index));
+                moreIcon.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showPopup(service, index);
+                });
                 if (Array.isArray(service.benefits)) {
                     service.benefits.forEach(benefit => {
                         serviceItem.classList.add(benefit.toLowerCase().replace(/\s+/g, '-'));
@@ -170,7 +175,14 @@ const serviceItem = serviceElement.querySelector('.service-item');
             });
 
             const packageItem = packageElement.querySelector('.package-item');
-            packageItem.addEventListener('click', () => showPopup(pkg, index, true));
+            const moreIcon = packageElement.querySelector('.more-icon');
+            if (packageItem && moreIcon) {
+                packageItem.addEventListener('click', () => showPopup(pkg, index, true));
+                moreIcon.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showPopup(pkg, index, true);
+                });
+            }
 
             const packageBackground = packageElement.querySelector('.package-background');
             if (pkg.backgroundImage) {
@@ -189,13 +201,14 @@ const serviceItem = serviceElement.querySelector('.service-item');
     function showPopup(data, index, isPackage = false) {
         console.log('Showing popup for:', data.title);
         const popup = getElement('popup');
+        const popupContent = popup.querySelector('.popup-content');
         const popupTitle = getElement('popup-title');
         const popupImage = getElement('popup-image');
         const popupDescription = getElement('popup-description');
         const popupBenefits = getElement('popup-benefits');
         const popupDuration = getElement('popup-duration');
         const whatsappButton = getElement('whatsapp-button');
-        if (!popup || !popupTitle || !popupImage || !popupDescription || !popupBenefits || !popupDuration || !whatsappButton) return;
+        if (!popup || !popupContent || !popupTitle || !popupImage || !popupDescription || !popupBenefits || !popupDuration || !whatsappButton) return;
 
         currentPopupIndex = index;
 
@@ -208,28 +221,39 @@ const serviceItem = serviceElement.querySelector('.service-item');
         popupDuration.textContent = data.duration || '';
 
         // Aplicar efecto de desenfoque basado en la imagen de fondo
-        const popupContent = popup.querySelector('.popup-content');
         popupContent.style.backgroundImage = `url(${buildImageUrl(data.popupImage || data.image)})`;
         popupContent.style.backgroundSize = 'cover';
         popupContent.style.backgroundPosition = 'center';
 
         whatsappButton.onclick = () => sendWhatsAppMessage('Reservar', data.title);
 
-        // Agregar botones de navegación
-        const prevButton = document.createElement('button');
-        prevButton.textContent = '← Anterior';
-        prevButton.className = 'nav-button prev-button';
-        prevButton.onclick = () => navigatePopup(-1, isPackage);
-
-        const nextButton = document.createElement('button');
-        nextButton.textContent = 'Siguiente →';
-        nextButton.className = 'nav-button next-button';
-        nextButton.onclick = () => navigatePopup(1, isPackage);
-
-        popupContent.appendChild(prevButton);
-        popupContent.appendChild(nextButton);
+        // Configurar el carrusel deslizable
+        setupPopupCarousel(isPackage);
 
         popup.style.display = 'block';
+    }
+
+    function setupPopupCarousel(isPackage) {
+        const popupContent = document.querySelector('.popup-content');
+        let startX, currentX;
+
+        popupContent.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        popupContent.addEventListener('touchmove', (e) => {
+            if (!startX) return;
+            currentX = e.touches[0].clientX;
+            const diff = startX - currentX;
+            if (Math.abs(diff) > 50) {
+                navigatePopup(diff > 0 ? 1 : -1, isPackage);
+                startX = null;
+            }
+        });
+
+        popupContent.addEventListener('touchend', () => {
+            startX = null;
+        });
     }
 
     function navigatePopup(direction, isPackage) {
@@ -457,7 +481,7 @@ const serviceItem = serviceElement.querySelector('.service-item');
         console.log('Gallery container found');
         const images = gsap.utils.toArray('.gallery-container img');
         
-        ScrollTrigger.create({
+ScrollTrigger.create({
             trigger: gallery,
             start: "top 80%",
             end: "bottom 20%",
@@ -481,7 +505,7 @@ const serviceItem = serviceElement.querySelector('.service-item');
             }
         });
 
-function animateImages() {
+        function animateImages() {
             images.forEach((img, index) => {
                 gsap.fromTo(img, 
                     { scale: 0.8, opacity: 0 },
@@ -600,3 +624,4 @@ function animateImages() {
 
     init();
 });
+                    
