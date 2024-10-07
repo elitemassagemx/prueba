@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             packageList.innerHTML = '<p>Error al cargar los paquetes. Por favor, intente más tarde.</p>';
             return;
         }
-
-        services.paquetes.forEach((pkg, index) => {
+        
+services.paquetes.forEach((pkg, index) => {
             console.log(`Rendering package ${index + 1}:`, pkg);
             const packageElement = template.content.cloneNode(true);
             
@@ -262,8 +262,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const category = input.value;
                 renderServices(category);
                 setupBenefitsNav(category);
+                setupPackageNav();
             });
         });
+        // Inicializar las barras de navegación
+        setupBenefitsNav('individual');
+        setupPackageNav();
     }
 
     function setupBenefitsNav(category) {
@@ -273,11 +277,13 @@ document.addEventListener('DOMContentLoaded', () => {
         benefitsNav.innerHTML = '';
         const allBenefits = new Set();
 
-        services[category].forEach(service => {
-            if (Array.isArray(service.benefits)) {
-                service.benefits.forEach(benefit => allBenefits.add(benefit));
-            }
-        });
+        if (services[category]) {
+            services[category].forEach(service => {
+                if (Array.isArray(service.benefits)) {
+                    service.benefits.forEach(benefit => allBenefits.add(benefit));
+                }
+            });
+        }
 
         const allButton = document.createElement('button');
         allButton.classList.add('benefit-btn', 'active');
@@ -300,6 +306,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         setupFilterButtons('.benefits-nav', '#services-list', '.service-item');
+    }
+
+    function setupPackageNav() {
+        const packageNav = document.querySelector('.package-nav');
+        if (!packageNav) return;
+
+        packageNav.innerHTML = '';
+        const allPackages = new Set();
+
+        if (services.paquetes) {
+            services.paquetes.forEach(pkg => {
+                allPackages.add(pkg.title);
+            });
+        }
+
+        const allButton = document.createElement('button');
+        allButton.classList.add('package-btn', 'active');
+        allButton.dataset.filter = 'all';
+        allButton.innerHTML = `
+            <img src="${BASE_URL}todos.png" alt="Todos">
+            <span>Todos</span>
+        `;
+        packageNav.appendChild(allButton);
+
+        allPackages.forEach(packageTitle => {
+            const button = document.createElement('button');
+            button.classList.add('package-btn');
+            button.dataset.filter = packageTitle.toLowerCase().replace(/\s+/g, '-');
+            button.innerHTML = `
+                <img src="${BASE_URL}${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.png" alt="${packageTitle}">
+                <span>${packageTitle}</span>
+            `;
+            packageNav.appendChild(button);
+        });
+
+        setupFilterButtons('.package-nav', '#package-list', '.package-item');
     }
 
     function setupPopup() {
@@ -359,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryGrid.appendChild(galleryItem);
         });
 
-verMasButton.addEventListener('click', () => {
+        verMasButton.addEventListener('click', () => {
             galleryGrid.style.display = galleryGrid.style.display === 'none' ? 'grid' : 'none';
             verMasButton.textContent = galleryGrid.style.display === 'none' ? 'Ver más' : 'Ver menos';
         });
