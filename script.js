@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     renderPackages();
                     setupFilters();
                     setupServiceCategories();
+                    setupGallery();
                 } catch (error) {
                     console.error('Error parsing JSON:', error);
                     console.error('Problematic JSON:', text);
@@ -246,12 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setupServiceCategories() {
-        const categoryButtons = document.querySelectorAll('.category-btn');
-        categoryButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.dataset.category;
-                categoryButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+        const categoryInputs = document.querySelectorAll('.service-category-toggle input[type="radio"]');
+        categoryInputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const category = input.value;
                 renderServices(category);
                 setupBenefitsNav(category);
             });
@@ -309,6 +308,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Closing popup (clicked outside)');
                 popup.style.display = 'none';
             }
+        });
+    }
+
+    function setupGallery() {
+        const galleryCarousel = document.querySelector('.gallery-carousel');
+        const galleryGrid = document.querySelector('.gallery-grid');
+        const verMasButton = getElement('ver-mas-galeria');
+
+        if (!galleryCarousel || !galleryGrid || !verMasButton) {
+            console.error('Gallery elements not found');
+            return;
+        }
+
+        // Aquí deberías cargar las imágenes de la galería desde tu fuente de datos
+        const galleryImages = [
+            { src: 'imagen1.jpg', title: 'Título 1', description: 'Descripción 1' },
+            { src: 'imagen2.jpg', title: 'Título 2', description: 'Descripción 2' },
+            // ... más imágenes
+        ];
+
+        // Configurar el carrusel
+        galleryImages.forEach(image => {
+            const img = document.createElement('img');
+            img.src = buildImageUrl(image.src);
+            img.alt = image.title;
+            galleryCarousel.appendChild(img);
+        });
+
+        // Configurar la cuadrícula
+        galleryImages.forEach(image => {
+            const galleryItem = document.createElement('div');
+            galleryItem.classList.add('gallery-item');
+            galleryItem.innerHTML = `
+                <img src="${buildImageUrl(image.src)}" alt="${image.title}">
+                <div class="image-overlay">
+                    <h3 class="image-title">${image.title}</h3>
+                    <p class="image-description">${image.description}</p>
+                </div>
+            `;
+            galleryGrid.appendChild(galleryItem);
+        });
+
+        verMasButton.addEventListener('click', () => {
+            galleryGrid.style.display = galleryGrid.style.display === 'none' ? 'grid' : 'none';
+            verMasButton.textContent = galleryGrid.style.display === 'none' ? 'Ver más' : 'Ver menos';
         });
     }
 
@@ -373,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Found ${images.length} images in the gallery`);
     }
 
-function setupGalleryModal() {
+    function setupGalleryModal() {
         const modal = getElement('imageModal');
         const modalImg = getElement('modalImage');
         const modalDescription = getElement('modalDescription');
@@ -427,12 +471,28 @@ function setupGalleryModal() {
         });
     }
 
+    function setupDarkMode() {
+        const darkModeToggle = document.getElementById('color_mode');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+            } else {
+                body.classList.add('light-mode');
+                body.classList.remove('dark-mode');
+            }
+        });
+    }
+
     function init() {
         loadJSONData();
         setupLanguageSelector();
         setupPopup();
         setupGalleryAnimations();
         setupGalleryModal();
+        setupDarkMode();
     }
 
     init();
