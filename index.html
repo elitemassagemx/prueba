@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elite Massage: Tu oasis de tranquilidad. Descubre nuestros servicios de masajes y paquetes especiales para una experiencia de relajación única.">
     <title>Elite Massage</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -30,7 +31,7 @@
                     <h1>Elite Massage</h1>
                 </div>
                 <div class="language-selector">
-                    <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/trad.png" alt="Traducir" id="translate-icon" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ICONOS/error.jpg';">
+                    <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/trad.png" alt="Traducir" id="translate-icon" aria-label="Seleccionar idioma" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ICONOS/error.jpg';">
                     <div class="language-options">
                         <button class="lang-option" data-lang="es"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/omx.png" alt="Bandera de México" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> Español</button>
                         <button class="lang-option" data-lang="en"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ous.png" alt="Bandera de Estados Unidos" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> English</button>
@@ -101,7 +102,7 @@
                             <h3 class="image-title">Ambiente Acogedor</h3>
                             <p class="image-description">Disfruta de nuestro espacio de relajación único.</p>
                         </div>
-                        <div class="more-icon">+</div>
+                        <div class="more-icon" aria-label="Ver más detalles">+</div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/QUESOSAHM.jpg" alt="Sillas choco vino esquinado H">
@@ -109,7 +110,7 @@
                             <h3 class="image-title">Delicias Gourmet</h3>
                             <p class="image-description">Saborea nuestra selección de quesos y vinos premium.</p>
                         </div>
-                        <div class="more-icon">+</div>
+                        <div class="more-icon" aria-label="Ver más detalles">+</div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/par.JPG" alt="Sillas choco vino esquinado H">
@@ -117,7 +118,7 @@
                             <h3 class="image-title">Masaje en Pareja</h3>
                             <p class="image-description">Comparte un momento de relajación con tu ser querido.</p>
                         </div>
-                        <div class="more-icon">+</div>
+                        <div class="more-icon" aria-label="Ver más detalles">+</div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/rosal.JPG" alt="Rosal">
@@ -125,7 +126,7 @@
                             <h3 class="image-title">Toque Romántico</h3>
                             <p class="image-description">Detalles que hacen la diferencia en tu experiencia.</p>
                         </div>
-                        <div class="more-icon">+</div>
+                        <div class="more-icon" aria-label="Ver más detalles">+</div>
                     </div>
                 </div>
             </div>
@@ -143,30 +144,28 @@
         </div>
     </footer>
 
-    <div class="fixed-bar">
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#servicios"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/lista.gif" alt="Icono Servicios" class="nav-icon" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-icon.png';"><span class="nav-text">Masajes</span></a></li>
-                <li><a href="#paquetes"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/reg.gif" alt="Icono Paquetes" class="nav-icon" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-icon.png';"><span class="nav-text">Paquetes</span></a></li>
-                <li><a href="#testimonios"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/coment.gif" alt="Icono Testimonios" class="nav-icon" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-icon.png';"><span class="nav-text">Testimonios</span></a></li>
-                <li><a href="#galeria"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fotos.gif" alt="Icono Galería" class="nav-icon" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-icon.png';"><span class="nav-text">Galería</span></a></li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="fixed-bar" aria-label="Navegación principal">
+        <ul>
+            <li><a href="#servicios" aria-label="Ir a sección de masajes"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/lista.gif" alt="" class="nav-icon"><span class="nav-text">Masajes</span></a></li>
+            <li><a href="#paquetes" aria-label="Ir a sección de paquetes"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/reg.gif" alt="" class="nav-icon"><span class="nav-text">Paquetes</span></a></li>
+            <li><a href="#testimonios" aria-label="Ir a sección de testimonios"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/coment.gif" alt="" class="nav-icon"><span class="nav-text">Testimonios</span></a></li>
+            <li><a href="#galeria" aria-label="Ir a sección de galería"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fotos.gif" alt="" class="nav-icon"><span class="nav-text">Galería</span></a></li>
+        </ul>
+    </nav>
 
-    <div id="popup" class="popup">
+    <div id="popup" class="popup" aria-modal="true" role="dialog">
         <div class="popup-content">
-            <span class="close">&times;</span>
+            <span class="close" aria-label="Cerrar">&times;</span>
             <img id="popup-image" src="" alt="Imagen del servicio">
             <h2 id="popup-title"></h2>
             <p id="popup-description"></p>
             <div class="popup-details">
                 <div class="popup-benefits">
-                    <img src="/ICONOS/benefits-icon.png" alt="Beneficios" class="benefits-icon">
+                    <img src="/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
                     <span id="popup-benefits"></span>
                 </div>
                 <div class="popup-duration">
-                    <img src="/ICONOS/duration-icon.png" alt="Duración" class="duration-icon">
+                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
                     <span id="popup-duration"></span>
                 </div>
             </div>
@@ -177,9 +176,9 @@
         </div>
     </div>
 
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modalImage">
+    <div id="imageModal" class="modal" aria-modal="true" role="dialog">
+        <span class="close" aria-label="Cerrar">&times;</span>
+        <img class="modal-content" id="modalImage" alt="Imagen ampliada">
         <div id="modalDescription"></div>
     </div>
 
@@ -188,23 +187,23 @@
             <div class="service-background"></div>
             <div class="service-content">
                 <div class="service-header">
-                    <img class="service-icon" alt="Icono del servicio">
+                    <img class="service-icon" alt="">
                     <h3 class="service-title"></h3>
                 </div>
                 <p class="service-description"></p>
                 <div class="benefits-container">
-                    <img src="/ICONOS/benefits-icon.png" alt="Beneficios" class="benefits-icon">
+                    <img src="/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
                     <span class="service-benefits"></span>
                 </div>
                 <div class="duration-container">
-                    <img src="/ICONOS/duration-icon.png" alt="Duración" class="duration-icon">
+                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
                     <span class="service-duration"></span>
                 </div>
                 <div class="service-buttons">
                     <button class="reserve-button">Reserva ahora</button>
                 </div>
             </div>
-            <div class="more-icon">+</div>
+            <div class="more-icon" aria-label="Ver más detalles">+</div>
         </div>
     </template>
 
@@ -218,18 +217,24 @@
                     <strong>Incluye:</strong> <span class="package-includes-list"></span>
                 </div>
                 <div class="package-duration">
-                    <img src="/ICONOS/duration-icon.png" alt="Duración" class="duration-icon">
+                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
+                    <span class="package-duration-text"></span>
+                </div>
+
+
+                    <div class="package-duration">
+                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
                     <span class="package-duration-text"></span>
                 </div>
                 <div class="package-benefits">
-                    <img src="/ICONOS/benefits-icon.png" alt="Beneficios" class="benefits-icon">
+                    <img src="/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
                     <span class="package-benefits-list"></span>
                 </div>
                 <div class="package-buttons">
                     <button class="reserve-button">Reservar</button>
                 </div>
             </div>
-            <div class="more-icon">+</div>
+            <div class="more-icon" aria-label="Ver más detalles">+</div>
         </div>
     </template>
     
@@ -242,7 +247,7 @@
             new google.translate.TranslateElement({pageLanguage: 'es', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
     
     <!-- GSAP y ScrollTrigger para animaciones -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
