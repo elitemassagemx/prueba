@@ -56,67 +56,83 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    function renderServices(category) {
-        console.log(`Rendering services for category: ${category}`);
-        const servicesList = getElement('services-list');
-        const template = getElement('service-template');
-        if (!servicesList || !template) return;
-
-        servicesList.innerHTML = '';
-
-        if (!Array.isArray(services[category])) {
-            console.error(`services[${category}] is not an array:`, services[category]);
-            servicesList.innerHTML = '<p>Error al cargar los servicios. Por favor, intente más tarde.</p>';
-            return;
-        }
-
-        services[category].forEach((service, index) => {
-            console.log(`Rendering service ${index + 1}:`, service);
-            const serviceElement = template.content.cloneNode(true);
-            
-            serviceElement.querySelector('.service-title').textContent = service.title || 'Sin título';
-            
-            const serviceIcon = serviceElement.querySelector('.service-icon');
-            serviceIcon.src = buildImageUrl(service.icon);
-            serviceIcon.onerror = () => handleImageError(serviceIcon);
-            
-            serviceElement.querySelector('.service-description').textContent = service.description || 'Sin descripción';
-            
-            const benefitsIcon = serviceElement.querySelector('.benefits-icon');
-            benefitsIcon.src = buildImageUrl(Array.isArray(service.benefitsIcons) ? service.benefitsIcons[0] : service.benefitsIcons);
-            benefitsIcon.onerror = () => handleImageError(benefitsIcon);
-            
-            serviceElement.querySelector('.service-benefits').textContent = Array.isArray(service.benefits) ? service.benefits.join(', ') : 'No especificado';
-            
-            const durationIcon = serviceElement.querySelector('.duration-icon');
-            durationIcon.src = buildImageUrl(service.durationIcon);
-            durationIcon.onerror = () => handleImageError(durationIcon);
-            
-            serviceElement.querySelector('.service-duration').textContent = service.duration || 'Duración no especificada';
-
-            const reserveButton = serviceElement.querySelector('.reserve-button');
-            reserveButton.addEventListener('click', () => sendWhatsAppMessage('Reservar', service.title));
-
-            const moreIcon = serviceElement.querySelector('.more-icon');
-            moreIcon.addEventListener('click', () => showPopup(service));
-
-            const serviceBackground = serviceElement.querySelector('.service-background');
-            if (service.backgroundImage) {
-                serviceBackground.style.backgroundImage = `url(${buildImageUrl(service.backgroundImage)})`;
-            }
-
-            const serviceItem = serviceElement.querySelector('.service-item');
-            if (Array.isArray(service.benefits)) {
-                service.benefits.forEach(benefit => {
-                    serviceItem.classList.add(benefit.toLowerCase().replace(/\s+/g, '-'));
-                });
-            }
-
-            servicesList.appendChild(serviceElement);
-        });
-        console.log(`Rendered ${services[category].length} services`);
+ function renderServices(category) {
+    console.log(`Rendering services for category: ${category}`);
+    const servicesList = document.getElementById('services-list');
+    const template = document.getElementById('service-template');
+    if (!servicesList || !template) {
+        console.error('services-list or service-template not found');
+        return;
     }
 
+    servicesList.innerHTML = '';
+
+    if (!Array.isArray(services[category])) {
+        console.error(`services[${category}] is not an array:`, services[category]);
+        servicesList.innerHTML = '<p>Error al cargar los servicios. Por favor, intente más tarde.</p>';
+        return;
+    }
+
+    services[category].forEach((service, index) => {
+        console.log(`Rendering service ${index + 1}:`, service);
+        const serviceElement = template.content.cloneNode(true);
+        
+        const titleElement = serviceElement.querySelector('.service-title');
+        if (titleElement) titleElement.textContent = service.title || 'Sin título';
+        
+        const serviceIcon = serviceElement.querySelector('.service-icon');
+        if (serviceIcon && service.icon) {
+            serviceIcon.src = buildImageUrl(service.icon);
+            serviceIcon.onerror = () => handleImageError(serviceIcon);
+        }
+        
+        const descriptionElement = serviceElement.querySelector('.service-description');
+        if (descriptionElement) descriptionElement.textContent = service.description || 'Sin descripción';
+        
+        const benefitsIcon = serviceElement.querySelector('.benefits-icon');
+        if (benefitsIcon && service.benefitsIcons) {
+            benefitsIcon.src = buildImageUrl(Array.isArray(service.benefitsIcons) ? service.benefitsIcons[0] : service.benefitsIcons);
+            benefitsIcon.onerror = () => handleImageError(benefitsIcon);
+        }
+        
+        const benefitsElement = serviceElement.querySelector('.service-benefits');
+        if (benefitsElement) benefitsElement.textContent = Array.isArray(service.benefits) ? service.benefits.join(', ') : 'No especificado';
+        
+        const durationIcon = serviceElement.querySelector('.duration-icon');
+        if (durationIcon && service.durationIcon) {
+            durationIcon.src = buildImageUrl(service.durationIcon);
+            durationIcon.onerror = () => handleImageError(durationIcon);
+        }
+        
+        const durationElement = serviceElement.querySelector('.service-duration');
+        if (durationElement) durationElement.textContent = service.duration || 'Duración no especificada';
+
+        const reserveButton = serviceElement.querySelector('.reserve-button');
+        if (reserveButton) {
+            reserveButton.addEventListener('click', () => sendWhatsAppMessage('Reservar', service.title));
+        }
+
+        const moreIcon = serviceElement.querySelector('.more-icon');
+        if (moreIcon) {
+            moreIcon.addEventListener('click', () => showPopup(service));
+        }
+
+        const serviceBackground = serviceElement.querySelector('.service-background');
+        if (serviceBackground && service.backgroundImage) {
+            serviceBackground.style.backgroundImage = `url(${buildImageUrl(service.backgroundImage)})`;
+        }
+
+        const serviceItem = serviceElement.querySelector('.service-item');
+        if (serviceItem && Array.isArray(service.benefits)) {
+            service.benefits.forEach(benefit => {
+                serviceItem.classList.add(benefit.toLowerCase().replace(/\s+/g, '-'));
+            });
+        }
+
+        servicesList.appendChild(serviceElement);
+    });
+    console.log(`Rendered ${services[category].length} services`);
+}
     function renderPackages() {
         console.log('Rendering packages');
         const packageList = getElement('package-list');
