@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Elite Massage: Tu oasis de tranquilidad. Descubre nuestros servicios de masajes y paquetes especiales para una experiencia de relajación única.">
     <title>Elite Massage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -25,35 +28,14 @@
     <!-- Web Manifest -->
     <link rel="manifest" href="site.webmanifest">
 </head>
-<body class="light-mode">
-    <header id="sticky-header">
+<body>
+    <header id="sticky-header" class="header-controls">
         <div class="container">
             <div class="header-top">
                 <div class="logo-container">
-                    <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/logo.png" alt="Elite Massage Logo" class="logo" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-logo.png';">
+                    <img src="https://elitemassagemx.github.io/Home/ICONOS/logo.png" alt="Elite Massage Logo" class="logo" onerror="this.onerror=null; this.src='https://elitemassagemx.github.io/Home/ICONOS/fallback-logo.png';">
                     <h1>Elite Massage</h1>
                 </div>
-                <div class="header-controls">
-                    <div class="dark-mode-toggle">
-                        <i class="fas fa-sun"></i>
-                        <label class="switch">
-                            <input type="checkbox" id="darkModeToggle">
-                            <span class="slider round"></span>
-                        </label>
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <div class="language-selector">
-                        <img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/trad.png" alt="Traducir" id="translate-icon" aria-label="Seleccionar idioma" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ICONOS/error.jpg';">
-                        <div class="language-options">
-                            <button class="lang-option" data-lang="es"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/omx.png" alt="Bandera de México" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> Español</button>
-                            <button class="lang-option" data-lang="en"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ous.png" alt="Bandera de Estados Unidos" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> English</button>
-                            <button class="lang-option" data-lang="iw"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ois.png" alt="Bandera de Israel" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> עברית</button>
-                            <button class="lang-option" data-lang="fr"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/ofr.png" alt="Bandera de Francia" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> Français</button>
-                            <button class="lang-option" data-lang="zh-CN"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/och.png" alt="Bandera de China" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-flag.png';"> 中文</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="google_translate_element" style="display:none;"></div>
             </div>
         </div>
     </header>
@@ -72,25 +54,21 @@
                 <div class="service-category-toggle sticky">
                     <input type="radio" id="individual" name="category" value="individual" checked>
                     <label for="individual">Individual</label>
-                    <input type="radio" id="premium" name="category" value="premium">
-                    <label for="premium">Premium</label>
                     <input type="radio" id="experiencias" name="category" value="experiencias">
                     <label for="experiencias">Experiencias</label>
+                    <input type="radio" id="paquetes" name="category" value="paquetes">
+                    <label for="paquetes">Paquetes</label>
                 </div>
                 <div class="benefits-nav sticky">
                     <!-- Los botones de beneficios se generarán dinámicamente con JavaScript -->
                 </div>
                 <div id="services-list" class="services-grid"></div>
-            </div>
-        </section>
-
-        <section id="paquetes" class="section packages">
-            <div class="container">
-                <h2>Paquetes Especiales</h2>
+                
+                <h2>Nuestros Paquetes</h2>
                 <div class="package-nav sticky">
-                    <!-- Los botones de paquetes se generarán dinámicamente con JavaScript -->
+                    <!-- Los botones de navegación de paquetes se generarán dinámicamente con JavaScript -->
                 </div>
-                <div id="package-list"></div>
+                <div id="package-list" class="package-grid"></div>
             </div>
         </section>
 
@@ -108,16 +86,26 @@
             </div>
         </section>
 
-        <section id="galeria" class="section gallery">
+        <section id="galeria" class="section gallery gallery-container">
             <div class="container">
                 <h2>Galería de Imágenes</h2>
-                <div class="gallery-carousel">
-                    <!-- Las imágenes del carrusel se generarán dinámicamente con JavaScript -->
+                <div id="gallery-carousel" class="carousel slide" data-bs-ride="carousel" aria-label="Galería de imágenes">
+                    <div class="carousel-inner">
+                        <!-- Las imágenes del carrusel se generarán dinámicamente con JavaScript -->
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#gallery-carousel" data-bs-slide="prev" aria-label="Imagen anterior">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#gallery-carousel" data-bs-slide="next" aria-label="Imagen siguiente">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 </div>
-                <button id="ver-mas-galeria" class="cta-button">Ver más</button>
                 <div class="gallery-grid">
                     <!-- Las imágenes de la galería en cuadrícula se generarán dinámicamente con JavaScript -->
                 </div>
+                <button id="ver-mas-galeria" class="ver-mas-btn">Ver más</button>
             </div>
         </section>
     </main>
@@ -135,32 +123,31 @@
 
     <nav class="fixed-bar" aria-label="Navegación principal">
         <ul>
-            <li><a href="#servicios" aria-label="Ir a sección de masajes"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/lista.gif" alt="" class="nav-icon"><span class="nav-text">Masajes</span></a></li>
-            <li><a href="#paquetes" aria-label="Ir a sección de paquetes"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/reg.gif" alt="" class="nav-icon"><span class="nav-text">Paquetes</span></a></li>
-            <li><a href="#testimonios" aria-label="Ir a sección de testimonios"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/coment.gif" alt="" class="nav-icon"><span class="nav-text">Testimonios</span></a></li>
-            <li><a href="#galeria" aria-label="Ir a sección de galería"><img src="https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fotos.gif" alt="" class="nav-icon"><span class="nav-text">Galería</span></a></li>
+            <li><a href="#servicios" aria-label="Ir a sección de masajes"><img src="https://elitemassagemx.github.io/Home/ICONOS/lista.gif" alt="" class="nav-icon"><span class="nav-text">Masajes<br>Individuales</span></a></li>
+            <li><a href="#experiencias" aria-label="Ir a sección de experiencias"><img src="https://elitemassagemx.github.io/Home/ICONOS/reg.gif" alt="" class="nav-icon"><span class="nav-text">Experiencias</span></a></li>
+            <li><a href="#paquetes" aria-label="Ir a sección de paquetes"><img src="https://elitemassagemx.github.io/Home/ICONOS/coment.gif" alt="" class="nav-icon"><span class="nav-text">Paquetes</span></a></li>
         </ul>
     </nav>
 
     <div id="popup" class="popup" aria-modal="true" role="dialog">
         <div class="popup-content">
             <span class="close" aria-label="Cerrar">&times;</span>
-            <img id="popup-image" src="" alt="Imagen del servicio">
             <h2 id="popup-title"></h2>
+            <img id="popup-image" src="" alt="Imagen del servicio">
             <p id="popup-description"></p>
             <div class="popup-details">
                 <div class="popup-benefits">
-                    <img src="/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
+                    <img src="https://elitemassagemx.github.io/Home/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
                     <span id="popup-benefits"></span>
                 </div>
                 <div class="popup-duration">
-                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
+                    <img src="https://elitemassagemx.github.io/Home/ICONOS/duration-icon.png" alt="" class="duration-icon">
                     <span id="popup-duration"></span>
                 </div>
             </div>
             <a href="#" id="whatsapp-button" class="whatsapp-button">
-                <img src="/ICONOS/whatsapp-icon.png" alt="WhatsApp">
-                Reservar por WhatsApp
+                <img src="https://elitemassagemx.github.io/Home/ICONOS/whatsapp.webp" alt="Whatsapp" class="logo" onerror="this.onerror=null; this.src='https://elitemassagemx.github.io/Home/ICONOS/fallback-logo.png';">
+                Reserva por WhatsApp
             </a>
         </div>
     </div>
@@ -181,11 +168,11 @@
                 </div>
                 <p class="service-description"></p>
                 <div class="benefits-container">
-                    <img src="/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
+                    <img src="https://elitemassagemx.github.io/Home/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
                     <span class="service-benefits"></span>
                 </div>
                 <div class="duration-container">
-                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
+                    <img src="https://elitemassagemx.github.io/Home/ICONOS/duration-icon.png" alt="" class="duration-icon">
                     <span class="service-duration"></span>
                 </div>
                 <div class="service-buttons">
@@ -206,11 +193,11 @@
                     <strong>Incluye: </strong><span class="package-includes-list"></span>
                 </div>
                 <div class="package-duration">
-                    <img src="/ICONOS/duration-icon.png" alt="" class="duration-icon">
+                    <img src="https://elitemassagemx.github.io/Home/ICONOS/duration-icon.png" alt="" class="duration-icon">
                     <span class="package-duration-text"></span>
                 </div>
                 <div class="package-benefits">
-                    <img src="/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
+                    <img src="https://elitemassagemx.github.io/Home/ICONOS/benefits-icon.png" alt="" class="benefits-icon">
                     <span class="package-benefits-list"></span>
                 </div>
                 <div class="package-buttons">
@@ -222,19 +209,7 @@
     </template>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-    <!-- Google Translate -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'es', 
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- GSAP y ScrollTrigger para animaciones -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
