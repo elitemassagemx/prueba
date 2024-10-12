@@ -1,9 +1,29 @@
 const BASE_URL = "https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/";
 let services = {};
-let currentPopupIndex = 0;
+let currentPopupIndex = 0; 
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
+
+    // Elementos del DOM
+    const verMasBtn = document.getElementById('ver-mas-galeria');
+    const galleryGrid = document.querySelector('.gallery-grid');
+    const body = document.body;
+    const header = document.getElementById('sticky-header');
+    let isExpanded = false;
+    let lastScrollTop = 0;
+
+    // Inicializaciones
+    init();
+
+    function init() {
+        loadJSONData();
+        setupPopup();
+        setupGalleryAnimations();
+        setupGalleryModal();
+        setupScrollHandling();
+        setupGallery();
+    }
 
     function handleImageError(img) {
         console.warn(`Failed to load image: ${img.src}`);
@@ -91,17 +111,28 @@ document.addEventListener('DOMContentLoaded', () => {
             const descriptionElement = serviceElement.querySelector('.service-description');
             if (descriptionElement) descriptionElement.textContent = service.description || 'Sin descripción';
             
-            const benefitsIcon = serviceElement.querySelector('.benefits-icon');
-            if (benefitsIcon && service.benefitsIcons) {
-                benefitsIcon.src = buildImageUrl(Array.isArray(service.benefitsIcons) ? service.benefitsIcons[0] : service.benefitsIcons);
-                benefitsIcon.onerror = () => handleImageError(benefitsIcon);
+            const benefitsContainer = serviceElement.querySelector('.benefits-container');
+            if (benefitsContainer && Array.isArray(service.benefitsIcons)) {
+                const benefitsIconsContainer = document.createElement('div');
+                benefitsIconsContainer.classList.add('benefits-icons');
+                service.benefitsIcons.forEach(iconUrl => {
+                    const img = document.createElement('img');
+                    img.src = buildImageUrl(iconUrl);
+                    img.alt = 'Benefit icon';
+                    img.classList.add('benefit-icon');
+                    img.style.width = '24px';
+                    img.style.height = '24px';
+                    img.onerror = () => handleImageError(img);
+                    benefitsIconsContainer.appendChild(img);
+                });
+                benefitsContainer.insertBefore(benefitsIconsContainer, benefitsContainer.firstChild);
             }
             
             const benefitsElement = serviceElement.querySelector('.service-benefits');
             if (benefitsElement) benefitsElement.textContent = Array.isArray(service.benefits) ? service.benefits.join(', ') : 'No especificado';
             
             const durationIcon = serviceElement.querySelector('.duration-icon');
-if (durationIcon && service.durationIcon) {
+            if (durationIcon && service.durationIcon) {
                 durationIcon.src = buildImageUrl(service.durationIcon);
                 durationIcon.onerror = () => handleImageError(durationIcon);
             }
@@ -220,14 +251,29 @@ if (durationIcon && service.durationIcon) {
         popupBenefits.textContent = Array.isArray(data.benefits) ? data.benefits.join(', ') : data.benefits || '';
         popupDuration.textContent = data.duration || '';
 
-        // Aplicar efecto de desenfoque basado en la imagen de fondo
-        popupContent.style.backgroundImage = `url(${buildImageUrl(data.popupImage || data.image)})`;
-        popupContent.style.backgroundSize = 'cover';
-        popupContent.style.backgroundPosition = 'center';
+        // Mostrar iconos de beneficios en el popup
+        const popupBenefitsIcons = popup.querySelector('.popup-benefits-icons') || document.createElement('div');
+        popupBenefitsIcons.className = 'popup-benefits-icons';
+        popupBenefitsIcons.innerHTML = '';
+        if (Array.isArray(data.benefitsIcons)) {
+            data.benefitsIcons.forEach(iconUrl => {
+                const img = document.createElement('img');
+                img.src = buildImageUrl(iconUrl);
+                img.alt = 'Benefit icon';
+                img.classList.add('popup-benefit-icon');
+                img.style.width = '24px';
+                img.style.height = '24px';
+                img.onerror = () => handleImageError(img);
+                popupBenefitsIcons.appendChild(img);
+            });
+        }
+        const popupDetails = popup.querySelector('.popup-details');
+        if (popupDetails) {
+            popupDetails.insertBefore(popupBenefitsIcons, popupDetails.firstChild);
+        }
 
         whatsappButton.onclick = () => sendWhatsAppMessage('Reservar', data.title);
 
-        // Configurar el carrusel deslizable
         setupPopupCarousel(isPackage);
 
         popup.style.display = 'block';
@@ -274,43 +320,6 @@ if (durationIcon && service.durationIcon) {
         window.open(url, '_blank');
     }
 
-    function changeLanguage(lang) {
-        console.log(`Changing language to: ${lang}`);
-        var selectField = document.querySelector('.goog-te-combo');
-        if (selectField) {
-            selectField.value = lang;
-            selectField.dispatchEvent(new Event('change'));
-        } else {
-            console.error('Google Translate dropdown not found');
-        }
-    }
-
-    function setupLanguageSelector() {
-        const translateIcon = getElement('translate-icon');
-        const languageOptions = document.querySelector('.language-options');
-        if (!translateIcon || !languageOptions) return;
-
-        translateIcon.addEventListener('click', () => {
-            console.log('Translate icon clicked');
-            languageOptions.style.display = languageOptions.style.display === 'block' ? 'none' : 'block';
-        });
-
-        document.querySelectorAll('.lang-option').forEach(option => {
-            option.addEventListener('click', (event) => {
-                const lang = event.currentTarget.dataset.lang;
-                console.log(`Language option clicked: ${lang}`);
-                changeLanguage(lang);
-                languageOptions.style.display = 'none';
-            });
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!translateIcon.contains(event.target) && !languageOptions.contains(event.target)) {
-                languageOptions.style.display = 'none';
-            }
-        });
-    }
-
     function setupServiceCategories() {
         const categoryInputs = document.querySelectorAll('.service-category-toggle input[type="radio"]');
         categoryInputs.forEach(input => {
@@ -321,102 +330,96 @@ if (durationIcon && service.durationIcon) {
                 setupPackageNav();
             });
         });
-        // Inicializar las barras de navegación
         setupBenefitsNav('individual');
         setupPackageNav();
     }
 
-  function setupBenefitsNav(category) {
-    const benefitsNav = document.querySelector('.benefits-nav');
-    if (!benefitsNav) return;
+    function setupBenefitsNav(category) {
+        const benefitsNav = document.querySelector('.benefits-nav');
+        if (!benefitsNav) return;
 
-    benefitsNav.innerHTML = '';
-    const allBenefits = new Set();
+        benefitsNav.innerHTML = '';
+        const allBenefits = new Set();
+        const benefitIcons = new Map();
 
-    if (services[category]) {
-        services[category].forEach(service => {
-            if (Array.isArray(service.benefits)) {
-                service.benefits.forEach(benefit => allBenefits.add(benefit));
-            }
+        if (services[category]) {
+            services[category].forEach(service => {
+                if (Array.isArray(service.benefits) && Array.isArray(service.benefitsIcons)) {
+                    service.benefits.forEach((benefit, index) => {
+                        if (!allBenefits.has(benefit)) {
+                            allBenefits.add(benefit);
+                            benefitIcons.set(benefit, service.benefitsIcons[index]);
+                        }
+                    });
+                }
+            });
+        }
+
+        const allButton = document.createElement('button');
+        allButton.classList.add('benefit-btn', 'active');
+        allButton.dataset.filter = 'all';
+        allButton.innerHTML = `
+            <img src="${BASE_URL}todos.png" alt="Todos" style="width: 24px; height: 24px;">
+            <span>Todos</span>
+        `;
+        benefitsNav.appendChild(allButton);
+
+        allBenefits.forEach(benefit => {
+            const button = document.createElement('button');
+            button.classList.add('benefit-btn');
+            button.dataset.filter = benefit.toLowerCase().replace(/\s+/g, '-');
+            
+            const iconUrl = benefitIcons.get(benefit) || `${BASE_URL}${benefit.toLowerCase().replace(/\s+/g, '-')}.png`;
+            
+            button.innerHTML = `
+                <img src="${buildImageUrl(iconUrl)}" alt="${benefit}" style="width: 24px; height: 24px;">
+                <span>${benefit}</span>
+            `;
+            benefitsNav.appendChild(button);
         });
+
+        setupFilterButtons('.benefits-nav', '#services-list', '.service-item');
     }
 
-    const allButton = document.createElement('button');
-    allButton.classList.add('benefit-btn', 'active');
-    allButton.dataset.filter = 'all';
-    allButton.innerHTML = `
-        <img src="${BASE_URL}todos.png" alt="Todos">
-        <span>Todos</span>
-    `;
-    benefitsNav.appendChild(allButton);
+    function setupPackageNav() {
+        const packageNav = document.querySelector('.package-nav');
+        if (!packageNav) return;
 
-    Array.from(allBenefits).forEach((benefit, index) => {
-        const button = document.createElement('button');
-        button.classList.add('benefit-btn');
-        button.dataset.filter = benefit.toLowerCase().replace(/\s+/g, '-');
-        
-        // Usa el índice para seleccionar el icono correcto
-        const iconIndex = index + 1;
-        const iconFileName = `benefits-icon${iconIndex}.png`;
-        
-        button.innerHTML = `
-            <img src="${BASE_URL}${iconFileName}" alt="${benefit}">
-            <span>${benefit}</span>
+        packageNav.innerHTML = '';
+        const allPackages = new Set();
+
+        if (services.paquetes) {
+            services.paquetes.forEach(pkg => {
+                allPackages.add(pkg.title);
+            });
+        }
+
+        const allButton = document.createElement('button');
+        allButton.classList.add('package-btn', 'active');
+        allButton.dataset.filter = 'all';
+        allButton.innerHTML = `
+            <img src="${BASE_URL}todos.png" alt="Todos" style="width: 24px; height: 24px;">
+            <span>Todos</span>
         `;
-        benefitsNav.appendChild(button);
-    });
+        packageNav.appendChild(allButton);
 
-    setupFilterButtons('.benefits-nav', '#services-list', '.service-item');
-}
-
-function setupPackageNav() {
-    const packageNav = document.querySelector('.package-nav');
-    if (!packageNav) return;
-
-    packageNav.innerHTML = '';
-    const allPackages = new Set();
-
-    if (services.paquetes) {
-        services.paquetes.forEach(pkg => {
-            allPackages.add(pkg.title);
+        allPackages.forEach(packageTitle => {
+            const button = document.createElement('button');
+            button.classList.add('package-btn');
+            button.dataset.filter = packageTitle.toLowerCase().replace(/\s+/g, '-');
+            button.innerHTML = `
+                <img src="${BASE_URL}${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.png" alt="${packageTitle}" style="width: 24px; height: 24px;">
+                <span>${packageTitle}</span>
+            `;
+            packageNav.appendChild(button);
         });
+
+        setupFilterButtons('.package-nav', '#package-list', '.package-item');
     }
-
-    const allButton = document.createElement('button');
-    allButton.classList.add('package-btn', 'active');
-    allButton.dataset.filter = 'all';
-    allButton.innerHTML = `
-        <img src="${BASE_URL}todos.png" alt="Todos">
-        <span>Todos</span>
-    `;
-    packageNav.appendChild(allButton);
-
-    allPackages.forEach(packageTitle => {
-        const button = document.createElement('button');
-        button.classList.add('package-btn');
-        button.dataset.filter = packageTitle.toLowerCase().replace(/\s+/g, '-');
-
-        // Buscar el paquete correspondiente en services.paquetes
-        const packageData = services.paquetes.find(pkg => pkg.title === packageTitle);
-        
-        // Usar el icono especificado en el JSON si está disponible, de lo contrario usar un nombre de archivo generado
-        const iconFileName = packageData && packageData.icon ? 
-            packageData.icon.split('/').pop() : 
-            `${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.png`;
-
-        button.innerHTML = `
-            <img src="${BASE_URL}${iconFileName}" alt="${packageTitle}">
-            <span>${packageTitle}</span>
-        `;
-        packageNav.appendChild(button);
-    });
-
-    setupFilterButtons('.package-nav', '#package-list', '.package-item');
-}
 
     function setupPopup() {
         const popup = getElement('popup');
-        const closeButton = document.querySelector('.close');
+        const closeButton = popup.querySelector('.close');
         if (!popup || !closeButton) return;
 
         closeButton.addEventListener('click', () => {
@@ -433,7 +436,7 @@ function setupPackageNav() {
     }
 
     function setupGallery() {
-        const galleryCarousel = document.querySelector('.gallery-carousel');
+        const galleryCarousel = document.querySelector('.carousel-inner');
         const galleryGrid = document.querySelector('.gallery-grid');
         const verMasButton = getElement('ver-mas-galeria');
 
@@ -444,17 +447,58 @@ function setupPackageNav() {
 
         // Aquí deberías cargar las imágenes de la galería desde tu fuente de datos
         const galleryImages = [
-            { src: 'imagen1.jpg', title: 'Título 1', description: 'Descripción 1' },
-            { src: 'imagen2.jpg', title: 'Título 2', description: 'Descripción 2' },
-            // ... más imágenes
-        ];
+    { src: 'QUESOSAHM.jpg', title: 'Tabla Gourmet', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'choco2.JPG', title: 'choco2', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'chococ.JPG', title: 'chococ', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'chococc.JPG', title: 'chococc', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'FRESASC.jpg', title: 'fresasc', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'QUESOS.jpg', title: 'quesos', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'QUESOSH.jpg', title: 'quesosh', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'QUESOSHM.jpg', title: 'quesoshm', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'QUESOSM.jpg', title: 'quesosm', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'QUESOSIG.jpg', title: 'quesosig', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'SILLAS.jpg', title: 'sillas', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'SILLASH.jpg', title: 'sillash', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'chen.JPG', title: 'chen', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'copas.JPG', title: 'copas', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'dif.JPG', title: 'dif', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'QUESOSAHM.jpg', title: 'quesosahm', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'jamc.JPG', title: 'jamc', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'jam.JPG', title: 'jam', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'lujo.JPG', title: 'lujo', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'lujo2.JPG', title: 'lujo2', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'noche.JPG', title: 'noche', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'noche1.JPG', title: 'noche1', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'paq1.JPG', title: 'paq1', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'paq2.JPG', title: 'paq2', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'paq41.JPG', title: 'paq41', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'rosa.JPG', title: 'rosa', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'rosal.JPG', title: 'rosal', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'rosao.JPG', title: 'rosao', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'semillas.JPG', title: 'semillas', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'sub.JPG', title: 'sub', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'spa.png', title: 'spa', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'buda2.png', title: 'buda2', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'mesap2.png', title: 'mesap2', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'papas.png', title: 'papas', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'mesa.png', title: 'mesa', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+    { src: 'buda.png', title: 'Buda', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
+];
 
         // Configurar el carrusel
-        galleryImages.forEach(image => {
-            const img = document.createElement('img');
-            img.src = buildImageUrl(image.src);
-            img.alt = image.title;
-            galleryCarousel.appendChild(img);
+        galleryImages.forEach((image, index) => {
+            const carouselItem = document.createElement('div');
+            carouselItem.classList.add('carousel-item');
+            if (index === 0) carouselItem.classList.add('active');
+            
+            carouselItem.innerHTML = `
+                <img src="${buildImageUrl(image.src)}" class="d-block w-100" alt="${image.title}">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>${image.title}</h5>
+                    <p>${image.description}</p>
+                </div>
+            `;
+            galleryCarousel.appendChild(carouselItem);
         });
 
         // Configurar la cuadrícula
@@ -495,7 +539,7 @@ function setupPackageNav() {
         console.log('Gallery container found');
         const images = gsap.utils.toArray('.gallery-container img');
         
-ScrollTrigger.create({
+        ScrollTrigger.create({
             trigger: gallery,
             start: "top 80%",
             end: "bottom 20%",
@@ -592,23 +636,12 @@ ScrollTrigger.create({
         });
     }
 
-    function setupDarkMode() {
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const body = document.body;
-
-        darkModeToggle.addEventListener('change', () => {
-            if (darkModeToggle.checked) {
-                body.classList.add('dark-mode');
-                body.classList.remove('light-mode');
-            } else {
-                body.classList.add('light-mode');
-                body.classList.remove('dark-mode');
-            }
-        });
-    }
-
     function setupScrollHandling() {
         const header = document.querySelector('.header-controls');
+        if (!header) {
+            console.error('Header controls not found');
+            return;
+        }
         let lastScrollTop = 0;
 
         window.addEventListener('scroll', () => {
@@ -626,16 +659,10 @@ ScrollTrigger.create({
         }, false);
     }
 
-    function init() {
-        loadJSONData();
-        setupLanguageSelector();
-        setupPopup();
-        setupGalleryAnimations();
-        setupGalleryModal();
-        setupDarkMode();
-        setupScrollHandling();
-    }
-
-    init();
+    // Manejo de errores de carga de imágenes
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            this.src = 'https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/fallback-image.png';
+        });
+    });
 });
-                    
