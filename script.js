@@ -1,6 +1,6 @@
 const BASE_URL = "https://raw.githubusercontent.com/elitemassagemx/Home/main/ICONOS/";
 let services = {};
-let currentPopupIndex = 0; 
+let currentPopupIndex = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded');
@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const verMasBtn = document.getElementById('ver-mas-galeria');
     const galleryGrid = document.querySelector('.gallery-grid');
     const body = document.body;
-    const header = document.getElementById('sticky-header');
+    const header = document.getElementById('main-header');
     let isExpanded = false;
-    let lastScrollTop = 0;
 
     // Inicializaciones
     init();
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupPopup();
         setupGalleryAnimations();
         setupGalleryModal();
-        setupScrollHandling();
         setupGallery();
     }
 
@@ -120,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     img.src = buildImageUrl(iconUrl);
                     img.alt = 'Benefit icon';
                     img.classList.add('benefit-icon');
-                    img.style.width = '24px';
-                    img.style.height = '24px';
+                    img.style.width = '48px';
+                    img.style.height = '48px';
                     img.onerror = () => handleImageError(img);
                     const span = document.createElement('span');
                     span.textContent = service.benefits[index] || '';
@@ -140,22 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const durationElement = serviceElement.querySelector('.service-duration');
             if (durationElement) durationElement.textContent = service.duration || 'Duración no especificada';
 
-            const reserveButton = serviceElement.querySelector('.reserve-button');
-            if (reserveButton) {
-                reserveButton.addEventListener('click', (e) => {
+            const saberMasButton = serviceElement.querySelector('.saber-mas-button');
+            if (saberMasButton) {
+                saberMasButton.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    sendWhatsAppMessage('Reservar', service.title);
+                    showPopup(service, index);
                 });
             }
 
             const serviceItem = serviceElement.querySelector('.service-item');
-            const moreIcon = serviceElement.querySelector('.more-icon');
-            if (serviceItem && moreIcon) {
-                serviceItem.addEventListener('click', () => showPopup(service, index));
-                moreIcon.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    showPopup(service, index);
-                });
+            if (serviceItem) {
                 if (Array.isArray(service.benefits)) {
                     service.benefits.forEach(benefit => {
                         serviceItem.classList.add(benefit.toLowerCase().replace(/\s+/g, '-'));
@@ -216,8 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     img.src = buildImageUrl(iconUrl);
                     img.alt = 'Benefit icon';
                     img.classList.add('benefit-icon');
-                    img.style.width = '24px';
-                    img.style.height = '24px';
+                    img.style.width = '48px';
+                    img.style.height = '48px';
                     img.onerror = () => handleImageError(img);
                     const span = document.createElement('span');
                     span.textContent = pkg.benefits[index] || '';
@@ -227,29 +219,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            const reserveButton = packageElement.querySelector('.reserve-button');
-            reserveButton.addEventListener('click', (e) => {
-                e.stopPropagation();
-                sendWhatsAppMessage('Reservar', pkg.title);
-            });
-
-            const packageItem = packageElement.querySelector('.package-item');
-            const moreIcon = packageElement.querySelector('.more-icon');
-            if (packageItem && moreIcon) {
-                packageItem.addEventListener('click', () => showPopup(pkg, index, true));
-                moreIcon.addEventListener('click', (e) => {
+            const saberMasButton = packageElement.querySelector('.saber-mas-button');
+            if (saberMasButton) {
+                saberMasButton.addEventListener('click', (e) => {
                     e.stopPropagation();
                     showPopup(pkg, index, true);
                 });
             }
 
-            const packageBackground = packageElement.querySelector('.package-background');
-            if (pkg.backgroundImage) {
-                packageBackground.style.backgroundImage = `url(${buildImageUrl(pkg.backgroundImage)})`;
+            const packageItem = packageElement.querySelector('.package-item');
+            if (packageItem && pkg.type) {
+                packageItem.classList.add(pkg.type.toLowerCase().replace(/\s+/g, '-'));
             }
 
-            if (pkg.type) {
-                packageItem.classList.add(pkg.type.toLowerCase().replace(/\s+/g, '-'));
+            const packageBackground = packageElement.querySelector('.package-background');
+            if (packageBackground && pkg.backgroundImage) {
+                packageBackground.style.backgroundImage = `url(${buildImageUrl(pkg.backgroundImage)})`;
             }
 
             packageList.appendChild(packageElement);
@@ -268,7 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const popupIncludes = getElement('popup-includes');
         const popupDuration = getElement('popup-duration');
         const whatsappButton = getElement('whatsapp-button');
-        if (!popup || !popupContent || !popupTitle || !popupImage || !popupDescription || !popupBenefits || !popupIncludes || !popupDuration || !whatsappButton) return;
+        if (!popup || !popupContent || !popupTitle || !popupImage || !popupDescription || !popupBenefits || !popupIncludes || !popupDuration || !whatsappButton) {
+            console.error('One or more popup elements not found');
+            return;
+        }
 
         currentPopupIndex = index;
 
@@ -304,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const includeItem = document.createElement('div');
                 includeItem.classList.add('popup-includes-item');
                 const img = document.createElement('img');
-                img.src = buildImageUrl('check-icon.png'); // Asume que tienes un icono de check
+                img.src = buildImageUrl('check-icon.png');
                 img.alt = 'Incluido';
                 const span = document.createElement('span');
                 span.textContent = item;
@@ -386,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const allBenefits = new Set();
         const benefitIcons = new Map();
 
-        if (services[category]) {
+    if (services[category]) {
             services[category].forEach(service => {
                 if (Array.isArray(service.benefits) && Array.isArray(service.benefitsIcons)) {
                     service.benefits.forEach((benefit, index) => {
@@ -403,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allButton.classList.add('benefit-btn', 'active');
         allButton.dataset.filter = 'all';
         allButton.innerHTML = `
-            <img src="${BASE_URL}todos.png" alt="Todos" style="width: 24px; height: 24px;">
+            <img src="${BASE_URL}todos.png" alt="Todos" style="width: 48px; height: 48px;">
             <span>Todos</span>
         `;
         benefitsNav.appendChild(allButton);
@@ -416,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const iconUrl = benefitIcons.get(benefit) || `${BASE_URL}${benefit.toLowerCase().replace(/\s+/g, '-')}.png`;
             
             button.innerHTML = `
-                <img src="${buildImageUrl(iconUrl)}" alt="${benefit}" style="width: 24px; height: 24px;">
+                <img src="${buildImageUrl(iconUrl)}" alt="${benefit}" style="width: 48px; height: 48px;">
                 <span>${benefit}</span>
             `;
             benefitsNav.appendChild(button);
@@ -442,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
         allButton.classList.add('package-btn', 'active');
         allButton.dataset.filter = 'all';
         allButton.innerHTML = `
-            <img src="${BASE_URL}todos.png" alt="Todos" style="width: 24px; height: 24px;">
+            <img src="${BASE_URL}todos.png" alt="Todos" style="width: 48px; height: 48px;">
             <span>Todos</span>
         `;
         packageNav.appendChild(allButton);
@@ -452,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add('package-btn');
             button.dataset.filter = packageTitle.toLowerCase().replace(/\s+/g, '-');
             button.innerHTML = `
-                <img src="${BASE_URL}${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.png" alt="${packageTitle}" style="width: 24px; height: 24px;">
+                <img src="${BASE_URL}${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.png" alt="${packageTitle}" style="width: 48px; height: 48px;">
                 <span>${packageTitle}</span>
             `;
             packageNav.appendChild(button);
@@ -490,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Aquí deberías cargar las imágenes de la galería desde tu fuente de datos
-      const galleryImages = [
+        const galleryImages = [
     { src: 'QUESOSAHM.jpg', title: 'Tabla Gourmet', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
     { src: 'choco2.JPG', title: 'choco2', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
     { src: 'chococ.JPG', title: 'chococ', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
@@ -543,6 +531,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${image.description}</p>
                 </div>
             `;
+            carouselItem.addEventListener('click', () => {
+                showImageDetails(image);
+            });
             galleryCarousel.appendChild(carouselItem);
         });
 
@@ -558,6 +549,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="image-description">${image.description}</p>
                 </div>
             `;
+            galleryItem.addEventListener('click', () => {
+                showImageDetails(image);
+            });
             galleryGrid.appendChild(galleryItem);
         });
 
@@ -565,6 +559,22 @@ document.addEventListener('DOMContentLoaded', () => {
             galleryGrid.style.display = galleryGrid.style.display === 'none' ? 'grid' : 'none';
             verMasButton.textContent = galleryGrid.style.display === 'none' ? 'Ver más' : 'Ver menos';
         });
+    }
+
+    function showImageDetails(image) {
+        const modal = getElement('imageModal');
+        const modalImg = getElement('modalImage');
+        const modalDescription = getElement('modalDescription');
+
+        if (!modal || !modalImg || !modalDescription) {
+            console.error('Modal elements not found');
+            return;
+        }
+
+        modalImg.src = buildImageUrl(image.src);
+        modalImg.alt = image.title;
+        modalDescription.innerHTML = `<h3>${image.title}</h3><p>${image.description}</p>`;
+        modal.style.display = 'block';
     }
 
     function setupGalleryAnimations() {
@@ -630,24 +640,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setupGalleryModal() {
         const modal = getElement('imageModal');
-        const modalImg = getElement('modalImage');
-        const modalDescription = getElement('modalDescription');
         const closeBtn = modal.querySelector('.close');
-
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                modal.style.display = "block";
-                modalImg.src = this.querySelector('img').src;
-                modalDescription.innerHTML = this.querySelector('.image-description').innerHTML;
-            });
-        });
 
         closeBtn.onclick = function() {
             modal.style.display = "none";
         }
 
         window.onclick = function(event) {
-if (event.target == modal) {
+            if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
@@ -680,29 +680,6 @@ if (event.target == modal) {
                 });
             });
         });
-    }
-
-    function setupScrollHandling() {
-        const header = document.querySelector('.header-controls');
-        if (!header) {
-            console.error('Header controls not found');
-            return;
-        }
-        let lastScrollTop = 0;
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop) {
-                // Scrolling down
-                header.style.top = '-50px';
-            } else {
-                // Scrolling up
-                header.style.top = '0';
-            }
-
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-        }, false);
     }
 
     // Manejo de errores de carga de imágenes
