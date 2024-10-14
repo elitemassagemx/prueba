@@ -77,9 +77,13 @@
             galleryElement.innerHTML = '';
             webpFiles.forEach(file => {
                 const img = document.createElement('img');
-                img.src = file;
+                img.src = baseUrl + file;
                 img.alt = file;
                 img.title = file;
+                img.onerror = function() {
+                    this.onerror = null;
+                    this.src = baseUrl + 'fallback-flag.webp';
+                };
                 galleryElement.appendChild(img);
             });
         }
