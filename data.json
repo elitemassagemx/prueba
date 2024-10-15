@@ -67,7 +67,7 @@
         "benefits": ["Mejorarás tu Equilibrio","Puntos específicos", "Reducirás el Estrés"],
         "duration": "",
         "icon": "${BASE_URL}sqpieblanco.webp",
-        "benefitsIcons": ["${BASE_URL}cequilibrio.webp", "${BASE_URL}reflexologia2.webp", "${BASE_URL}benefits-icon3.webp"],
+        "benefitsIcons": ["${BASE_URL}cequilibrio.webp", "${BASE_URL}reflexologia2.webp", "${BASE_URL}SONRISA.webp"],
         "durationIcon": "${BASE_URL}c30min.webp",
         "image": "${BASE_URL}reflexologia-image.webp",
         "popupDescription": "La reflexología es una técnica terapéutica que se centra en aplicar presión en puntos específicos de los pies que se corresponden con diferentes órganos y sistemas del cuerpo. Este tratamiento no solo proporciona una profunda relajación, sino que también puede ayudar a mejorar la circulación, reducir el estrés y promover un sentido general de bienestar en todo el cuerpo.",
