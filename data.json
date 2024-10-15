@@ -30,7 +30,7 @@
         "description": "Un enfoque especial para liberar tensiones acumuladas y relajarse profundamente.",
         "benefits": ["Relajación", "Alivio de Dolores en Espalda y Cuello"],
         "duration": "",
-        "icon": "${BASE_URL}pinsuecia.webp",
+        "icon": "${BASE_URL}ESPALDFLECH.webp",
         "benefitsIcons": ["${BASE_URL}ESPALDFLECH.webp", "${BASE_URL}benefits-icon2.webp", "${BASE_URL}benefits-icon3.webp"],
         "durationIcon": "${BASE_URL}c30min.webp",
         "image": "${BASE_URL}noche.webp",
