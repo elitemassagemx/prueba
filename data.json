@@ -55,7 +55,7 @@
         "benefits": ["Hidratará tu Piel", "Multisensorial", "Relajación Profunda"],
         "duration": "",
         "icon": "${BASE_URL}choco.webp",
-        "benefitsIcons": ["${BASE_URL}chidratacion.webp", "${BASE_URL}benefits-icon2.webp", "${BASE_URL}sqmanoforverde3d.webp"],
+        "benefitsIcons": ["${BASE_URL}chidratacion.webp", "${BASE_URL}sqsensorial.webp", "${BASE_URL}sqmanoforverde3d.webp"],
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}chocolaterapia-image.webp",
         "popupDescription": "La chocolaterapia es un tratamiento lujoso que combina los beneficios del masaje con las propiedades nutritivas del chocolate. El cacao rico en antioxidantes ayuda a nutrir y rejuvenecer la piel, mientras que el aroma del chocolate induce una sensación de bienestar y relajación. Este tratamiento no solo es un placer para los sentidos, sino que también deja la piel suave, hidratada y con un brillo saludable.",
