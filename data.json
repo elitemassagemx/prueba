@@ -42,7 +42,7 @@
         "description": "Ideal para una relajación completa, nuestras especialistas usarán técnicas de presión suaves para calmar el estrés.",
         "benefits": ["Relajación Total", "Mejora Circulación Sanguínea"],
         "duration": "",
-        "icon": "${BASE_URL}pinsuecia.webp",
+        "icon": "${BASE_URL}MANOSBIEN.webp",
         "benefitsIcons": ["${BASE_URL}manv.webp", "${BASE_URL}ccirculacion.webp", "${BASE_URL}benefits-icon3.webp"],
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}relajante.webp",
