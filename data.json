@@ -7,7 +7,7 @@
         "benefits": ["Bajará tu Estrés", "Cambiará tu Ánimo", "Aliviarás Tensiones"],
         "duration": "",
         "icon": "${BASE_URL}FRASCOVER.webp",
-        "benefitsIcons": ["${BASE_URL}estr.webp", "${BASE_URL}sonrisa.webp", "${BASE_URL}relaj.webp"],
+        "benefitsIcons": ["${BASE_URL}estr.webp", "${BASE_URL}SONRISA.webp", "${BASE_URL}relaj.webp"],
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}aroma.webp",
         "popupDescription": "La aromaterapia es una terapia holística que utiliza aceites esenciales naturales para promover la salud y el bienestar. Nuestras expertas terapeutas seleccionarán cuidadosamente los aceites más adecuados para ti, creando una experiencia personalizada que no solo relaja tu cuerpo, sino que también calma tu mente y eleva tu espíritu.",
