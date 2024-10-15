@@ -55,6 +55,7 @@ a, button {
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
+    padding-top: 10px;
 }
 
 /* Header y navegación */
@@ -97,8 +98,8 @@ h1 {
 
 /* Secciones */
 .section {
-    padding: 40px 0;
-    margin-bottom: 20px;
+    padding: 20px 0;
+    margin-bottom: 10px;
 }
 
 .hero {
@@ -120,6 +121,10 @@ h1 {
     background-color: var(--item-background);
     border-radius: 20px;
     padding: 5px;
+    position: static;
+    top: auto;
+    z-index: auto;
+    background-color: transparent;
 }
 
 .service-category-toggle input[type="radio"] {
@@ -145,10 +150,14 @@ h1 {
     align-items: center;
     overflow-x: auto;
     padding: 10px 0;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    position: static;
+    top: auto;
+    z-index: auto;
+    background-color: transparent;
 }
 
 .benefits-nav::-webkit-scrollbar, .package-nav::-webkit-scrollbar {
@@ -161,25 +170,26 @@ h1 {
     align-items: center;
     background: none;
     border: none;
-    padding: 10px;
-    margin: 0 10px;
+    padding: 5px;
+    margin: 0 5px;
     cursor: pointer;
     transition: transform 0.3s;
-    min-width: 80px;
+    min-width: 60px;
 }
 
 .benefit-btn img, .package-btn img {
     width: 48px;
     height: 48px;
-    margin-bottom: 5px;
+    display: block;
+    margin: 0 auto 5px;
 }
 
 .benefit-btn span, .package-btn span {
     font-size: 12px;
     text-align: center;
-    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
     line-height: 1.2;
-    max-width: 80px;
 }
 
 .benefit-btn.active, .package-btn.active {
@@ -496,7 +506,7 @@ h1 {
     cursor: pointer;
 }
 
-/* Estilos para la barra fija */
+/* Continuación de los estilos para la barra fija */
 .fixed-bar {
     position: fixed;
     bottom: 0;
@@ -526,12 +536,14 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 5px;
 }
 
 .nav-icon {
     width: 32px;
     height: 32px;
-    margin-bottom: 5px;
+    display: block;
+    margin: 0 auto 5px;
 }
 
 .nav-text {
@@ -540,6 +552,9 @@ h1 {
     text-align: center;
     white-space: normal;
     max-width: 80px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 /* Footer styles */
@@ -610,6 +625,29 @@ footer {
     }
 }
 
+@media (max-width: 576px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .service-item, .package-item {
+        padding: 1rem;
+    }
+
+    .benefit-btn, .package-btn {
+        min-width: 60px;
+    }
+
+    .benefit-btn img, .package-btn img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .benefit-btn span, .package-btn span {
+        font-size: 10px;
+    }
+}
+
 @media (max-width: 480px) {
     .gallery-item {
         height: 150px;
@@ -641,15 +679,6 @@ a:focus, button:focus {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 15px;
     border-radius: 8px;
-}
-
-/* Final spacing and alignment adjustments */
-.section {
-    margin-bottom: 2rem;
-}
-
-.container > *:last-child {
-    margin-bottom: 0;
 }
 
 /* Main CTA button styles */
@@ -706,16 +735,6 @@ a:focus, button:focus {
 }
 
 /* Additional adjustments */
-.service-category-toggle,
-.benefits-nav,
-.package-nav {
-    position: sticky;
-    top: 60px;
-    background-color: var(--background-color);
-    z-index: 100;
-    padding: 10px 0;
-}
-
 .hero + .services {
     margin-top: 20px;
 }
@@ -890,48 +909,6 @@ a:focus, button:focus {
     width: 24px;
     height: 24px;
     margin-right: 5px;
-}
-
-/* Ensure proper spacing in fixed bar */
-.fixed-bar a {
-    padding: 5px;
-}
-
-/* Additional responsive adjustments */
-@media (max-width: 576px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .service-item, .package-item {
-        padding: 1rem;
-    }
-
-    .benefit-btn, .package-btn {
-        min-width: 60px;
-    }
-
-    .benefit-btn img, .package-btn img {
-        width: 36px;
-        height: 36px;
-    }
-
-    .benefit-btn span, .package-btn span {
-        font-size: 10px;
-    }
-}
-
-/* Ensure proper text wrapping in navigation buttons */
-.nav-text {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-}
-
-/* Styles for package icons in navigation */
-.package-nav .package-btn img {
-    width: 36px;
-    height: 36px;
 }
 
 /* Import styles from galeria.css */
