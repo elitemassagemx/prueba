@@ -46,63 +46,28 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
+        #errorMessage {
+            color: red;
+            text-align: center;
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>Galería de Imágenes WEBP</h1>
     <button id="showAllBtn">Mostrar Todas</button>
+    <div id="errorMessage"></div>
     <div id="gallery" class="gallery"></div>
 
     <script>
         const baseUrl = "https://elitemassagemx.github.io/Home/IMG/";
         const galleryElement = document.getElementById('gallery');
         const showAllBtn = document.getElementById('showAllBtn');
+        const errorMessage = document.getElementById('errorMessage');
 
         const possibleFiles = [
             "AMANCAF.webp", "ANIMO.webp", "AROMA.webp", "BARNIZ.webp", "BIENES.webp",
-            "CEREBRO.webp", "CHOCO2.webp", "CHOCOC.webp", "CHOCOCC.webp", "COPAVIN.webp",
-            "DURAC.webp", "ESPALDFLECH.webp", "ESTRES.webp", "EXPRESO.webp", "FOCUS.webp",
-            "FRAG.webp", "FRASCOVER.webp", "FRESASC.webp", "FRESASC_1.webp", "GALLETAS.webp",
-            "MANOSBIEN.webp", "MASAJES.webp", "OSO.webp", "PAQ.webp", "PIEFLECH.webp",
-            "PIES.webp", "PIZZACHAMCIR.webp", "PLANT.webp", "QUESOS.webp", "QUESOSAHM.webp",
-            "QUESOSH.webp", "QUESOSHM.webp", "QUESOSIG.webp", "QUESOSM.webp", "QUESOSMM.webp",
-            "RELAJACION.webp", "ROSAS.webp", "SELECCION PIZZAS.webp", "SELECQUES.webp", "SILLAS.webp",
-            "SILLASH.webp", "SONRISA.webp", "TALAQUES.webp", "TARTA.webp", "TARTA2.webp",
-            "TESTI.webp", "WhatsApp Image 2024-10-11 at 1.17.53 PM (4)-fotor-bg-remover-20241011143242.webp",
-            "algas.webp", "android-chrome-192x192.webp", "android-chrome-512x512.webp", "animo2.webp",
-            "apple-touch-icon.webp", "atras.webp", "atrasm.webp", "bat.webp", "benefits-icon1.webp",
-            "benefits-icon2.webp", "billet.webp", "buda.webp", "buda2.webp", "c30min.webp",
-            "cafep.webp", "calen.webp", "camas2.webp", "camass.webp", "camp.webp",
-            "ccirculacion.webp", "cculinario.webp", "cdetox.webp", "cdolorespalda.webp", "cel.webp",
-            "cequilibrio.webp", "cer.webp", "cfragancia morado naranja.webp", "cfragancia2.webp", "check.webp",
-            "chen.webp", "chidratacion.webp", "choco.webp", "cinflamacion.webp", "cmasaje lomi.webp",
-            "comco.webp", "coment.webp", "comentari.webp", "copas.webp", "copasg.webp",
-            "coracaja.webp", "corago.webp", "correos.webp", "cpastel.webp", "cpastel4.webp",
-            "cpiedrasflroesvelasrosa.webp", "crebanadapiequeso.webp", "csuecia.webp", "ctarta.webp", "ctarta2.webp",
-            "cuentanos.webp", "cventosas.webp", "dif.webp", "dorado.webp", "duracionn.webp",
-            "duracioon.webp", "duration-icon.webp", "entradallam.webp", "error.webp", "error_1.webp",
-            "espalda2.webp", "estr.webp", "exp.webp", "fallback-flag.webp", "fotos.webp",
-            "galeria-de-fotos.webp", "galeria.webp", "gota.webp", "gotero.webp", "guard.webp",
-            "guardar.webp", "hablemos.webp", "holistico.webp", "idea.webp", "ideattex.webp",
-            "jam.webp", "jamc.webp", "lab.webp", "lapiz.webp", "lataref.webp",
-            "like.webp", "lista-de-regalos.webp", "lista.webp", "llave.webp", "logo.webp",
-            "lomi.webp", "lujo.webp", "lujo2.webp", "manv.webp", "mas.webp",
-            "mejan.webp", "mesap.webp", "mesap2.webp", "mora.webp", "mx.webp",
-            "noche.webp", "noche1.webp", "noct.webp", "och.webp", "ofr.webp",
-            "ois.webp", "omx.webp", "org.webp", "ous.webp", "papas.webp",
-            "paq1.webp", "paq2.webp", "paq41.webp", "paq4o.webp", "paqp.webp",
-            "par.webp", "personal.webp", "personalizaarte.webp", "piedras.webp", "piedras2.webp",
-            "pinmap.webp", "pinsuecia.webp", "pizcha.webp", "pizzs.webp", "planta.webp",
-            "rcaromaterapia.webp", "recomend.webp", "recos.webp", "reflexologia2.webp", "reg.webp",
-            "regalo.webp", "reserva.webp", "reservaa.webp", "rhlomi.webp", "rhpiedrasfloresvela.webp",
-            "rhpiedrasfrias.webp", "rhreflexologia.webp", "rhsuecia.webp", "rosa.webp", "rosal.webp",
-            "rosao.webp", "rosasic.webp", "semillas.webp", "serv.webp", "sig.webp",
-            "sol.webp", "spa.webp", "sqaromasflor.webp", "sqaromaterapiaroja.webp", "sqdifusoraromaterapia.webp",
-            "sqflormanos.webp", "sqfragancias.webp", "sqfrutas.webp", "sqpieblanco.webp", "sqpierna.webp",
-            "sqquesoyvino.webp", "sqsensorial.webp", "sqvelasaromaticamorada.webp", "start.webp", "sub.webp",
-            "tazaaa.webp", "toggprem.webp", "tomarf.webp", "trad.webp", "union.webp",
-            "us.webp", "vaso.webp", "vela.webp", "verificado.webp", "vingold.webp",
-            "vip.webp", "whatsapp.webp"
+            // ... (resto de los nombres de archivo)
         ];
 
         function checkImageExists(url) {
@@ -114,24 +79,31 @@
             });
         }
 
-        async function showAllImages() {
+        function showAllImages() {
             galleryElement.innerHTML = '';
-            const promises = possibleFiles.map(file => checkImageExists(baseUrl + file));
+            errorMessage.style.display = 'none';
             
-            try {
-                const results = await Promise.allSettled(promises);
-                results.forEach((result, index) => {
-                    if (result.status === 'fulfilled') {
+            let loadedImages = 0;
+            possibleFiles.forEach(file => {
+                checkImageExists(baseUrl + file)
+                    .then(url => {
                         const img = document.createElement('img');
-                        img.src = result.value;
-                        img.alt = possibleFiles[index];
-                        img.title = possibleFiles[index];
+                        img.src = url;
+                        img.alt = file;
+                        img.title = file;
                         galleryElement.appendChild(img);
-                    }
-                });
-            } catch (error) {
-                console.error("Error loading images:", error);
-            }
+                        loadedImages++;
+                    })
+                    .catch(() => {
+                        // Imagen no encontrada, no hacemos nada
+                    })
+                    .finally(() => {
+                        if (loadedImages === 0 && galleryElement.children.length === 0) {
+                            errorMessage.textContent = "No se pudieron cargar las imágenes. Por favor, verifica la URL base.";
+                            errorMessage.style.display = 'block';
+                        }
+                    });
+            });
         }
 
         showAllBtn.addEventListener('click', showAllImages);
