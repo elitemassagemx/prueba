@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     renderPackages();
                     setupFilters();
                     setupServiceCategories();
+                    setupPackageNav();
                     setupGallery();
                 } catch (error) {
                     console.error('Error parsing JSON:', error);
@@ -68,8 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(error => {
-
-            console.error('Error loading or parsing the JSON file:', error);
+                console.error('Error loading or parsing the JSON file:', error);
                 const servicesList = getElement('services-list');
                 const packageList = getElement('package-list');
                 if (servicesList) servicesList.innerHTML = '<p>Error al cargar los servicios. Por favor, intente más tarde.</p>';
@@ -452,7 +452,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (services.paquetes) {
             services.paquetes.forEach(pkg => {
-                allPackages.add(pkg.title);
+                allPackages.add(pkg.type || pkg.title);
             });
         }
 
@@ -461,17 +461,21 @@ document.addEventListener('DOMContentLoaded', () => {
         allButton.dataset.filter = 'all';
         allButton.innerHTML = `
             <img src="${BASE_URL}todos.webp" alt="Todos" style="width: 48px; height: 48px;">
-            <span>Todos</span>
+            <span class="visible-text">Todos</span>
+            <span class="hidden-text visually-hidden">all</span>
         `;
         packageNav.appendChild(allButton);
 
-        allPackages.forEach(packageTitle => {
+        allPackages.forEach(packageType => {
             const button = document.createElement('button');
             button.classList.add('package-btn');
-            button.dataset.filter = packageTitle.toLowerCase().replace(/\s+/g, '-');
+            button.dataset.filter = packageType.toLowerCase().replace(/\s+/g, '-');
+            const iconUrl = `${BASE_URL}${packageType.toLowerCase().replace(/\s+/g, '-')}-icon.webp`;
+            const alternativeText = getAlternativeText(packageType);
             button.innerHTML = `
-                <img src="${BASE_URL}${packageTitle.toLowerCase().replace(/\s+/g, '-')}-icon.webp" alt="${packageTitle}" style="width: 48px; height: 48px;">
-                <span>${packageTitle}</span>
+                <img src="${iconUrl}" alt="${packageType}" style="width: 48px; height: 48px;">
+                <span class="visible-text">${alternativeText}</span>
+                <span class="hidden-text visually-hidden">${packageType}</span>
             `;
             packageNav.appendChild(button);
         });
@@ -509,46 +513,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Aquí deberías cargar las imágenes de la galería desde tu fuente de datos
         const galleryImages = [
             { src: 'QUESOSAHM.webp', title: 'Tabla Gourmet', description: 'Después de tu masaje en pareja saborea una exquisita selección de jamón curado, quesos gourmet, fresas cubiertas de chocolate y copas de vino. Un toque de lujo y placer compartido para complementar tu visita' },
-            { src: 'choco2.webp', title: 'choco2', description: 'LLENAR' },
-            { src: 'chococ.webp', title: 'chococ', description: 'LLENAR' },
-            { src: 'chococc.webp', title: 'chococc', description: 'LLENAR' },
-            { src: 'FRESASC.webp', title: 'fresasc', description: 'LLENAR' },
-            { src: 'QUESOS.webp', title: 'quesos', description: 'LLENAR' },
-            { src: 'QUESOSH.webp', title: 'quesosh', description: 'LLENAR' },
-            { src: 'QUESOSHM.webp', title: 'quesoshm', description: 'LLENAR' },
-            { src: 'QUESOSM.webp', title: 'quesosm', description: 'LLENAR' },
-            { src: 'QUESOSIG.webp', title: 'quesosig', description: 'LLENAR' },
-            { src: 'SILLAS.webp', title: 'sillas', description: 'LLENAR' },
-            { src: 'SILLASH.webp', title: 'sillash', description: 'LLENAR' },
-            { src: 'chen.webp', title: 'chen', description: 'LLENAR' },
-            { src: 'copas.webp', title: 'copas', description: 'LLENAR' },
-            { src: 'dif.webp', title: 'dif', description: 'LLENAR' },
-            { src: 'QUESOSAHM.webp', title: 'quesosahm', description: 'LLENAR' },
-            { src: 'jamc.webp', title: 'jamc', description: 'LLENAR' },
-            { src: 'jam.webp', title: 'jam', description: 'LLENAR' },
-            { src: 'lujo.webp', title: 'lujo', description: 'LLENAR' },
-            { src: 'lujo2.webp', title: 'lujo2', description: 'LLENAR' },
-            { src: 'noche.webp', title: 'noche', description: 'LLENAR' },
-            { src: 'noche1.webp', title: 'noche1', description: 'LLENAR' },
-            { src: 'paq1.webp', title: 'paq1', description: 'LLENAR' },
-            { src: 'paq2.webp', title: 'paq2', description: 'LLENAR' },            
-            { src: 'paq41.webp', title: 'paq41', description: 'LLENAR' },
-            { src: 'rosa.webp', title: 'rosa', description: 'LLENAR' },
-            { src: 'rosal.webp', title: 'rosal', description: 'LLENAR' },
-            { src: 'rosao.webp', title: 'rosao', description: 'LLENAR' },
-            { src: 'semillas.webp', title: 'semillas', description: 'LLENAR' },
-            { src: 'sub.webp', title: 'sub', description: 'LLENAR' },
-            { src: 'spa.webp', title: 'spa', description: 'LLENAR' },
-            { src: 'buda2.webp', title: 'buda2', description: 'LLENAR' },
-            { src: 'mesap2.webp', title: 'mesap2', description: 'LLENAR' },
-            { src: 'papas.webp', title: 'papas', description: 'LLENAR' },
-            { src: 'mesa.webp', title: 'mesa', description: 'LLENAR' },
-            { src: 'buda.webp', title: 'Buda', description: 'LLENAR' },
+            { src: 'choco2.webp', title: 'Chocolate Deluxe', description: 'Sumérgete en una experiencia de dulzura y relajación con nuestro tratamiento de chocolate' },
+            { src: 'SILLAS.webp', title: 'Área de Relajación', description: 'Disfruta de nuestro acogedor espacio de relajación antes o después de tu masaje' },
         ];
 
-        // Configurar la cuadrícula
-        const gridImages = galleryImages.slice(0, 12); // Mostrar solo las primeras 12 imágenes en la cuadrícula
-        gridImages.forEach(image => {
+        // Configurar la cuadrícula con solo 3 imágenes
+        galleryImages.forEach(image => {
             const galleryItem = document.createElement('div');
             galleryItem.classList.add('gallery-item');
             galleryItem.innerHTML = `
