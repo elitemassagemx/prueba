@@ -35,7 +35,7 @@
         "durationIcon": "${BASE_URL}c30min.webp",
         "image": "${BASE_URL}noche.webp",
         "popupDescription": "Este masaje focalizado se centra en las áreas que más comúnmente acumulan tensión: la espalda y el cuello. Utilizando una combinación de técnicas de masaje sueco y de puntos de presión, nuestros terapeutas trabajarán para liberar los nudos musculares, mejorar la flexibilidad y proporcionar un alivio del estrés y la tensión.",
-        "popupImage": "${BASE_URL}espalda-cuello-popup.webp"
+        "popupImage": "${BASE_URL}am3.webp"
       },
       {
         "title": "Relajante",
@@ -47,7 +47,7 @@
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}relajante.webp",
         "popupDescription": "Conocido por su capacidad para inducir una relajación profunda y aliviar la tensión muscular. Nuestros terapeutas utilizan una combinación de movimientos largos y fluidos, para mejorar la circulación, flexibilidad y bienestar general. Este masaje es perfecto para aquellos que buscan un escape relajante del estrés diario.",
-        "popupImage": "${BASE_URL}sueco-relajante-popup.webp"
+        "popupImage": "${BASE_URL}am21.webp"
       },
       {
         "title": "Chocolaterapia",
@@ -59,7 +59,7 @@
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}chocolaterapia-image.webp",
         "popupDescription": "La chocolaterapia es un tratamiento lujoso que combina los beneficios del masaje con las propiedades nutritivas del chocolate. El cacao rico en antioxidantes ayuda a nutrir y rejuvenecer la piel, mientras que el aroma del chocolate induce una sensación de bienestar y relajación. Este tratamiento no solo es un placer para los sentidos, sino que también deja la piel suave, hidratada y con un brillo saludable.",
-        "popupImage": "${BASE_URL}chocolaterapia-popup.webp"
+        "popupImage": "${BASE_URL}ah1.webp"
       },
       {
         "title": "Pies cansados",
@@ -71,7 +71,7 @@
         "durationIcon": "${BASE_URL}c30min.webp",
         "image": "${BASE_URL}reflexologia-image.webp",
         "popupDescription": "La reflexología es una técnica terapéutica que se centra en aplicar presión en puntos específicos de los pies que se corresponden con diferentes órganos y sistemas del cuerpo. Este tratamiento no solo proporciona una profunda relajación, sino que también puede ayudar a mejorar la circulación, reducir el estrés y promover un sentido general de bienestar en todo el cuerpo.",
-        "popupImage": "${BASE_URL}reflexologia-popup.webp"
+        "popupImage": "${BASE_URL}arr.webp"
       },
       {
         "title": "Lomi Lomi",
@@ -83,7 +83,7 @@
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}lomi-lomi-image.webp",
         "popupDescription": "El Lomi Lomi es un masaje tradicional hawaiano que utiliza movimientos largos, fluidos y rítmicos de los antebrazos y las manos para masajear el cuerpo. Esta técnica única no solo relaja profundamente los músculos, sino que también se dice que ayuda a liberar patrones de pensamiento negativos almacenados en el cuerpo. El resultado es una sensación de rejuvenecimiento tanto física como mental.",
-        "popupImage": "${BASE_URL}lomi-lomi-popup.webp"
+        "popupImage": "${BASE_URL}ahs2.webp"
       },
       {
         "title": "Aceites de CBD",
@@ -95,7 +95,7 @@
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}cbd-image.webp",
         "popupDescription": "Nuestro masaje con aceites de CBD combina las técnicas de masaje tradicionales con los beneficios terapéuticos del cannabidiol (CBD). El CBD es conocido por sus propiedades antiinflamatorias y calmantes. Este tratamiento puede ayudar a aliviar el dolor muscular y promover una sensación de calma y bienestar general.",
-        "popupImage": "${BASE_URL}cbd-popup.webp"
+        "popupImage": "${BASE_URL}.webp"
       }
     ],
 
@@ -189,7 +189,7 @@
         "durationIcon": "${BASE_URL}duration-romance-icon.webp",
         "image": "${BASE_URL}paq1.webp",
         "popupDescription": "El Paquete Romance Total es la experiencia definitiva para parejas que buscan un escape lujoso y relajante. Comienza con un masaje de aromaterapia en pareja de 90 minutos, donde los aceites esenciales cuidadosamente seleccionados crearán una atmósfera de relajación total. Después del masaje, disfruten de 30 minutos adicionales de indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos gourmet. Este paquete está diseñado para nutrir tanto el cuerpo como el espíritu, ofreciendo un momento de conexión y lujo compartido.",
-        "popupImage": "${BASE_URL}romance-total-popup.webp"
+        "popupImage": "${BASE_URL}ae.webp"
       },
       {
         "title": "Romance Dulzura",
@@ -214,7 +214,7 @@
         "durationIcon": "${BASE_URL}duration-romance2-icon.webp",
         "image": "${BASE_URL}rosao.webp",
         "popupDescription": "Comienza con un lujoso masaje de aromaterapia en pareja de 60 minutos, donde cuidamos cada detalle para que la experiencia sea sensorial. Después del masaje disfruten las delicias dulces del café con pastel o tarta de su previamente elegidas por ti. Este paquete combina perfectamente la relajación profunda con los placeres culinarios, creando un momento especial para conectar.",
-        "popupImage": "${BASE_URL}romance-total2-popup.webp"
+        "popupImage": "${BASE_URL}aluz.webp"
       },
       {
         "title": "Paquete Lujo y Sabor",
@@ -240,7 +240,7 @@
         "durationIcon": "${BASE_URL}duration-lujo-icon.webp",
         "image": "${BASE_URL}jamc.webp",
         "popupDescription": "El Paquete Lujo y Sabor es una experiencia premium que combina el lujo de un masaje de piedras calientes con una degustación gourmet. Comienza con un relajante masaje de 90 minutos donde las piedras volcánicas calientes aliviarán profundamente la tensión muscular. Luego, disfruten de 30 minutos de pura indulgencia con una selección cuidadosamente curada de vinos finos, quesos artesanales y fresas bañadas en chocolate. Este paquete es perfecto para aquellos que buscan una experiencia que deleite todos los sentidos.",
-        "popupImage": "${BASE_URL}lujo-sabor-popup.webp"
+        "popupImage": "${BASE_URL}am.webp"
       },
       {
         "title": "Paquete Sensaciones Inolvidables",
@@ -266,7 +266,7 @@
         "durationIcon": "${BASE_URL}duration-sensaciones-icon.webp",
         "image": "${BASE_URL}chen.webp",
         "popupDescription": "El Paquete Sensaciones Inolvidables es una experiencia diseñada para despertar todos sus sentidos. Comienza con un lujoso masaje de cuerpo completo en pareja de 90 minutos, que les dejará completamente relajados y renovados. Después, disfruten de 45 minutos de pura indulgencia con una copa de vino selecto, fresas cubiertas de chocolate y una exquisita tabla de quesos artísticos. Este paquete combina perfectamente la relajación profunda con una experiencia gastronómica refinada, creando recuerdos que perdurarán mucho después de que termine su visita.",
-"popupImage": "${BASE_URL}sensaciones-inolvidables-popup.webp"
+"popupImage": "${BASE_URL}am.webp"
       },
       {
         "title": "Paquete Escape de Lujo",
