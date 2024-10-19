@@ -35,7 +35,7 @@
         "durationIcon": "${BASE_URL}c30min.webp",
         "image": "${BASE_URL}noche.webp",
         "popupDescription": "Este masaje focalizado se centra en las áreas que más comúnmente acumulan tensión: la espalda y el cuello. Utilizando una combinación de técnicas de masaje sueco y de puntos de presión, nuestros terapeutas trabajarán para liberar los nudos musculares, mejorar la flexibilidad y proporcionar un alivio del estrés y la tensión.",
-        "popupImage": "${BASE_URL}am3.webp"
+        "popupImage": "${BASE_URL}am21.webp"
       },
       {
         "title": "Relajante",
@@ -47,7 +47,7 @@
         "durationIcon": "${BASE_URL}duration-icon.webp",
         "image": "${BASE_URL}relajante.webp",
         "popupDescription": "Conocido por su capacidad para inducir una relajación profunda y aliviar la tensión muscular. Nuestros terapeutas utilizan una combinación de movimientos largos y fluidos, para mejorar la circulación, flexibilidad y bienestar general. Este masaje es perfecto para aquellos que buscan un escape relajante del estrés diario.",
-        "popupImage": "${BASE_URL}am21.webp"
+        "popupImage": "${BASE_URL}am3.webp"
       },
       {
         "title": "Chocolaterapia",
