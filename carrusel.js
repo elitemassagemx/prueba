@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function() {
+    initCarousel();
+});
+
 function initCarousel() {
     console.log('Initializing carousel');
     const carousel = document.getElementById('carrusel-container');
@@ -14,23 +18,24 @@ function initCarousel() {
     }
     console.log('Number of carousel items:', items.length);
 
-    const prevBtn = document.querySelector('.carousel-control.prev');
-    const nextBtn = document.querySelector('.carousel-control.next');
+    const prevBtn = carousel.querySelector('.carousel-control.prev');
+    const nextBtn = carousel.querySelector('.carousel-control.next');
     if (!prevBtn || !nextBtn) {
         console.error('Carousel control buttons not found');
         return;
     }
 
-    const itemWidth = items[0].offsetWidth + 20; // width + margin
+    const itemWidth = items[0].offsetWidth;
     console.log('Item width:', itemWidth);
-
-    const visibleItems = 3; // Número de elementos visibles a la vez
+    const visibleItems = 1; // Cambiado a 1 para mostrar una imagen a la vez
     let currentIndex = 0;
 
     function showSlide(index) {
-        carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+        const carouselList = carousel.querySelector('.carousel');
+        carouselList.style.transform = `translateX(-${index * itemWidth}px)`;
         currentIndex = index;
         console.log('Current index:', currentIndex);
+        updateIndicators(index);
     }
 
     function nextSlide() {
@@ -51,8 +56,27 @@ function initCarousel() {
         }
     }
 
+    function updateIndicators(index) {
+        const indicators = carousel.querySelectorAll('.carousel-indicators button');
+        indicators.forEach((indicator, i) => {
+            if (i === index) {
+                indicator.classList.add('active');
+                indicator.setAttribute('aria-current', 'true');
+            } else {
+                indicator.classList.remove('active');
+                indicator.removeAttribute('aria-current');
+            }
+        });
+    }
+
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
+
+    // Configurar indicadores
+    const indicators = carousel.querySelectorAll('.carousel-indicators button');
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => showSlide(index));
+    });
 
     // Manejo de errores de carga de imágenes
     carousel.querySelectorAll('img').forEach(img => {
@@ -62,6 +86,7 @@ function initCarousel() {
         });
     });
 
+    // Iniciar el carrusel
+    showSlide(0);
     console.log('Carousel initialization complete');
 }
-
