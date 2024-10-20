@@ -1,46 +1,19 @@
-function initCarousel() {
-    const carousel = document.getElementById('carrusel-container');
-    const carouselList = carousel.querySelector('.carousel');
-    const items = carousel.querySelectorAll('.carousel-item');
-    const prevBtn = carousel.querySelector('.carousel-control.prev');
-    const nextBtn = carousel.querySelector('.carousel-control.next');
-    
-    let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    const mainImage = document.getElementById('mainImage');
+    const mainImageTitle = document.getElementById('mainImageTitle');
+    const mainImageDescription = document.getElementById('mainImageDescription');
+    const navItems = document.querySelectorAll('.image-nav-item');
 
-    function showSlide(index) {
-        const itemWidth = items[0].offsetWidth;
-        carouselList.style.transform = `translateX(-${index * itemWidth}px)`;
-        currentIndex = index;
-    }
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imageSrc = this.getAttribute('data-image');
+            const imageTitle = this.getAttribute('data-title');
+            const imageDescription = this.getAttribute('data-description');
 
-    function nextSlide() {
-        if (currentIndex < items.length - 1) {
-            showSlide(currentIndex + 1);
-        } else {
-            showSlide(0);
-        }
-    }
-
-    function prevSlide() {
-        if (currentIndex > 0) {
-            showSlide(currentIndex - 1);
-        } else {
-            showSlide(items.length - 1);
-        }
-    }
-
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
-
-    // Manejo de errores de carga de imágenes
-    carousel.querySelectorAll('img').forEach(img => {
-        img.addEventListener('error', function() {
-            this.src = 'https://raw.githubusercontent.com/elitemassagemx/Home/main/IMG/error.webp';
+            mainImage.src = imageSrc;
+            mainImage.alt = imageTitle;
+            mainImageTitle.textContent = imageTitle;
+            mainImageDescription.textContent = imageDescription;
         });
     });
-
-    // Iniciar el carrusel
-    showSlide(0);
-}
-
-document.addEventListener('DOMContentLoaded', initCarousel);
+});
