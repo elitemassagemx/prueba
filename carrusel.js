@@ -1,6 +1,6 @@
 function initCarousel() {
     console.log('Initializing carousel');
-    const carousel = document.getElementById('elite-carousel');
+    const carousel = document.getElementById('carrusel-container');
     if (!carousel) {
         console.error('Carousel element not found');
         return;
