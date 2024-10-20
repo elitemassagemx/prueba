@@ -1,4 +1,5 @@
 const BASE_URL = "https://raw.githubusercontent.com/elitemassagemx/Home/main/IMG/";
+const CAROUSEL_IMAGE_BASE_URL = "https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/";
 let services = {};
 let currentPopupIndex = 0;
 
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupGalleryAnimations();
         setupGalleryModal();
         setupGallery();
+        loadCarouselContent();
     }
 
     function handleImageError(img) {
@@ -39,6 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(`Element with id "${id}" not found`);
         }
         return element;
+    }
+    
+    function loadCarouselContent() {
+        fetch('carrusel.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('carrusel-container').innerHTML = data;
+                initCarousel();
+            })
+            .catch(error => console.error('Error loading carousel:', error));
     }
 
     function loadJSONData() {
@@ -113,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const benefitsContainer = serviceElement.querySelector('.benefits-container');
             if (benefitsContainer && Array.isArray(service.benefitsIcons)) {
                 service.benefitsIcons.forEach((iconUrl, index) => {
-                       const benefitItem = document.createElement('div');
+                    const benefitItem = document.createElement('div');
                     benefitItem.classList.add('benefit-item');
                     const img = document.createElement('img');
                     img.src = buildImageUrl(iconUrl);
@@ -353,7 +365,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupServiceCategories() {
         const categoryInputs = document.querySelectorAll('.service-category-toggle input[type="radio"]');
         categoryInputs.forEach(input => {
-            input.addEventListener('change', () => {
+
+input.addEventListener('change', () => {
                 const category = input.value;
                 renderServices(category);
                 setupBenefitsNav(category);
@@ -663,4 +676,73 @@ document.addEventListener('DOMContentLoaded', () => {
             this.src = 'https://raw.githubusercontent.com/elitemassagemx/Home/main/IMG/error.webp';
         });
     });
+
+    function initCarousel() {
+        console.log('Initializing carousel');
+        const carousel = document.getElementById('elite-carousel');
+        if (!carousel) {
+            console.error('Carousel element not found');
+            return;
+        }
+        console.log('Carousel element found:', carousel);
+
+        const items = carousel.querySelectorAll('.carousel-item');
+        if (items.length === 0) {
+            console.error('No carousel items found');
+            return;
+        }
+        console.log('Number of carousel items:', items.length);
+
+        // Actualiza las rutas de las imágenes solo para los elementos del carrusel
+        items.forEach(item => {
+            const img = item.querySelector('img');
+            if (img) {
+                const originalSrc = img.getAttribute('src');
+                img.src = `${CAROUSEL_IMAGE_BASE_URL}${originalSrc}`;
+            }
+        });
+
+        const prevBtn = document.querySelector('.carousel-control.prev');
+        const nextBtn = document.querySelector('.carousel-control.next');
+        if (!prevBtn || !nextBtn) {
+            console.error('Carousel control buttons not found');
+            return;
+        }
+
+        const itemWidth = items[0].offsetWidth + 20; // width + margin
+        console.log('Item width:', itemWidth);
+
+        const visibleItems = 3; // Número de elementos visibles a la vez
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+            currentIndex = index;
+            console.log('Current index:', currentIndex);
+        }
+
+        function nextSlide() {
+            console.log('Next slide clicked');
+            if (currentIndex < items.length - visibleItems) {
+                showSlide(currentIndex + 1);
+            } else {
+                showSlide(0);
+            }
+        }
+
+        function prevSlide() {
+            console.log('Previous slide clicked');
+            if (currentIndex > 0) {
+                showSlide(currentIndex - 1);
+            } else {
+                showSlide(items.length - visibleItems);
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        console.log('Carousel initialization complete');
+    }
 });
+                               
