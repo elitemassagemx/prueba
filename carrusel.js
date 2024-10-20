@@ -6,8 +6,8 @@ function initCarousel() {
         return;
     }
     console.log('Carousel element found:', carousel);
-    console.log('Carousel HTML:', carousel.innerHTML);
 
+    const carouselList = carousel.querySelector('.carousel');
     const items = carousel.querySelectorAll('.carousel-item');
     if (items.length === 0) {
         console.error('No carousel items found');
@@ -22,20 +22,11 @@ function initCarousel() {
         return;
     }
 
-    const itemWidth = items[0].offsetWidth;
-    console.log('Item width:', itemWidth);
     let currentIndex = 0;
 
     function showSlide(index) {
-        items.forEach((item, i) => {
-            if (i === index) {
-                item.style.display = 'block';
-                item.classList.add('active');
-            } else {
-                item.style.display = 'none';
-                item.classList.remove('active');
-            }
-        });
+        const itemWidth = items[0].offsetWidth + parseInt(getComputedStyle(items[0]).marginRight);
+        carouselList.style.transform = `translateX(-${index * itemWidth}px)`;
         currentIndex = index;
         console.log('Current index:', currentIndex);
         updateIndicators(index);
@@ -43,12 +34,20 @@ function initCarousel() {
 
     function nextSlide() {
         console.log('Next slide clicked');
-        showSlide((currentIndex + 1) % items.length);
+        if (currentIndex < items.length - 1) {
+            showSlide(currentIndex + 1);
+        } else {
+            showSlide(0);
+        }
     }
 
     function prevSlide() {
         console.log('Previous slide clicked');
-        showSlide((currentIndex - 1 + items.length) % items.length);
+        if (currentIndex > 0) {
+            showSlide(currentIndex - 1);
+        } else {
+            showSlide(items.length - 1);
+        }
     }
 
     function updateIndicators(index) {
