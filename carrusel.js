@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     function showSlide(index) {
-        const itemWidth = items[0].offsetWidth + 20; // width + margin
+        const itemWidth = items[0].offsetWidth;
         carousel.style.transform = `translateX(-${index * itemWidth}px)`;
         currentIndex = index;
     }
@@ -32,4 +32,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Opcional: deslizamiento automático
     setInterval(nextSlide, 5000);
+
+    // Opcional: soporte para gestos táctiles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', function(event) {
+        touchStartX = event.changedTouches[0].screenX;
+    }, false);
+
+    carousel.addEventListener('touchend', function(event) {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipe();
+    }, false);
+
+    function handleSwipe() {
+        if (touchEndX < touchStartX) {
+            nextSlide();
+        }
+        if (touchEndX > touchStartX) {
+            prevSlide();
+        }
+    }
 });
