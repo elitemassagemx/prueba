@@ -65,5 +65,3 @@ function initCarousel() {
     console.log('Carousel initialization complete');
 }
 
-// Llamar a initCarousel cuando el DOM esté completamente cargado
-document.addEventListener('DOMContentLoaded', initCarousel);
