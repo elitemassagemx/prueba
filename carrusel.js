@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    initCarousel();
-});
-
 function initCarousel() {
     console.log('Initializing carousel');
     const carousel = document.getElementById('carrusel-container');
@@ -10,6 +6,7 @@ function initCarousel() {
         return;
     }
     console.log('Carousel element found:', carousel);
+    console.log('Carousel HTML:', carousel.innerHTML);
 
     const items = carousel.querySelectorAll('.carousel-item');
     if (items.length === 0) {
@@ -27,12 +24,18 @@ function initCarousel() {
 
     const itemWidth = items[0].offsetWidth;
     console.log('Item width:', itemWidth);
-    const visibleItems = 1; // Cambiado a 1 para mostrar una imagen a la vez
     let currentIndex = 0;
 
     function showSlide(index) {
-        const carouselList = carousel.querySelector('.carousel');
-        carouselList.style.transform = `translateX(-${index * itemWidth}px)`;
+        items.forEach((item, i) => {
+            if (i === index) {
+                item.style.display = 'block';
+                item.classList.add('active');
+            } else {
+                item.style.display = 'none';
+                item.classList.remove('active');
+            }
+        });
         currentIndex = index;
         console.log('Current index:', currentIndex);
         updateIndicators(index);
@@ -40,20 +43,12 @@ function initCarousel() {
 
     function nextSlide() {
         console.log('Next slide clicked');
-        if (currentIndex < items.length - visibleItems) {
-            showSlide(currentIndex + 1);
-        } else {
-            showSlide(0);
-        }
+        showSlide((currentIndex + 1) % items.length);
     }
 
     function prevSlide() {
         console.log('Previous slide clicked');
-        if (currentIndex > 0) {
-            showSlide(currentIndex - 1);
-        } else {
-            showSlide(items.length - visibleItems);
-        }
+        showSlide((currentIndex - 1 + items.length) % items.length);
     }
 
     function updateIndicators(index) {
@@ -80,6 +75,9 @@ function initCarousel() {
 
     // Manejo de errores de carga de imágenes
     carousel.querySelectorAll('img').forEach(img => {
+        img.addEventListener('load', function() {
+            console.log(`Image loaded successfully: ${this.src}`);
+        });
         img.addEventListener('error', function() {
             console.warn(`Failed to load image: ${this.src}`);
             this.src = 'https://raw.githubusercontent.com/elitemassagemx/Home/main/IMG/error.webp';
