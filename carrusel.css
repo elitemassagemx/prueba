@@ -5,22 +5,18 @@
     margin: 0 auto;
     overflow: hidden;
 }
-
 .carousel {
     display: flex;
     transition: transform 0.5s ease;
 }
-
 .carousel-item {
     flex: 0 0 100%;
     position: relative;
 }
-
 .carousel-item img {
     width: 100%;
     height: auto;
 }
-
 .carousel-caption {
     position: absolute;
     bottom: 20px;
@@ -31,7 +27,6 @@
     padding: 10px;
     text-align: center;
 }
-
 .carousel-controls {
     position: absolute;
     top: 50%;
@@ -39,7 +34,6 @@
     display: flex;
     justify-content: space-between;
 }
-
 .carousel-control {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -48,7 +42,6 @@
     cursor: pointer;
     font-size: 18px;
 }
-
 .carousel-indicators {
     position: absolute;
     bottom: 10px;
@@ -57,7 +50,6 @@
     display: flex;
     gap: 10px;
 }
-
 .carousel-indicators button {
     width: 10px;
     height: 10px;
@@ -66,7 +58,6 @@
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
-
 .carousel-indicators button.active {
     background-color: white;
 }
