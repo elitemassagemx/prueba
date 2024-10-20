@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setupGalleryAnimations();
         setupGalleryModal();
         setupGallery();
-        loadCarouselContent();
     }
 
     function handleImageError(img) {
