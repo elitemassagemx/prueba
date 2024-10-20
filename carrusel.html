@@ -81,3 +81,13 @@
         <button type="button" data-bs-target="#elite-carousel" data-bs-slide-to="8" aria-label="Slide 9" role="tab"></button>
     </div>
 </div>
+
+document.addEventListener("DOMContentLoaded", function() {
+    fetch('carrusel.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('carrusel-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error al cargar el carrusel:', error));
+});
+
