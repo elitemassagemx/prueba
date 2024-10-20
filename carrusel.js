@@ -1,41 +1,54 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded");
     const carousel = document.getElementById('elite-carousel');
+    console.log("Carousel element:", carousel);
+
     if (carousel) {
         const items = carousel.querySelectorAll('.carousel-item');
-        const prevBtn = document.querySelector('.carousel-control.prev');
-        const nextBtn = document.querySelector('.carousel-control.next');
-        let currentIndex = 0;
+        console.log("Carousel items:", items);
+        console.log("Number of items:", items.length);
 
-        function showSlide(index) {
-            const itemWidth = items[0].offsetWidth + 20; // width + margin
-            carousel.style.transform = `translateX(-${index * itemWidth}px)`;
-            currentIndex = index;
-        }
+        if (items.length > 0) {
+            const prevBtn = document.querySelector('.carousel-control.prev');
+            const nextBtn = document.querySelector('.carousel-control.next');
+            let currentIndex = 0;
 
-        function nextSlide() {
-            if (currentIndex < items.length - 1) {
-                showSlide(currentIndex + 1);
-            } else {
-                showSlide(0);
+            function showSlide(index) {
+                const itemWidth = items[0].offsetWidth + 20; // width + margin
+                carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+                currentIndex = index;
             }
-        }
 
-        function prevSlide() {
-            if (currentIndex > 0) {
-                showSlide(currentIndex - 1);
-            } else {
-                showSlide(items.length - 1);
+            function nextSlide() {
+                if (currentIndex < items.length - 1) {
+                    showSlide(currentIndex + 1);
+                } else {
+                    showSlide(0);
+                }
             }
-        }
 
-        if (prevBtn && nextBtn) {
-            nextBtn.addEventListener('click', nextSlide);
-            prevBtn.addEventListener('click', prevSlide);
-        }
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    showSlide(currentIndex - 1);
+                } else {
+                    showSlide(items.length - 1);
+                }
+            }
 
-        // Opcional: deslizamiento automático
-        setInterval(nextSlide, 5000);
+            if (prevBtn && nextBtn) {
+                nextBtn.addEventListener('click', nextSlide);
+                prevBtn.addEventListener('click', prevSlide);
+                console.log("Navigation buttons set up");
+            } else {
+                console.error("Navigation buttons not found");
+            }
+
+            // Opcional: deslizamiento automático
+            setInterval(nextSlide, 5000);
+        } else {
+            console.error("No carousel items found");
+        }
     } else {
-        console.error('Elemento del carrusel no encontrado');
+        console.error('Carousel element not found');
     }
 });
