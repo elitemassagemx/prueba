@@ -1,44 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const carruselContainer = document.getElementById('carrusel-container');
+    const carousel = document.getElementById('elite-carousel');
+    const items = carousel.querySelectorAll('.carousel-item');
+    const prevBtn = document.querySelector('.carousel-control.prev');
+    const nextBtn = document.querySelector('.carousel-control.next');
+    let currentIndex = 0;
 
-    // Cargar el contenido del carrusel.html
-    fetch('carrusel.html')
-        .then(response => response.text())
-        .then(data => {
-            carruselContainer.innerHTML = data;
-            initCarrusel();
-        })
-        .catch(error => {
-            console.error('Error al cargar el carrusel:', error);
-            carruselContainer.innerHTML = '<p>Error al cargar el carrusel. Por favor, intente más tarde.</p>';
-        });
-
-    function initCarrusel() {
-        const carrusel = document.getElementById('elite-carrusel');
-        const items = carrusel.querySelectorAll('.carrusel-item');
-        const prevBtn = document.querySelector('.carrusel-control.prev');
-        const nextBtn = document.querySelector('.carrusel-control.next');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            if (index < 0) index = items.length - 1;
-            if (index >= items.length) index = 0;
-            carrusel.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
-        }
-
-        function nextSlide() {
-            showSlide(currentIndex + 1);
-        }
-
-        function prevSlide() {
-            showSlide(currentIndex - 1);
-        }
-
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        // Cambio automático cada 5 segundos
-        setInterval(nextSlide, 5000);
+    function showSlide(index) {
+        const itemWidth = items[0].offsetWidth + 20; // width + margin
+        carousel.style.transform = `translateX(-${index * itemWidth}px)`;
+        currentIndex = index;
     }
+
+    function nextSlide() {
+        if (currentIndex < items.length - 1) {
+            showSlide(currentIndex + 1);
+        } else {
+            showSlide(0);
+        }
+    }
+
+    function prevSlide() {
+        if (currentIndex > 0) {
+            showSlide(currentIndex - 1);
+        } else {
+            showSlide(items.length - 1);
+        }
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Opcional: deslizamiento automático
+    setInterval(nextSlide, 5000);
 });
