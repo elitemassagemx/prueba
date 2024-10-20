@@ -1,91 +1,214 @@
-<div id="carrusel-container" class="carousel-container" role="region" aria-label="Galería de imágenes de Elite Massage">
-    <h2>Nuestras Instalaciones</h2>
-    <div class="carousel" role="list">
-        <!-- Primer item del carrusel -->
-        <div class="carousel-item active" role="listitem" data-slide-index="0">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/SALA1.webp" alt="Sala de masajes Elite Massage">
-            <div class="carousel-caption">
-                <h3>Sala de Masajes</h3>
-                <p>Experimenta la relajación en nuestra sala de masajes de lujo</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Massage Carousel</title>
+    <style>
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+            background-color: #f8f8f8;
+        }
+        .carousel-container h2 {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+            padding: 0 20px;
+        }
+        .carousel-item {
+            flex: 0 0 90%;
+            max-width: 90%;
+            margin-right: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px;
+        }
+        .carousel-caption h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .carousel-caption p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        .carousel-control {
+            background-color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        @media (min-width: 768px) {
+            .carousel-item {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
+        }
+        @media (min-width: 1024px) {
+            .carousel-item {
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="carrusel-container" class="carousel-container" role="region" aria-label="Galería de imágenes de Elite Massage">
+        <h2>Nuestras Instalaciones</h2>
+        <div class="carousel" role="list">
+            <div class="carousel-item active" role="listitem" data-slide-index="0">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/SALA1.webp" alt="Sala de masajes Elite Massage">
+                <div class="carousel-caption">
+                    <h3>Sala de Masajes</h3>
+                    <p>Experimenta la relajación en nuestra sala de masajes de lujo</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="1">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/SALA2.webp" alt="Sala de masajes en pareja Elite Massage">
+                <div class="carousel-caption">
+                    <h3>Masajes en Pareja</h3>
+                    <p>Disfruta de un masaje relajante junto a tu pareja</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="2">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah.webp" alt="Personaliza tu estancia">
+                <div class="carousel-caption">
+                    <h3>Personaliza tu Experiencia</h3>
+                    <p>Celebraciones y fechas especiales</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="3">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/aw3.webp" alt="Zona de descanso Elite Massage">
+                <div class="carousel-caption">
+                    <h3>Zona de Descanso</h3>
+                    <p>Elige tu bebida</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="4">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah6.webp" alt="Prepararemos tu idea!">
+                <div class="carousel-caption">
+                    <h3>Bienvenido a Elite Massage</h3>
+                    <p>Prepararemos tu idea!</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="5">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah8.webp" alt="Preparemos tu evento!">
+                <div class="carousel-caption">
+                    <h3>Preparemos tu evento!</h3>
+                    <p>Elige cada detalle!</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="6">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/afl.webp" alt="Plan romántico dentro de la ciudad!">
+                <div class="carousel-caption">
+                    <h3>Fecha romántica en la ciudad</h3>
+                    <p>Flores, Masaje y Champagne</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="7">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah2.webp" alt="Masajes + cambio de look">
+                <div class="carousel-caption">
+                    <h3>Masajes + cambio de look</h3>
+                    <p>Prepararemos tu idea!</p>
+                </div>
+            </div>
+            <div class="carousel-item" role="listitem" data-slide-index="8">
+                <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/am1.webp" alt="Zona de descanso Elite Massage">
+                <div class="carousel-caption">
+                    <h3>Zona de Descanso</h3>
+                    <p>Relájate antes o después de tu masaje</p>
+                </div>
             </div>
         </div>
-
-        <!-- Segundo item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="1">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/SALA2.webp" alt="Sala de masajes en pareja Elite Massage">
-            <div class="carousel-caption">
-                <h3>Masajes en Pareja</h3>
-                <p>Disfruta de un masaje relajante junto a tu pareja</p>
-            </div>
-        </div>
-
-        <!-- Tercer item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="2">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah.webp" alt="Personaliza tu estancia">
-            <div class="carousel-caption">
-                <h3>Personaliza tu Experiencia</h3>
-                <p>Celebraciones y fechas especiales</p>
-            </div>
-        </div>
-
-        <!-- Cuarto item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="3">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/aw3.webp" alt="Zona de descanso Elite Massage">
-            <div class="carousel-caption">
-                <h3>Zona de Descanso</h3>
-                <p>Elige tu bebida</p>
-            </div>
-        </div>
-
-        <!-- Quinto item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="4">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah6.webp" alt="Prepararemos tu idea!">
-            <div class="carousel-caption">
-                <h3>Bienvenido a Elite Massage</h3>
-                <p>Prepararemos tu idea!</p>
-            </div>
-        </div>
-
-        <!-- Sexto item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="5">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah8.webp" alt="Preparemos tu evento!">
-            <div class="carousel-caption">
-                <h3>Preparemos tu evento!</h3>
-                <p>Elige cada detalle!</p>
-            </div>
-        </div>
-
-        <!-- Séptimo item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="6">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/afl.webp" alt="Plan romántico dentro de la ciudad!">
-            <div class="carousel-caption">
-                <h3>Fecha romántica en la ciudad</h3>
-                <p>Flores, Masaje y Champagne</p>
-            </div>
-        </div>
-
-        <!-- Octavo item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="7">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/ah2.webp" alt="Masajes + cambio de look">
-            <div class="carousel-caption">
-                <h3>Masajes + cambio de look</h3>
-                <p>Prepararemos tu idea!</p>
-            </div>
-        </div>
-
-        <!-- Noveno item del carrusel -->
-        <div class="carousel-item" role="listitem" data-slide-index="8">
-            <img src="https://raw.githubusercontent.com/elitemassagemx/prueba/main/carruimg/am1.webp" alt="Zona de descanso Elite Massage">
-            <div class="carousel-caption">
-                <h3>Zona de Descanso</h3>
-                <p>Relájate antes o después de tu masaje</p>
-            </div>
+        <div class="carousel-controls">
+            <button class="carousel-control prev" aria-label="Anterior">&lt;</button>
+            <button class="carousel-control next" aria-label="Siguiente">&gt;</button>
         </div>
     </div>
 
-    <!-- Controles del carrusel -->
-    <div class="carousel-controls">
-        <button class="carousel-control prev" aria-label="Anterior" type="button">&lt;</button>
-        <button class="carousel-control next" aria-label="Siguiente" type="button">&gt;</button>
-    </div>
-</div>
+    <script>
+        function initCarousel() {
+            const carousel = document.getElementById('carrusel-container');
+            const carouselList = carousel.querySelector('.carousel');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.carousel-control.prev');
+            const nextBtn = carousel.querySelector('.carousel-control.next');
+            
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                const itemWidth = items[0].offsetWidth;
+                carouselList.style.transform = `translateX(-${index * itemWidth}px)`;
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                if (currentIndex < items.length - 1) {
+                    showSlide(currentIndex + 1);
+                } else {
+                    showSlide(0);
+                }
+            }
+
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    showSlide(currentIndex - 1);
+                } else {
+                    showSlide(items.length - 1);
+                }
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Manejo de errores de carga de imágenes
+            carousel.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'https://raw.githubusercontent.com/elitemassagemx/Home/main/IMG/error.webp';
+                });
+            });
+
+            // Iniciar el carrusel
+            showSlide(0);
+        }
+
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    </script>
+</body>
+</html>
