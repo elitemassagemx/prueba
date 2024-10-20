@@ -54,8 +54,13 @@ function initCarousel() {
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
 
-    // Opcional: deslizamiento automático
-    // setInterval(nextSlide, 5000);
+    // Manejo de errores de carga de imágenes
+    carousel.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            console.warn(`Failed to load image: ${this.src}`);
+            this.src = 'https://raw.githubusercontent.com/elitemassagemx/Home/main/IMG/error.webp';
+        });
+    });
 
     console.log('Carousel initialization complete');
 }
