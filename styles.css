@@ -29,7 +29,7 @@ body {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
-    padding-top: 60px; /* Ajustado para el header fijo */
+    padding-top: 60px;
 }
 
 h1, h2, h3 {
@@ -59,7 +59,6 @@ a, button {
     margin: 0 auto;
     padding: 0 15px;
     box-sizing: border-box;
-    padding-top: 10px;
 }
 
 /* Header y navegación */
@@ -615,27 +614,48 @@ footer {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding-top: 50px;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    #main-header {
+        padding: 5px 0;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
     .services-grid, #package-list {
         grid-template-columns: 1fr;
     }
 
-    .popup-content {
-        width: 90%;
-        margin: 10% auto;
-    }
-
-    .footer-content {
+    .service-category-toggle {
         flex-wrap: wrap;
     }
-}
 
-@media (max-width: 576px) {
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .service-item, .package-item {
-        padding: 1rem;
+    .service-category-toggle label {
+        margin: 5px;
+        font-size: 12px;
+        padding: 8px 12px;
     }
 
     .benefit-btn, .package-btn {
@@ -650,20 +670,93 @@ footer {
     .benefit-btn span, .package-btn span {
         font-size: 10px;
     }
-}
 
-@media (max-width: 480px) {
+    .service-item, .package-item {
+        padding: 1rem;
+    }
+
+    .service-item h3, .package-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .service-item p, .package-item p {
+        font-size: 0.9rem;
+    }
+
+    .saber-mas-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
     .gallery-item {
         height: 150px;
     }
 
-    .package-includes {
-        margin-bottom: 10px;
+    .popup-content {
+        width: 90%;
+        margin: 10% auto;
     }
 
-    .package-includes strong {
-        display: block;
-        margin-bottom: 5px;
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .fixed-bar a {
+        padding: 3px;
+    }
+
+    .nav-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav-text {
+        font-size: 8px;
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .gallery-item {
+        height: 120px;
+    }
+
+    .image-title {
+        font-size: 0.9rem;
+    }
+
+    .service-category-toggle label {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .benefit-btn, .package-btn {
+        min-width: 50px;
+    }
+
+    .benefit-btn img, .package-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .benefit-btn span, .package-btn span {
+        font-size: 8px;
     }
 }
 
@@ -736,42 +829,6 @@ a:focus, button:focus {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-}
-
-/* Additional adjustments */
-.hero + .services {
-    margin-top: 20px;
-}
-
-.package-includes {
-    margin-bottom: 10px;
-}
-
-.package-includes strong {
-    margin-right: 5px;
-}
-
-/* Ver más button styles */
-.ver-mas-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.ver-mas-btn:hover {
-    background-color: var(--gold);
-}
-
-.conocenos-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
 }
 
 /* Carousel adjustments */
@@ -848,17 +905,6 @@ a:focus, button:focus {
     text-shadow: none;
 }
 
-/* Adjust font for service and package items to match project fonts */
-.service-item,
-.package-item {
-    font-family: 'Quattrocento', serif;
-}
-
-.service-item h3,
-.package-item h3 {
-    font-family: 'Tenor Sans', sans-serif;
-}
-
 /* Fix for carousel image issue */
 .carousel-item {
     display: none;
@@ -886,12 +932,12 @@ a:focus, button:focus {
 
 /* Additional spacing between sections */
 .section + .section {
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 /* Styles for package navigation */
 .package-nav {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .package-btn {
@@ -913,4 +959,59 @@ a:focus, button:focus {
     width: 24px;
     height: 24px;
     margin-right: 5px;
+}
+
+/* Estilo para el enlace "Personaliza" */
+.personaliza-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--item-background);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.personaliza-link:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+/* Ajustes adicionales para dispositivos muy pequeños */
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+
+    .hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .service-item h3,
+    .package-item h3 {
+        font-size: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .gallery-item {
+        height: 100px;
+    }
+}
+
+/* Asegurar que los elementos flexibles se ajusten correctamente en móviles */
+@media (max-width: 480px) {
+    .header-top,
+    .logo-container,
+    .service-category-toggle,
+    .benefits-container,
+    .duration-container,
+    .package-includes,
+    .package-duration,
+    .package-benefits {
+        flex-wrap: wrap;
+    }
 }
