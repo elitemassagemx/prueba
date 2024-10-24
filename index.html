@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Elite Massage: Tu oasis de tranquilidad. Descubre nuestros servicios de masajes y paquetes especiales para una experiencia de relajación única.">
     <title>Elite Massage</title>
+    
+    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="galeria.css">
     <link rel="stylesheet" href="carrusel.css">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.webp">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.webp">
@@ -31,18 +34,24 @@
     <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
-    <header id="main-header" class="fixed-header">
+    <!-- Header -->
+    <header id="main-header" class="fixed-header" role="banner">
         <div class="container">
             <div class="header-top">
                 <div class="logo-container">
-                    <img src="https://elitemassagemx.github.io/Home/IMG/logo.webp" alt="Elite Massage Logo" class="logo" onerror="this.onerror=null; this.src='https://elitemassagemx.github.io/Home/IMG/fallback-logo.webp';">
+                    <img src="https://elitemassagemx.github.io/Home/IMG/logo.webp" 
+                         alt="Elite Massage Logo" 
+                         class="logo" 
+                         onerror="this.onerror=null; this.src='https://elitemassagemx.github.io/Home/IMG/fallback-logo.webp';">
                     <h1>Elite Massage</h1>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main role="main">
+        <!-- Hero Section -->
         <section id="inicio" class="section hero">
             <div class="container">
                 <h2>Bienvenido a tu Oasis de Tranquilidad</h2>
@@ -50,53 +59,117 @@
             </div>
         </section>
 
-<section id="carrusel-elite" class="section carrusel-section">
-    <div class="container">
-        <h2>Nuestras Instalaciones</h2>
-        <div id="carrusel-container">
-            <!-- El contenido del carrusel se cargará aquí dinámicamente -->
-        </div>
-    </div>
-</section>
-        
-        <section id="galeria" class="section gallery gallery-container">
+        <!-- Primer Carrusel -->
+        <section id="carrusel-elite" class="section carrusel-section">
             <div class="container">
-                <h2>Personaliza tu experiencia</h2>
-                <div class="gallery-grid">
-                    <!-- Se mostrarán solo 3 imágenes aquí -->
+                <h2>Personaliza tu estancia</h2>
+                <div id="carrusel-container">
+                    <!-- carrusel.html se carga aquí dinámicamente -->
                 </div>
-                <a href="galeria.html" class="btn btn-primary">Ver Galería Completa</a>
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="servicios" class="section services">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
                 <div class="service-category-toggle">
-                    <input type="radio" id="masajes" name="category" value="masajes" checked>
-                    <label for="masajes">Masajes</label>
-                    <input type="radio" id="experiencias" name="category" value="experiencias">
-                    <label for="experiencias">Experiencias</label>
-                    <input type="radio" id="paquetes" name="category" value="paquetes">
-                    <label for="paquetes">Paquetes</label>
+                    <input type="radio" id="masajes1" name="category1" value="masajes" checked>
+                    <label for="masajes1">
+                        <img src="https://elitemassagemx.github.io/Home/IMG/recomend.webp" alt="Icono Masajes" class="category-icon">
+                        Masajes
+                    </label>
+                    
+                    <input type="radio" id="experiencias1" name="category1" value="experiencias">
+                    <label for="experiencias1">
+                        <img src="https://elitemassagemx.github.io/Home/IMG/personal.webp" alt="Icono Experiencias" class="category-icon">
+                        Experiencias
+                    </label>
+                    
+                    <input type="radio" id="paquetes1" name="category1" value="paquetes">
+                    <label for="paquetes1">
+                        <img src="https://elitemassagemx.github.io/Home/IMG/paqp.webp" alt="Icono Paquetes" class="category-icon">
+                        Paquetes
+                    </label>
+                    
+                    <a href="tuplan.html" class="personaliza-link">
+                        <img src="https://elitemassagemx.github.io/Home/IMG/perso.webp" alt="Icono Personaliza" class="category-icon">
+                        Personaliza
+                    </a>
                 </div>
+                
                 <div class="benefits-nav">
-                    <!-- Los botones de beneficios se generarán dinámicamente con JavaScript -->
+                    <!-- Benefits navigation se genera dinámicamente -->
                 </div>
-                <div id="services-list" class="services-grid"></div>
+                
+                <div id="services-list" class="services-grid">
+                    <!-- Services grid se genera dinámicamente -->
+                </div>
             </div>
         </section>
 
+        <!-- Gallery Section -->
+        <section id="galeria" class="section gallery gallery-container">
+            <div class="container">
+                <h2>Inspírate con nuestras opciones</h2>
+                <div class="gallery-grid">
+                    <!-- Dynamic gallery content -->
+                </div>
+                <a href="galeria.html" class="btn btn-primary">Ver más</a>
+            </div>
+        </section>
+
+        <!-- Segundo Carrusel -->
+        <section id="paqcarr-elite" class="section paqcarr-section">
+            <div class="container">
+                <h2>Descubre nuestros paquetes especiales</h2>
+                <div id="paqcarr-container">
+                    <!-- paqcarr.html se carga aquí dinámicamente -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
         <section id="paquetes" class="section packages">
             <div class="container">
-                <h2>Nuestros Paquetes</h2>
-                <div class="package-nav">
-                    <!-- Los botones de navegación de paquetes se generarán dinámicamente con JavaScript -->
+                <h2>Nuestros Servicios</h2>
+                
+                <!-- Navegación principal de categorías -->
+                <div class="service-category-toggle">
+                    <input type="radio" id="masajes2" name="category2" value="masajes" checked>
+                    <label for="masajes2">
+                        <img src="https://elitemassagemx.github.io/Home/IMG/recomend.webp" alt="Icono Masajes" class="category-icon">
+                        Masajes
+                    </label>
+                    
+                    <input type="radio" id="experiencias2" name="category2" value="experiencias">
+                    <label for="experiencias2">
+                        <img src="https://elitemassagemx.github.io/Home/IMG/personal.webp" alt="Icono Experiencias" class="category-icon">
+                        Experiencias
+                    </label>
+                    
+                    <input type="radio" id="paquetes2" name="category2" value="paquetes">
+                    <label for="paquetes2">
+                        <img src="https://elitemassagemx.github.io/Home/IMG/paqp.webp" alt="Icono Paquetes" class="category-icon">
+                        Paquetes
+                    </label>
                 </div>
-                <div id="package-list" class="package-grid"></div>
+
+                <!-- Barra de navegación de beneficios -->
+                <div class="benefits-nav" id="benefits-nav">
+                    <!-- Los iconos se generan dinámicamente -->
+                </div>
+
+                <!-- Contenedor de servicios -->
+                <div class="services-container">
+                    <div id="services-grid" class="services-grid">
+                        <!-- Los servicios se generan dinámicamente -->
+                    </div>
+                </div>
             </div>
         </section>
-
+        
+        <!-- Testimonials Section -->
         <section id="testimonios" class="section testimonials">
             <div class="container">
                 <h2>Lo que dicen nuestros clientes</h2>
@@ -111,6 +184,7 @@
             </div>
         </section>
 
+        <!-- About Us Section -->
         <section id="conocenos" class="section gallery gallery-container">
             <div class="container">
                 <div class="conocenos-header">
@@ -118,15 +192,16 @@
                     <a href="galeria.html" id="ver-mas-galeria" class="ver-mas-btn">Ver más</a>
                 </div>
                 <div class="gallery-grid">
-                    <!-- Las imágenes de la galería en cuadrícula se generarán dinámicamente con JavaScript -->
+                    <!-- Dynamic gallery grid content -->
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer role="contentinfo">
         <div class="container">
-            <p>&copy; 2023 Elite Massage. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Elite Massage. Todos los derechos reservados.</p>
             <div class="social-media">
                 <a href="https://facebook.com/elitemassage" target="_blank" rel="noopener noreferrer">Facebook</a> |
                 <a href="https://instagram.com/elitemassage" target="_blank" rel="noopener noreferrer">Instagram</a> |
@@ -135,6 +210,7 @@
         </div>
     </footer>
 
+    <!-- Fixed Navigation Bar -->
     <nav class="fixed-bar" aria-label="Navegación principal">
         <ul>
             <li>
@@ -158,6 +234,7 @@
         </ul>
     </nav>
 
+    <!-- Popup Modal -->
     <div id="popup" class="popup" aria-modal="true" role="dialog">
         <div class="popup-content">
             <span class="close" aria-label="Cerrar">&times;</span>
@@ -166,10 +243,10 @@
             <p id="popup-description"></p>
             <div class="popup-details">
                 <div class="popup-benefits">
-                    <!-- Los iconos y textos de beneficios se generarán dinámicamente -->
+                    <!-- Dynamic benefits content -->
                 </div>
                 <div class="popup-includes">
-                    <!-- La lista de 'includes' se generará dinámicamente -->
+                    <!-- Dynamic includes content -->
                 </div>
                 <div class="popup-duration">
                     <img src="https://elitemassagemx.github.io/Home/IMG/duration-icon.webp" alt="" class="duration-icon">
@@ -183,12 +260,14 @@
         </div>
     </div>
 
+    <!-- Image Modal -->
     <div id="imageModal" class="modal" aria-modal="true" role="dialog">
         <span class="close" aria-label="Cerrar">&times;</span>
         <img class="modal-content" id="modalImage" alt="Imagen ampliada">
         <div id="modalDescription"></div>
     </div>
 
+    <!-- Templates -->
     <template id="service-template">
         <div class="service-item">
             <div class="service-background"></div>
@@ -199,7 +278,7 @@
                 </div>
                 <p class="service-description"></p>
                 <div class="benefits-container">
-                    <!-- Los iconos y textos de beneficios se generarán dinámicamente -->
+                    <!-- Dynamic benefits content -->
                 </div>
                 <div class="duration-container">
                     <img src="https://elitemassagemx.github.io/Home/IMG/duration-icon.webp" alt="" class="duration-icon">
@@ -226,7 +305,7 @@
                     <span class="package-duration-text"></span>
                 </div>
                 <div class="package-benefits">
-                    <!-- Los iconos y textos de beneficios se generarán dinámicamente -->
+                    <!-- Dynamic benefits content -->
                 </div>
                 <div class="package-buttons">
                     <button class="saber-mas-button">Saber más</button>
@@ -235,31 +314,13 @@
         </div>
     </template>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- GSAP y ScrollTrigger para animaciones -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     
-
-    
-    <!-- Script para cargar el carrusel -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        fetch('carrusel.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('carrusel-container').innerHTML = data;
-                initCarousel();
-            })
-            .catch(error => console.error('Error loading carousel:', error));
-    });
-    </script>
-    
-    <!-- Tu script personalizado -->
+    <!-- Custom Scripts -->
     <script src="script.js"></script>
-        <!-- Carrusel JS -->
     <script src="carrusel.js"></script>
 </body>
 </html>
